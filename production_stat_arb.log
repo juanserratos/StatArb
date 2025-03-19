@@ -1,0 +1,100 @@
+2025-03-19 16:03:03,728 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 16:03:03,728 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, confidence=0.05, holding_period=20
+2025-03-19 16:03:03,728 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 16:03:03,728 - utils.helpers - INFO - Expanded universe from 19 to 32 tickers
+2025-03-19 16:03:03,728 - ProductionStatArb - INFO - Running walk-forward validation...
+2025-03-19 16:03:03,728 - ProductionStatArb - INFO - Fetching price data for validation...
+2025-03-19 16:03:03,728 - strategy.regime_switching - INFO - Fetching price data for 32 tickers from 2008-12-19 to 2023-12-31
+2025-03-19 16:03:04,156 - data.market_data - INFO - Successfully downloaded XLV data: 3782 rows
+2025-03-19 16:03:04,310 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 16:03:04,603 - data.market_data - INFO - Successfully downloaded XBI data: 3782 rows
+2025-03-19 16:03:04,756 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 16:03:04,936 - data.market_data - INFO - Successfully downloaded XLI data: 3782 rows
+2025-03-19 16:03:05,088 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 16:03:05,249 - data.market_data - INFO - Successfully downloaded SLV data: 3782 rows
+2025-03-19 16:03:05,566 - data.market_data - INFO - Successfully downloaded XLP data: 3782 rows
+2025-03-19 16:03:05,800 - data.market_data - INFO - Successfully downloaded XLU data: 3782 rows
+2025-03-19 16:03:06,002 - data.market_data - INFO - Successfully downloaded XOP data: 3782 rows
+2025-03-19 16:03:06,187 - data.market_data - INFO - Successfully downloaded XLY data: 3782 rows
+2025-03-19 16:03:06,493 - data.market_data - INFO - Successfully downloaded XLB data: 3782 rows
+2025-03-19 16:03:06,620 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 16:03:06,824 - data.market_data - INFO - Successfully downloaded KRE data: 3782 rows
+2025-03-19 16:03:07,071 - data.market_data - INFO - Successfully downloaded DIA data: 3782 rows
+2025-03-19 16:03:07,270 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 16:03:07,488 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 16:03:07,748 - data.market_data - INFO - Successfully downloaded KBE data: 3782 rows
+2025-03-19 16:03:07,986 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 16:03:08,217 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 16:03:08,402 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 16:03:08,593 - data.market_data - INFO - Successfully downloaded XME data: 3782 rows
+2025-03-19 16:03:08,788 - data.market_data - INFO - Successfully downloaded XPH data: 3782 rows
+2025-03-19 16:03:09,082 - data.market_data - INFO - Successfully downloaded XLF data: 3782 rows
+2025-03-19 16:03:09,291 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 16:03:09,433 - data.market_data - INFO - Successfully downloaded FXY data: 3782 rows
+2025-03-19 16:03:09,661 - data.market_data - INFO - Successfully downloaded XLE data: 3782 rows
+2025-03-19 16:03:09,803 - data.market_data - INFO - Successfully downloaded XHB data: 3782 rows
+2025-03-19 16:03:10,023 - data.market_data - INFO - Successfully downloaded FXE data: 3782 rows
+2025-03-19 16:03:10,238 - data.market_data - INFO - Successfully downloaded XRT data: 3782 rows
+2025-03-19 16:03:10,403 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 16:03:10,672 - data.market_data - INFO - Successfully downloaded XLK data: 3782 rows
+2025-03-19 16:03:10,673 - data.market_data - WARNING - Dropping XLRE due to insufficient data: 2071/3403 valid points
+2025-03-19 16:03:10,673 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/3403 valid points
+2025-03-19 16:03:10,675 - data.market_data - INFO - Successfully fetched data for 30/32 tickers
+2025-03-19 16:03:10,675 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 16:03:10,675 - data.market_data - INFO - Data shape: (3782, 30)
+2025-03-19 16:03:10,676 - strategy.regime_switching - INFO - Successfully fetched data for 30/32 tickers
+2025-03-19 16:03:10,676 - strategy.regime_switching - INFO - Date range: 2010-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 16:03:10,676 - strategy.regime_switching - INFO - Data shape: (3522, 30)
+2025-03-19 16:03:10,679 - utils.helpers - INFO - Filtered universe from 30 to 30 tickers
+2025-03-19 16:03:10,680 - utils.validation - INFO - Running walk-forward test with 72 windows
+2025-03-19 16:03:10,681 - utils.validation - INFO - Window 1/72: Train 2010-01-04 to 2011-05-23, Test 2011-05-23 to 2011-09-26
+2025-03-19 16:03:19,679 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 16:03:19,679 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, confidence=0.05, holding_period=20
+2025-03-19 16:03:19,679 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 16:03:19,679 - utils.helpers - INFO - Expanded universe from 19 to 32 tickers
+2025-03-19 16:03:19,679 - ProductionStatArb - INFO - Running walk-forward validation...
+2025-03-19 16:03:19,679 - ProductionStatArb - INFO - Fetching price data for validation...
+2025-03-19 16:03:19,679 - strategy.regime_switching - INFO - Fetching price data for 32 tickers from 2008-12-19 to 2023-12-31
+2025-03-19 16:03:19,965 - data.market_data - INFO - Successfully downloaded FXY data: 3782 rows
+2025-03-19 16:03:20,179 - data.market_data - INFO - Successfully downloaded XHB data: 3782 rows
+2025-03-19 16:03:20,411 - data.market_data - INFO - Successfully downloaded DIA data: 3782 rows
+2025-03-19 16:03:20,634 - data.market_data - INFO - Successfully downloaded XME data: 3782 rows
+2025-03-19 16:03:20,771 - data.market_data - INFO - Successfully downloaded SLV data: 3782 rows
+2025-03-19 16:03:20,980 - data.market_data - INFO - Successfully downloaded XBI data: 3782 rows
+2025-03-19 16:03:21,248 - data.market_data - INFO - Successfully downloaded KRE data: 3782 rows
+2025-03-19 16:03:21,435 - data.market_data - INFO - Successfully downloaded XLI data: 3782 rows
+2025-03-19 16:03:21,674 - data.market_data - INFO - Successfully downloaded XLF data: 3782 rows
+2025-03-19 16:03:21,852 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 16:03:22,124 - data.market_data - INFO - Successfully downloaded FXE data: 3782 rows
+2025-03-19 16:03:22,328 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 16:03:22,508 - data.market_data - INFO - Successfully downloaded XLE data: 3782 rows
+2025-03-19 16:03:22,709 - data.market_data - INFO - Successfully downloaded XLY data: 3782 rows
+2025-03-19 16:03:22,914 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 16:03:23,132 - data.market_data - INFO - Successfully downloaded XPH data: 3782 rows
+2025-03-19 16:03:23,285 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 16:03:23,550 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 16:03:23,731 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 16:03:23,917 - data.market_data - INFO - Successfully downloaded XLP data: 3782 rows
+2025-03-19 16:03:24,088 - data.market_data - INFO - Successfully downloaded XLB data: 3782 rows
+2025-03-19 16:03:24,274 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 16:03:24,481 - data.market_data - INFO - Successfully downloaded XLK data: 3782 rows
+2025-03-19 16:03:24,855 - data.market_data - INFO - Successfully downloaded XRT data: 3782 rows
+2025-03-19 16:03:25,061 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 16:03:25,249 - data.market_data - INFO - Successfully downloaded XLU data: 3782 rows
+2025-03-19 16:03:25,475 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 16:03:25,668 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 16:03:25,779 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 16:03:25,956 - data.market_data - INFO - Successfully downloaded XLV data: 3782 rows
+2025-03-19 16:03:26,137 - data.market_data - INFO - Successfully downloaded XOP data: 3782 rows
+2025-03-19 16:03:26,312 - data.market_data - INFO - Successfully downloaded KBE data: 3782 rows
+2025-03-19 16:03:26,313 - data.market_data - WARNING - Dropping XLRE due to insufficient data: 2071/3403 valid points
+2025-03-19 16:03:26,315 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/3403 valid points
+2025-03-19 16:03:26,315 - data.market_data - INFO - Successfully fetched data for 30/32 tickers
+2025-03-19 16:03:26,316 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 16:03:26,316 - data.market_data - INFO - Data shape: (3782, 30)
+2025-03-19 16:03:26,317 - strategy.regime_switching - INFO - Successfully fetched data for 30/32 tickers
+2025-03-19 16:03:26,317 - strategy.regime_switching - INFO - Date range: 2010-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 16:03:26,317 - strategy.regime_switching - INFO - Data shape: (3522, 30)
+2025-03-19 16:03:26,319 - utils.helpers - INFO - Filtered universe from 30 to 30 tickers
+2025-03-19 16:03:26,321 - utils.validation - INFO - Running walk-forward test with 72 windows
+2025-03-19 16:03:26,321 - utils.validation - INFO - Window 1/72: Train 2010-01-04 to 2011-05-23, Test 2011-05-23 to 2011-09-26
