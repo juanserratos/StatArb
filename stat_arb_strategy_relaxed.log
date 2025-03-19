@@ -1,0 +1,1175 @@
+2025-03-19 15:07:21,869 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 15:07:21,869 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=1.8, z_exit=0.8, n_regimes=2, confidence=0.15, holding_period=25
+2025-03-19 15:07:21,869 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=1.8, z_exit=0.8, n_regimes=2, min_half_life=2, volatility_scaling=True, cost_model=simple
+2025-03-19 15:07:21,869 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 15:07:21,869 - utils.helpers - INFO - Expanded universe from 32 to 33 tickers
+2025-03-19 15:07:21,869 - strategy.regime_switching - INFO - Fetching price data for 33 tickers from 2008-12-19 to 2023-12-31
+2025-03-19 15:07:22,280 - data.market_data - INFO - Successfully downloaded XHB data: 3782 rows
+2025-03-19 15:07:22,470 - data.market_data - INFO - Successfully downloaded XME data: 3782 rows
+2025-03-19 15:07:22,724 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 15:07:22,994 - data.market_data - INFO - Successfully downloaded XOP data: 3782 rows
+2025-03-19 15:07:23,206 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 15:07:23,346 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 15:07:23,588 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 15:07:23,815 - data.market_data - INFO - Successfully downloaded XRT data: 3782 rows
+2025-03-19 15:07:24,040 - data.market_data - INFO - Successfully downloaded XLI data: 3782 rows
+2025-03-19 15:07:24,219 - data.market_data - INFO - Successfully downloaded FXY data: 3782 rows
+2025-03-19 15:07:24,422 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 15:07:24,678 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 15:07:24,859 - data.market_data - INFO - Successfully downloaded XPH data: 3782 rows
+2025-03-19 15:07:25,004 - data.market_data - INFO - Successfully downloaded SLV data: 3782 rows
+2025-03-19 15:07:25,221 - data.market_data - INFO - Successfully downloaded KRE data: 3782 rows
+2025-03-19 15:07:25,442 - data.market_data - INFO - Successfully downloaded KBE data: 3782 rows
+2025-03-19 15:07:25,634 - data.market_data - INFO - Successfully downloaded XLV data: 3782 rows
+2025-03-19 15:07:25,829 - data.market_data - INFO - Successfully downloaded DIA data: 3782 rows
+2025-03-19 15:07:26,069 - data.market_data - INFO - Successfully downloaded XLY data: 3782 rows
+2025-03-19 15:07:26,237 - data.market_data - INFO - Successfully downloaded BIL data: 3782 rows
+2025-03-19 15:07:26,524 - data.market_data - INFO - Successfully downloaded XLU data: 3782 rows
+2025-03-19 15:07:26,776 - data.market_data - INFO - Successfully downloaded XLE data: 3782 rows
+2025-03-19 15:07:26,977 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 15:07:27,168 - data.market_data - INFO - Successfully downloaded FXE data: 3782 rows
+2025-03-19 15:07:27,454 - data.market_data - INFO - Successfully downloaded XLP data: 3782 rows
+2025-03-19 15:07:27,637 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 15:07:27,858 - data.market_data - INFO - Successfully downloaded XBI data: 3782 rows
+2025-03-19 15:07:28,047 - data.market_data - INFO - Successfully downloaded XLK data: 3782 rows
+2025-03-19 15:07:28,289 - data.market_data - INFO - Successfully downloaded XLF data: 3782 rows
+2025-03-19 15:07:28,550 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 15:07:28,784 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 15:07:28,979 - data.market_data - INFO - Successfully downloaded XLB data: 3782 rows
+2025-03-19 15:07:29,109 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 15:07:29,111 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/3403 valid points
+2025-03-19 15:07:29,112 - data.market_data - WARNING - Dropping XLRE due to insufficient data: 2071/3403 valid points
+2025-03-19 15:07:29,112 - data.market_data - INFO - Successfully fetched data for 31/33 tickers
+2025-03-19 15:07:29,113 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 15:07:29,113 - data.market_data - INFO - Data shape: (3782, 31)
+2025-03-19 15:07:29,114 - strategy.regime_switching - INFO - Successfully fetched data for 31/33 tickers
+2025-03-19 15:07:29,114 - strategy.regime_switching - INFO - Date range: 2010-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 15:07:29,114 - strategy.regime_switching - INFO - Data shape: (3522, 31)
+2025-03-19 15:07:29,114 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 15:07:29,116 - utils.helpers - INFO - Filtered universe from 31 to 31 tickers
+2025-03-19 15:07:29,116 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 15:07:29,116 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2008-12-19 to 2023-12-31
+2025-03-19 15:07:29,261 - data.market_data - INFO - Successfully downloaded ^VIX data: 3782 rows
+2025-03-19 15:07:29,462 - data.market_data - INFO - Successfully downloaded ^VVIX data: 3773 rows
+2025-03-19 15:07:29,599 - data.market_data - INFO - Successfully downloaded ^TNX data: 3780 rows
+2025-03-19 15:07:29,830 - data.market_data - INFO - Successfully downloaded ^TYX data: 3780 rows
+2025-03-19 15:07:29,975 - data.market_data - INFO - Successfully downloaded ^IRX data: 3780 rows
+2025-03-19 15:07:30,118 - data.market_data - INFO - Successfully downloaded ^FVX data: 3780 rows
+2025-03-19 15:07:30,346 - data.market_data - INFO - Successfully downloaded LQD data: 3782 rows
+2025-03-19 15:07:30,562 - data.market_data - INFO - Successfully downloaded HYG data: 3782 rows
+2025-03-19 15:07:30,600 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 15:07:30,631 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 15:07:30,663 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 15:07:30,694 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 15:07:30,736 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 15:07:30,766 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 15:07:30,908 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 3781 rows
+2025-03-19 15:07:30,941 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 15:07:30,969 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 15:07:30,999 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 15:07:31,029 - data.market_data - INFO - Successfully downloaded BIL data: 3782 rows
+2025-03-19 15:07:31,031 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 15:07:31,031 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 15:07:31,031 - data.market_data - INFO - Data shape: (3782, 19)
+2025-03-19 15:07:31,175 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (3522, 40)
+2025-03-19 15:07:31,176 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 15:07:31,176 - pairs.selection - INFO - Testing 465 potential pairs with enhanced criteria...
+2025-03-19 15:07:31,201 - pairs.cointegration - INFO - Calculated half-life: 79.4910 days
+2025-03-19 15:07:31,212 - pairs.cointegration - INFO - Calculated half-life: 71.2898 days
+2025-03-19 15:07:31,233 - pairs.cointegration - INFO - Calculated half-life: 54.7685 days
+2025-03-19 15:07:31,287 - pairs.cointegration - INFO - Calculated half-life: 9.9666 days
+2025-03-19 15:07:31,309 - pairs.cointegration - INFO - Calculated half-life: 29.1691 days
+2025-03-19 15:07:31,314 - pairs.cointegration - INFO - Calculated half-life: 21.1221 days
+2025-03-19 15:07:31,351 - pairs.cointegration - INFO - Calculated half-life: 11.3127 days
+2025-03-19 15:07:31,460 - pairs.cointegration - INFO - Calculated half-life: 14.4850 days
+2025-03-19 15:07:31,468 - pairs.cointegration - INFO - Calculated half-life: 7.2567 days
+2025-03-19 15:07:31,511 - pairs.cointegration - INFO - Calculated half-life: 40.3244 days
+2025-03-19 15:07:31,614 - pairs.cointegration - INFO - Calculated half-life: 44.1952 days
+2025-03-19 15:07:31,627 - pairs.cointegration - INFO - Calculated half-life: 32.0768 days
+2025-03-19 15:07:31,660 - pairs.cointegration - INFO - Calculated half-life: 12.0019 days
+2025-03-19 15:07:31,697 - pairs.cointegration - INFO - Calculated half-life: 10.6042 days
+2025-03-19 15:07:31,731 - pairs.cointegration - INFO - Calculated half-life: 6.6729 days
+2025-03-19 15:07:31,745 - pairs.cointegration - INFO - Calculated half-life: 56.6176 days
+2025-03-19 15:07:31,787 - pairs.cointegration - INFO - Calculated half-life: 25.3429 days
+2025-03-19 15:07:31,824 - pairs.cointegration - INFO - Calculated half-life: 9.2575 days
+2025-03-19 15:07:31,835 - pairs.cointegration - INFO - Calculated half-life: 14.7750 days
+2025-03-19 15:07:31,928 - pairs.cointegration - INFO - Calculated half-life: 8.2825 days
+2025-03-19 15:07:31,987 - pairs.cointegration - INFO - Calculated half-life: 7.4341 days
+2025-03-19 15:07:32,123 - pairs.cointegration - INFO - Calculated half-life: 47.1909 days
+2025-03-19 15:07:32,128 - pairs.cointegration - INFO - Calculated half-life: 45.5094 days
+2025-03-19 15:07:32,134 - pairs.cointegration - INFO - Calculated half-life: 10.2116 days
+2025-03-19 15:07:32,148 - pairs.cointegration - INFO - Calculated half-life: 12.4091 days
+2025-03-19 15:07:32,154 - pairs.cointegration - INFO - Calculated half-life: 18.0860 days
+2025-03-19 15:07:32,160 - pairs.cointegration - INFO - Calculated half-life: 12.2802 days
+2025-03-19 15:07:32,165 - pairs.cointegration - INFO - Calculated half-life: 9.7811 days
+2025-03-19 15:07:32,177 - pairs.cointegration - INFO - Calculated half-life: 41.1240 days
+2025-03-19 15:07:32,185 - pairs.cointegration - INFO - Calculated half-life: 14.1152 days
+2025-03-19 15:07:32,191 - pairs.cointegration - INFO - Calculated half-life: 12.4556 days
+2025-03-19 15:07:32,290 - pairs.cointegration - INFO - Calculated half-life: 47.1314 days
+2025-03-19 15:07:32,296 - pairs.cointegration - INFO - Calculated half-life: 29.6332 days
+2025-03-19 15:07:32,310 - pairs.cointegration - INFO - Calculated half-life: 7.1232 days
+2025-03-19 15:07:32,336 - pairs.cointegration - INFO - Calculated half-life: 8.6940 days
+2025-03-19 15:07:32,445 - pairs.cointegration - INFO - Calculated half-life: 11.6476 days
+2025-03-19 15:07:32,450 - pairs.cointegration - INFO - Calculated half-life: 34.6787 days
+2025-03-19 15:07:32,519 - pairs.cointegration - INFO - Calculated half-life: 11.6861 days
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Found 15 valid pairs after enhanced filtering
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 1: TLT-XLU, Score: 0.2136, Half-life: 6.7, Correlation: 0.861, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 2: XOP-USO, Score: 0.2324, Half-life: 7.3, Correlation: 0.909, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 3: XME-XRT, Score: 0.2344, Half-life: 10.0, Correlation: 0.840, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 4: SLV-XLU, Score: 0.2558, Half-life: 12.4, Correlation: 0.478, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 5: XLV-XLB, Score: 0.2571, Half-life: 8.7, Correlation: 0.685, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 6: XLU-XLP, Score: 0.2663, Half-life: 11.6, Correlation: 0.815, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 7: XRT-XLF, Score: 0.2730, Half-life: 9.3, Correlation: 0.856, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 8: XLV-FXE, Score: 0.2762, Half-life: 7.1, Correlation: 0.556, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 9: SLV-GLD, Score: 0.2780, Half-life: 12.5, Correlation: 0.741, Same Sector: False
+2025-03-19 15:07:32,602 - pairs.selection - INFO - Pair 10: IEF-XLU, Score: 0.2957, Half-life: 7.4, Correlation: 0.805, Same Sector: False
+2025-03-19 15:07:32,602 - strategy.enhanced - INFO - Generating trading signals...
+2025-03-19 15:07:32,602 - strategy.enhanced - INFO - Generating enhanced signals for 15 pairs
+2025-03-19 15:07:32,944 - strategy.regime_switching - INFO - Calculated hedge ratios for ('TLT', 'XLU'): mean=0.3966, std=0.1151
+2025-03-19 15:07:32,946 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:07:32,953 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:07:33,247 - hmmlearn.base - WARNING - Model is not converging.  Current: -37049.44402342183 is not greater than -37049.37076697786. Delta is -0.07325644396769349
+2025-03-19 15:07:34,741 - hmmlearn.base - WARNING - Model is not converging.  Current: -37049.47598002869 is not greater than -37049.39156259812. Delta is -0.08441743057483109
+2025-03-19 15:07:40,446 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:07:40,447 - regime.detector - INFO - Low (0): mean=0.1345, std=2.1825, proportion=0.07
+2025-03-19 15:07:40,447 - regime.detector - INFO - High (1): mean=0.3928, std=2.3354, proportion=0.93
+2025-03-19 15:07:40,454 - regime.detector - INFO - Regime Low (0) parameters: z_entry=1.80, z_exit=0.50
+2025-03-19 15:07:40,457 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:07:40,502 - risk.manager - INFO - New position at 2011-08-08 00:00:00: signal=1, entry_z=-1.90
+2025-03-19 15:07:40,502 - risk.manager - INFO - Position closed at 2011-08-09 00:00:00 (original signal)
+2025-03-19 15:07:40,503 - risk.manager - INFO - New position at 2011-08-10 00:00:00: signal=1, entry_z=-2.05
+2025-03-19 15:07:40,504 - risk.manager - INFO - Profit target reached at 2011-08-11 00:00:00: max PnL 0.0926
+2025-03-19 15:07:40,527 - risk.manager - INFO - New position at 2019-08-14 00:00:00: signal=1, entry_z=-2.28
+2025-03-19 15:07:40,528 - risk.manager - INFO - Position closed at 2019-08-15 00:00:00 (original signal)
+2025-03-19 15:07:40,530 - risk.manager - INFO - New position at 2019-08-16 00:00:00: signal=1, entry_z=-1.82
+2025-03-19 15:07:40,533 - risk.manager - INFO - Position closed at 2019-08-19 00:00:00 (original signal)
+2025-03-19 15:07:40,538 - risk.manager - INFO - New position at 2020-02-28 00:00:00: signal=1, entry_z=-4.07
+2025-03-19 15:07:40,539 - risk.manager - INFO - Position closed at 2020-03-02 00:00:00 (original signal)
+2025-03-19 15:07:40,543 - risk.manager - INFO - New position at 2020-03-03 00:00:00: signal=1, entry_z=-3.16
+2025-03-19 15:07:40,543 - risk.manager - INFO - Profit target reached at 2020-03-04 00:00:00: max PnL 0.0674
+2025-03-19 15:07:40,545 - risk.manager - INFO - New position at 2020-03-06 00:00:00: signal=1, entry_z=-4.08
+2025-03-19 15:07:40,555 - risk.manager - INFO - Stop loss triggered at 2020-03-12 00:00:00: cumulative PnL -0.1071
+2025-03-19 15:07:40,558 - risk.manager - INFO - New position at 2020-03-13 00:00:00: signal=1, entry_z=-4.89
+2025-03-19 15:07:40,560 - risk.manager - INFO - Stop loss triggered at 2020-03-16 00:00:00: cumulative PnL -0.1783
+2025-03-19 15:07:40,570 - risk.manager - INFO - New position at 2020-03-17 00:00:00: signal=1, entry_z=-4.46
+2025-03-19 15:07:40,592 - risk.manager - INFO - Stop loss triggered at 2020-03-20 00:00:00: cumulative PnL -0.1545
+2025-03-19 15:07:40,609 - risk.manager - INFO - New position at 2020-03-23 00:00:00: signal=1, entry_z=-10.58
+2025-03-19 15:07:40,621 - risk.manager - INFO - Position closed at 2020-04-09 00:00:00 (original signal)
+2025-03-19 15:07:40,622 - risk.manager - INFO - New position at 2020-04-13 00:00:00: signal=1, entry_z=-2.95
+2025-03-19 15:07:40,624 - risk.manager - INFO - Position closed at 2020-04-14 00:00:00 (original signal)
+2025-03-19 15:07:40,625 - risk.manager - INFO - New position at 2020-04-15 00:00:00: signal=1, entry_z=-3.49
+2025-03-19 15:07:40,626 - risk.manager - INFO - Position closed at 2020-04-17 00:00:00 (original signal)
+2025-03-19 15:07:40,628 - risk.manager - INFO - New position at 2020-04-20 00:00:00: signal=1, entry_z=-3.39
+2025-03-19 15:07:40,632 - risk.manager - INFO - Position closed at 2020-04-27 00:00:00 (original signal)
+2025-03-19 15:07:40,634 - risk.manager - INFO - New position at 2020-05-01 00:00:00: signal=1, entry_z=-2.98
+2025-03-19 15:07:40,635 - risk.manager - INFO - Position closed at 2020-05-04 00:00:00 (original signal)
+2025-03-19 15:07:40,636 - risk.manager - INFO - New position at 2020-06-02 00:00:00: signal=-1, entry_z=1.97
+2025-03-19 15:07:40,636 - risk.manager - INFO - Position closed at 2020-06-03 00:00:00 (original signal)
+2025-03-19 15:07:40,637 - risk.manager - INFO - New position at 2020-06-08 00:00:00: signal=-1, entry_z=3.13
+2025-03-19 15:07:40,638 - risk.manager - INFO - Position closed at 2020-06-09 00:00:00 (original signal)
+2025-03-19 15:07:40,640 - risk.manager - INFO - New position at 2020-10-08 00:00:00: signal=-1, entry_z=2.33
+2025-03-19 15:07:40,641 - risk.manager - INFO - Position closed at 2020-10-12 00:00:00 (original signal)
+2025-03-19 15:07:40,643 - risk.manager - INFO - New position at 2020-10-16 00:00:00: signal=-1, entry_z=2.10
+2025-03-19 15:07:40,644 - risk.manager - INFO - Position closed at 2020-10-19 00:00:00 (original signal)
+2025-03-19 15:07:40,645 - risk.manager - INFO - New position at 2020-10-20 00:00:00: signal=-1, entry_z=2.27
+2025-03-19 15:07:40,645 - risk.manager - INFO - Position closed at 2020-10-21 00:00:00 (original signal)
+2025-03-19 15:07:40,646 - risk.manager - INFO - New position at 2020-10-23 00:00:00: signal=-1, entry_z=2.66
+2025-03-19 15:07:40,649 - risk.manager - INFO - Position closed at 2020-10-28 00:00:00 (original signal)
+2025-03-19 15:07:40,651 - risk.manager - INFO - New position at 2021-03-26 00:00:00: signal=-1, entry_z=2.39
+2025-03-19 15:07:40,652 - risk.manager - INFO - Position closed at 2021-03-29 00:00:00 (original signal)
+2025-03-19 15:07:40,655 - risk.manager - INFO - New position at 2022-01-04 00:00:00: signal=-1, entry_z=2.02
+2025-03-19 15:07:40,655 - risk.manager - INFO - Position closed at 2022-01-05 00:00:00 (original signal)
+2025-03-19 15:07:40,657 - risk.manager - INFO - New position at 2022-03-22 00:00:00: signal=-1, entry_z=2.90
+2025-03-19 15:07:40,658 - risk.manager - INFO - Position closed at 2022-03-24 00:00:00 (original signal)
+2025-03-19 15:07:40,660 - risk.manager - INFO - New position at 2022-03-25 00:00:00: signal=-1, entry_z=3.46
+2025-03-19 15:07:40,699 - risk.manager - INFO - Position closed at 2022-04-29 00:00:00 (original signal)
+2025-03-19 15:07:40,701 - risk.manager - INFO - New position at 2022-05-04 00:00:00: signal=-1, entry_z=2.91
+2025-03-19 15:07:40,705 - risk.manager - INFO - Position closed at 2022-05-10 00:00:00 (original signal)
+2025-03-19 15:07:40,706 - risk.manager - INFO - New position at 2022-05-17 00:00:00: signal=-1, entry_z=2.97
+2025-03-19 15:07:40,706 - risk.manager - INFO - Position closed at 2022-05-18 00:00:00 (original signal)
+2025-03-19 15:07:40,708 - risk.manager - INFO - New position at 2022-09-07 00:00:00: signal=-1, entry_z=3.08
+2025-03-19 15:07:40,712 - risk.manager - INFO - Position closed at 2022-09-13 00:00:00 (original signal)
+2025-03-19 15:07:40,713 - risk.manager - INFO - New position at 2022-09-14 00:00:00: signal=-1, entry_z=2.84
+2025-03-19 15:07:40,713 - risk.manager - INFO - Position closed at 2022-09-15 00:00:00 (original signal)
+2025-03-19 15:07:40,715 - risk.manager - INFO - New position at 2023-01-19 00:00:00: signal=1, entry_z=-2.01
+2025-03-19 15:07:40,716 - risk.manager - INFO - Position closed at 2023-01-20 00:00:00 (original signal)
+2025-03-19 15:07:40,719 - risk.manager - INFO - New position at 2023-12-20 00:00:00: signal=1, entry_z=-2.47
+2025-03-19 15:07:40,720 - risk.manager - INFO - Position closed at 2023-12-22 00:00:00 (original signal)
+2025-03-19 15:07:40,722 - risk.manager - INFO - New position at 2023-12-27 00:00:00: signal=1, entry_z=-2.30
+2025-03-19 15:07:40,722 - risk.manager - INFO - Position closed at 2023-12-28 00:00:00 (original signal)
+2025-03-19 15:07:41,088 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XOP', 'USO'): mean=1.0434, std=0.4660
+2025-03-19 15:07:41,089 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:07:41,093 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:07:47,571 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:07:47,572 - regime.detector - INFO - High (0): mean=-0.7521, std=9.5659, proportion=0.23
+2025-03-19 15:07:47,572 - regime.detector - INFO - Low (1): mean=-2.3898, std=11.1909, proportion=0.77
+2025-03-19 15:07:47,577 - regime.detector - INFO - Regime High (0) parameters: z_entry=2.20, z_exit=0.50
+2025-03-19 15:07:47,579 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.40, z_exit=0.50
+2025-03-19 15:07:47,624 - risk.manager - INFO - New position at 2010-05-13 00:00:00: signal=1, entry_z=-2.58
+2025-03-19 15:07:47,636 - risk.manager - INFO - Position closed at 2010-05-20 00:00:00 (original signal)
+2025-03-19 15:07:47,639 - risk.manager - INFO - New position at 2010-05-21 00:00:00: signal=1, entry_z=-2.44
+2025-03-19 15:07:47,641 - risk.manager - INFO - Position closed at 2010-05-24 00:00:00 (original signal)
+2025-03-19 15:07:47,644 - risk.manager - INFO - New position at 2010-05-28 00:00:00: signal=1, entry_z=-2.43
+2025-03-19 15:07:47,645 - risk.manager - INFO - Position closed at 2010-06-01 00:00:00 (original signal)
+2025-03-19 15:07:47,647 - risk.manager - INFO - New position at 2010-06-02 00:00:00: signal=1, entry_z=-2.47
+2025-03-19 15:07:47,654 - risk.manager - INFO - Position closed at 2010-06-07 00:00:00 (original signal)
+2025-03-19 15:07:47,656 - risk.manager - INFO - New position at 2010-06-11 00:00:00: signal=1, entry_z=-2.65
+2025-03-19 15:07:47,661 - risk.manager - INFO - Position closed at 2010-06-16 00:00:00 (original signal)
+2025-03-19 15:07:47,665 - risk.manager - INFO - New position at 2010-11-19 00:00:00: signal=1, entry_z=-2.61
+2025-03-19 15:07:47,669 - risk.manager - INFO - Position closed at 2010-11-23 00:00:00 (original signal)
+2025-03-19 15:07:47,673 - risk.manager - INFO - New position at 2011-01-26 00:00:00: signal=1, entry_z=-2.47
+2025-03-19 15:07:47,677 - risk.manager - INFO - Position closed at 2011-01-28 00:00:00 (original signal)
+2025-03-19 15:07:47,680 - risk.manager - INFO - New position at 2011-02-01 00:00:00: signal=1, entry_z=-2.64
+2025-03-19 15:07:47,696 - risk.manager - INFO - Profit target reached at 2011-02-22 00:00:00: max PnL 0.0699
+2025-03-19 15:07:47,698 - risk.manager - INFO - New position at 2011-04-21 00:00:00: signal=-1, entry_z=2.27
+2025-03-19 15:07:47,699 - risk.manager - INFO - Position closed at 2011-04-25 00:00:00 (original signal)
+2025-03-19 15:07:47,700 - risk.manager - INFO - New position at 2011-05-03 00:00:00: signal=-1, entry_z=2.45
+2025-03-19 15:07:47,701 - risk.manager - INFO - Profit target reached at 2011-05-05 00:00:00: max PnL 0.0697
+2025-03-19 15:07:47,703 - risk.manager - INFO - New position at 2011-07-01 00:00:00: signal=1, entry_z=-2.53
+2025-03-19 15:07:47,712 - risk.manager - INFO - Position closed at 2011-07-07 00:00:00 (original signal)
+2025-03-19 15:07:47,715 - risk.manager - INFO - New position at 2011-07-15 00:00:00: signal=1, entry_z=-2.58
+2025-03-19 15:07:47,731 - risk.manager - INFO - Position closed at 2011-07-27 00:00:00 (original signal)
+2025-03-19 15:07:47,734 - risk.manager - INFO - New position at 2011-08-22 00:00:00: signal=-1, entry_z=2.20
+2025-03-19 15:07:47,736 - risk.manager - INFO - Position closed at 2011-08-23 00:00:00 (original signal)
+2025-03-19 15:07:47,738 - risk.manager - INFO - New position at 2011-09-28 00:00:00: signal=-1, entry_z=2.35
+2025-03-19 15:07:47,741 - risk.manager - INFO - Profit target reached at 2011-10-04 00:00:00: max PnL 0.0500
+2025-03-19 15:07:47,744 - risk.manager - INFO - New position at 2011-10-06 00:00:00: signal=-1, entry_z=2.47
+2025-03-19 15:07:47,746 - risk.manager - INFO - Position closed at 2011-10-10 00:00:00 (original signal)
+2025-03-19 15:07:47,748 - risk.manager - INFO - New position at 2011-11-17 00:00:00: signal=-1, entry_z=2.47
+2025-03-19 15:07:47,749 - risk.manager - INFO - Position closed at 2011-11-18 00:00:00 (original signal)
+2025-03-19 15:07:47,750 - risk.manager - INFO - New position at 2011-11-21 00:00:00: signal=-1, entry_z=2.46
+2025-03-19 15:07:47,756 - risk.manager - INFO - Profit target reached at 2011-11-30 00:00:00: max PnL 0.0542
+2025-03-19 15:07:47,757 - risk.manager - INFO - New position at 2011-12-13 00:00:00: signal=-1, entry_z=2.80
+2025-03-19 15:07:47,758 - risk.manager - INFO - Position closed at 2011-12-14 00:00:00 (original signal)
+2025-03-19 15:07:47,760 - risk.manager - INFO - New position at 2012-04-11 00:00:00: signal=-1, entry_z=2.42
+2025-03-19 15:07:47,760 - risk.manager - INFO - Position closed at 2012-04-12 00:00:00 (original signal)
+2025-03-19 15:07:47,761 - risk.manager - INFO - New position at 2012-04-16 00:00:00: signal=-1, entry_z=2.48
+2025-03-19 15:07:47,762 - risk.manager - INFO - Position closed at 2012-04-17 00:00:00 (original signal)
+2025-03-19 15:07:47,764 - risk.manager - INFO - New position at 2012-04-20 00:00:00: signal=-1, entry_z=2.43
+2025-03-19 15:07:47,766 - risk.manager - INFO - Position closed at 2012-04-25 00:00:00 (original signal)
+2025-03-19 15:07:47,768 - risk.manager - INFO - New position at 2012-06-20 00:00:00: signal=1, entry_z=-2.66
+2025-03-19 15:07:47,769 - risk.manager - INFO - Position closed at 2012-06-21 00:00:00 (original signal)
+2025-03-19 15:07:47,770 - risk.manager - INFO - New position at 2012-06-28 00:00:00: signal=1, entry_z=-3.03
+2025-03-19 15:07:47,770 - risk.manager - INFO - Position closed at 2012-06-29 00:00:00 (original signal)
+2025-03-19 15:07:47,771 - risk.manager - INFO - New position at 2012-07-02 00:00:00: signal=1, entry_z=-3.29
+2025-03-19 15:07:47,773 - risk.manager - INFO - Position closed at 2012-07-05 00:00:00 (original signal)
+2025-03-19 15:07:47,776 - risk.manager - INFO - New position at 2013-07-10 00:00:00: signal=-1, entry_z=2.43
+2025-03-19 15:07:47,776 - risk.manager - INFO - Position closed at 2013-07-11 00:00:00 (original signal)
+2025-03-19 15:07:47,778 - risk.manager - INFO - New position at 2013-10-01 00:00:00: signal=1, entry_z=-2.41
+2025-03-19 15:07:47,779 - risk.manager - INFO - Position closed at 2013-10-02 00:00:00 (original signal)
+2025-03-19 15:07:47,780 - risk.manager - INFO - New position at 2013-10-10 00:00:00: signal=1, entry_z=-2.34
+2025-03-19 15:07:47,801 - risk.manager - INFO - Position closed at 2013-11-07 00:00:00 (original signal)
+2025-03-19 15:07:47,803 - risk.manager - INFO - New position at 2013-11-08 00:00:00: signal=1, entry_z=-2.54
+2025-03-19 15:07:47,804 - risk.manager - INFO - Position closed at 2013-11-11 00:00:00 (original signal)
+2025-03-19 15:07:47,805 - risk.manager - INFO - New position at 2013-11-13 00:00:00: signal=1, entry_z=-2.51
+2025-03-19 15:07:47,807 - risk.manager - INFO - Position closed at 2013-11-18 00:00:00 (original signal)
+2025-03-19 15:07:47,810 - risk.manager - INFO - New position at 2014-04-24 00:00:00: signal=1, entry_z=-2.63
+2025-03-19 15:07:47,810 - risk.manager - INFO - Position closed at 2014-04-25 00:00:00 (original signal)
+2025-03-19 15:07:47,812 - risk.manager - INFO - New position at 2014-10-07 00:00:00: signal=-1, entry_z=2.56
+2025-03-19 15:07:47,813 - risk.manager - INFO - Position closed at 2014-10-08 00:00:00 (original signal)
+2025-03-19 15:07:47,814 - risk.manager - INFO - New position at 2014-10-09 00:00:00: signal=-1, entry_z=2.52
+2025-03-19 15:07:47,821 - risk.manager - INFO - Position closed at 2014-10-20 00:00:00 (original signal)
+2025-03-19 15:07:47,822 - risk.manager - INFO - New position at 2014-10-27 00:00:00: signal=-1, entry_z=2.43
+2025-03-19 15:07:47,823 - risk.manager - INFO - Position closed at 2014-10-28 00:00:00 (original signal)
+2025-03-19 15:07:47,825 - risk.manager - INFO - New position at 2014-12-17 00:00:00: signal=1, entry_z=-2.21
+2025-03-19 15:07:47,833 - risk.manager - INFO - Position closed at 2014-12-31 00:00:00 (original signal)
+2025-03-19 15:07:47,837 - risk.manager - INFO - New position at 2015-01-02 00:00:00: signal=1, entry_z=-3.52
+2025-03-19 15:07:47,840 - risk.manager - INFO - Position closed at 2015-01-07 00:00:00 (original signal)
+2025-03-19 15:07:47,841 - risk.manager - INFO - New position at 2015-01-09 00:00:00: signal=1, entry_z=-2.61
+2025-03-19 15:07:47,841 - risk.manager - INFO - Position closed at 2015-01-12 00:00:00 (original signal)
+2025-03-19 15:07:47,842 - risk.manager - INFO - New position at 2015-01-21 00:00:00: signal=1, entry_z=-2.59
+2025-03-19 15:07:47,850 - risk.manager - INFO - Position closed at 2015-01-30 00:00:00 (original signal)
+2025-03-19 15:07:47,851 - risk.manager - INFO - New position at 2015-02-02 00:00:00: signal=1, entry_z=-2.50
+2025-03-19 15:07:47,856 - risk.manager - INFO - Position closed at 2015-02-09 00:00:00 (original signal)
+2025-03-19 15:07:47,857 - risk.manager - INFO - New position at 2015-02-11 00:00:00: signal=1, entry_z=-2.58
+2025-03-19 15:07:47,857 - risk.manager - INFO - Position closed at 2015-02-12 00:00:00 (original signal)
+2025-03-19 15:07:47,859 - risk.manager - INFO - New position at 2015-02-13 00:00:00: signal=1, entry_z=-2.42
+2025-03-19 15:07:47,860 - risk.manager - INFO - Position closed at 2015-02-17 00:00:00 (original signal)
+2025-03-19 15:07:47,861 - risk.manager - INFO - New position at 2015-02-20 00:00:00: signal=1, entry_z=-2.42
+2025-03-19 15:07:47,863 - risk.manager - INFO - Position closed at 2015-02-25 00:00:00 (original signal)
+2025-03-19 15:07:47,875 - risk.manager - INFO - New position at 2020-04-21 00:00:00: signal=1, entry_z=-2.93
+2025-03-19 15:07:47,875 - risk.manager - INFO - Stop loss triggered at 2020-04-22 00:00:00: cumulative PnL -0.1350
+2025-03-19 15:07:47,876 - risk.manager - INFO - New position at 2020-04-23 00:00:00: signal=1, entry_z=-3.38
+2025-03-19 15:07:47,877 - risk.manager - INFO - Stop loss triggered at 2020-04-27 00:00:00: cumulative PnL -0.1698
+2025-03-19 15:07:47,878 - risk.manager - INFO - New position at 2020-04-28 00:00:00: signal=1, entry_z=-3.90
+2025-03-19 15:07:47,883 - risk.manager - INFO - Profit target reached at 2020-05-05 00:00:00: max PnL 0.1095
+2025-03-19 15:07:47,885 - risk.manager - INFO - New position at 2020-05-06 00:00:00: signal=1, entry_z=-2.65
+2025-03-19 15:07:47,894 - risk.manager - INFO - Position closed at 2020-05-13 00:00:00 (original signal)
+2025-03-19 15:07:48,302 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XME', 'XRT'): mean=1.3178, std=0.5768
+2025-03-19 15:07:48,303 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:07:48,307 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:07:57,556 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:07:57,557 - regime.detector - INFO - Low (0): mean=0.1395, std=3.7451, proportion=0.90
+2025-03-19 15:07:57,557 - regime.detector - INFO - High (1): mean=0.4970, std=3.9297, proportion=0.10
+2025-03-19 15:07:57,560 - regime.detector - INFO - Regime Low (0) parameters: z_entry=2.40, z_exit=0.50
+2025-03-19 15:07:57,562 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.20, z_exit=0.50
+2025-03-19 15:07:57,617 - risk.manager - INFO - New position at 2015-07-20 00:00:00: signal=-1, entry_z=2.66
+2025-03-19 15:07:57,628 - risk.manager - INFO - Position closed at 2015-07-28 00:00:00 (original signal)
+2025-03-19 15:07:57,630 - risk.manager - INFO - New position at 2015-08-05 00:00:00: signal=-1, entry_z=2.43
+2025-03-19 15:07:57,631 - risk.manager - INFO - Position closed at 2015-08-06 00:00:00 (original signal)
+2025-03-19 15:07:57,636 - risk.manager - INFO - New position at 2016-03-07 00:00:00: signal=1, entry_z=-2.78
+2025-03-19 15:07:57,637 - risk.manager - INFO - Profit target reached at 2016-03-08 00:00:00: max PnL 0.0679
+2025-03-19 15:07:57,640 - risk.manager - INFO - New position at 2016-03-17 00:00:00: signal=1, entry_z=-2.44
+2025-03-19 15:07:57,644 - risk.manager - INFO - Position closed at 2016-03-21 00:00:00 (original signal)
+2025-03-19 15:07:57,647 - risk.manager - INFO - New position at 2016-04-19 00:00:00: signal=1, entry_z=-2.65
+2025-03-19 15:07:57,647 - risk.manager - INFO - Position closed at 2016-04-20 00:00:00 (original signal)
+2025-03-19 15:07:57,651 - risk.manager - INFO - New position at 2016-04-29 00:00:00: signal=1, entry_z=-2.64
+2025-03-19 15:07:57,654 - risk.manager - INFO - Position closed at 2016-05-03 00:00:00 (original signal)
+2025-03-19 15:07:57,676 - risk.manager - INFO - New position at 2021-01-26 00:00:00: signal=-1, entry_z=3.67
+2025-03-19 15:07:57,676 - risk.manager - INFO - Stop loss triggered at 2021-01-27 00:00:00: cumulative PnL -0.1436
+2025-03-19 15:07:57,677 - risk.manager - INFO - New position at 2021-01-28 00:00:00: signal=-1, entry_z=3.87
+2025-03-19 15:07:57,684 - risk.manager - INFO - Profit target reached at 2021-02-01 00:00:00: max PnL 0.1011
+2025-03-19 15:07:57,687 - risk.manager - INFO - New position at 2021-02-03 00:00:00: signal=-1, entry_z=2.22
+2025-03-19 15:07:57,688 - risk.manager - INFO - Position closed at 2021-02-04 00:00:00 (original signal)
+2025-03-19 15:07:57,691 - risk.manager - INFO - New position at 2021-05-11 00:00:00: signal=1, entry_z=-2.69
+2025-03-19 15:07:57,703 - risk.manager - INFO - Position closed at 2021-05-14 00:00:00 (original signal)
+2025-03-19 15:07:57,705 - risk.manager - INFO - New position at 2021-05-17 00:00:00: signal=1, entry_z=-2.44
+2025-03-19 15:07:57,707 - risk.manager - INFO - Position closed at 2021-05-18 00:00:00 (original signal)
+2025-03-19 15:07:57,711 - risk.manager - INFO - New position at 2021-06-01 00:00:00: signal=1, entry_z=-2.37
+2025-03-19 15:07:57,713 - risk.manager - INFO - Position closed at 2021-06-02 00:00:00 (original signal)
+2025-03-19 15:07:57,720 - risk.manager - INFO - New position at 2022-01-05 00:00:00: signal=1, entry_z=-2.79
+2025-03-19 15:07:57,740 - risk.manager - INFO - Position closed at 2022-01-24 00:00:00 (original signal)
+2025-03-19 15:07:57,743 - risk.manager - INFO - New position at 2022-02-02 00:00:00: signal=1, entry_z=-2.63
+2025-03-19 15:07:57,770 - risk.manager - INFO - Max holding period reached at 2022-03-10 00:00:00: 25 days
+2025-03-19 15:07:57,771 - risk.manager - INFO - New position at 2022-03-11 00:00:00: signal=1, entry_z=-6.85
+2025-03-19 15:07:57,798 - risk.manager - INFO - Max holding period reached at 2022-04-18 00:00:00: 25 days
+2025-03-19 15:07:57,800 - risk.manager - INFO - New position at 2022-04-19 00:00:00: signal=1, entry_z=-3.44
+2025-03-19 15:07:57,801 - risk.manager - INFO - Position closed at 2022-04-21 00:00:00 (original signal)
+2025-03-19 15:07:58,175 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'XLU'): mean=2.1310, std=0.9306
+2025-03-19 15:07:58,176 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:07:58,180 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:08:10,858 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:10,859 - regime.detector - INFO - Low (0): mean=-0.8539, std=4.4775, proportion=0.19
+2025-03-19 15:08:10,859 - regime.detector - INFO - High (1): mean=0.6474, std=2.8863, proportion=0.81
+2025-03-19 15:08:10,865 - regime.detector - INFO - Regime Low (0) parameters: z_entry=2.00, z_exit=0.50
+2025-03-19 15:08:10,869 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:08:10,921 - risk.manager - INFO - New position at 2019-09-04 00:00:00: signal=1, entry_z=-2.95
+2025-03-19 15:08:10,922 - risk.manager - INFO - Position closed at 2019-09-05 00:00:00 (original signal)
+2025-03-19 15:08:10,924 - risk.manager - INFO - New position at 2020-03-17 00:00:00: signal=-1, entry_z=2.06
+2025-03-19 15:08:10,931 - risk.manager - INFO - Profit target reached at 2020-03-19 00:00:00: max PnL 0.0680
+2025-03-19 15:08:10,936 - risk.manager - INFO - New position at 2020-07-22 00:00:00: signal=1, entry_z=-2.76
+2025-03-19 15:08:10,969 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.1143
+2025-03-19 15:08:10,976 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-2.06
+2025-03-19 15:08:11,004 - risk.manager - INFO - Profit target reached at 2020-09-02 00:00:00: max PnL 0.0536
+2025-03-19 15:08:11,007 - risk.manager - INFO - New position at 2021-01-04 00:00:00: signal=1, entry_z=-2.93
+2025-03-19 15:08:11,007 - risk.manager - INFO - Position closed at 2021-01-05 00:00:00 (original signal)
+2025-03-19 15:08:11,009 - risk.manager - INFO - New position at 2021-08-09 00:00:00: signal=-1, entry_z=2.87
+2025-03-19 15:08:11,019 - risk.manager - INFO - Position closed at 2021-08-23 00:00:00 (original signal)
+2025-03-19 15:08:11,023 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=1, entry_z=-2.87
+2025-03-19 15:08:11,023 - risk.manager - INFO - Position closed at 2022-03-02 00:00:00 (original signal)
+2025-03-19 15:08:11,025 - risk.manager - INFO - New position at 2022-05-12 00:00:00: signal=-1, entry_z=2.95
+2025-03-19 15:08:11,027 - risk.manager - INFO - Position closed at 2022-05-16 00:00:00 (original signal)
+2025-03-19 15:08:11,028 - risk.manager - INFO - New position at 2022-07-01 00:00:00: signal=-1, entry_z=2.00
+2025-03-19 15:08:11,029 - risk.manager - INFO - Position closed at 2022-07-05 00:00:00 (original signal)
+2025-03-19 15:08:11,030 - risk.manager - INFO - New position at 2022-07-06 00:00:00: signal=-1, entry_z=2.03
+2025-03-19 15:08:11,030 - risk.manager - INFO - Position closed at 2022-07-07 00:00:00 (original signal)
+2025-03-19 15:08:11,032 - risk.manager - INFO - New position at 2022-07-11 00:00:00: signal=-1, entry_z=2.04
+2025-03-19 15:08:11,034 - risk.manager - INFO - Position closed at 2022-07-13 00:00:00 (original signal)
+2025-03-19 15:08:11,035 - risk.manager - INFO - New position at 2022-07-14 00:00:00: signal=-1, entry_z=2.19
+2025-03-19 15:08:11,036 - risk.manager - INFO - Position closed at 2022-07-18 00:00:00 (original signal)
+2025-03-19 15:08:11,038 - risk.manager - INFO - New position at 2022-08-18 00:00:00: signal=-1, entry_z=2.86
+2025-03-19 15:08:11,040 - risk.manager - INFO - Position closed at 2022-08-23 00:00:00 (original signal)
+2025-03-19 15:08:11,042 - risk.manager - INFO - New position at 2022-08-31 00:00:00: signal=-1, entry_z=2.98
+2025-03-19 15:08:11,048 - risk.manager - INFO - Position closed at 2022-09-09 00:00:00 (original signal)
+2025-03-19 15:08:11,049 - risk.manager - INFO - New position at 2022-10-03 00:00:00: signal=1, entry_z=-2.15
+2025-03-19 15:08:11,054 - risk.manager - INFO - Position closed at 2022-10-10 00:00:00 (original signal)
+2025-03-19 15:08:11,055 - risk.manager - INFO - New position at 2022-11-08 00:00:00: signal=1, entry_z=-2.24
+2025-03-19 15:08:11,063 - risk.manager - INFO - Position closed at 2022-11-16 00:00:00 (original signal)
+2025-03-19 15:08:11,064 - risk.manager - INFO - New position at 2022-12-20 00:00:00: signal=1, entry_z=-2.92
+2025-03-19 15:08:11,064 - risk.manager - INFO - Position closed at 2022-12-21 00:00:00 (original signal)
+2025-03-19 15:08:11,440 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XLV', 'XLB'): mean=0.7232, std=0.1540
+2025-03-19 15:08:11,441 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:11,446 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:08:16,712 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:16,712 - regime.detector - INFO - High (0): mean=-0.1272, std=1.7440, proportion=0.92
+2025-03-19 15:08:16,713 - regime.detector - INFO - Low (1): mean=-0.5104, std=2.8335, proportion=0.08
+2025-03-19 15:08:16,720 - regime.detector - INFO - Regime High (0) parameters: z_entry=3.00, z_exit=0.50
+2025-03-19 15:08:16,722 - regime.detector - INFO - Regime Low (1) parameters: z_entry=1.60, z_exit=0.48
+2025-03-19 15:08:16,782 - risk.manager - INFO - New position at 2019-04-16 00:00:00: signal=-1, entry_z=1.67
+2025-03-19 15:08:16,783 - risk.manager - INFO - Position closed at 2019-04-18 00:00:00 (original signal)
+2025-03-19 15:08:16,784 - risk.manager - INFO - New position at 2019-04-22 00:00:00: signal=-1, entry_z=1.80
+2025-03-19 15:08:16,784 - risk.manager - INFO - Position closed at 2019-04-23 00:00:00 (original signal)
+2025-03-19 15:08:16,792 - risk.manager - INFO - New position at 2020-03-13 00:00:00: signal=1, entry_z=-3.11
+2025-03-19 15:08:16,850 - risk.manager - INFO - Position closed at 2020-03-19 00:00:00 (original signal)
+2025-03-19 15:08:16,853 - risk.manager - INFO - New position at 2020-04-03 00:00:00: signal=1, entry_z=-3.18
+2025-03-19 15:08:16,854 - risk.manager - INFO - Position closed at 2020-04-06 00:00:00 (original signal)
+2025-03-19 15:08:16,857 - risk.manager - INFO - New position at 2020-04-16 00:00:00: signal=1, entry_z=-3.26
+2025-03-19 15:08:16,858 - risk.manager - INFO - Position closed at 2020-04-17 00:00:00 (original signal)
+2025-03-19 15:08:16,860 - risk.manager - INFO - New position at 2020-04-20 00:00:00: signal=1, entry_z=-3.09
+2025-03-19 15:08:16,861 - risk.manager - INFO - Position closed at 2020-04-21 00:00:00 (original signal)
+2025-03-19 15:08:16,865 - risk.manager - INFO - New position at 2020-06-04 00:00:00: signal=-1, entry_z=3.02
+2025-03-19 15:08:16,873 - risk.manager - INFO - Position closed at 2020-06-09 00:00:00 (original signal)
+2025-03-19 15:08:16,879 - risk.manager - INFO - New position at 2020-11-24 00:00:00: signal=-1, entry_z=1.83
+2025-03-19 15:08:16,881 - risk.manager - INFO - Position closed at 2020-11-27 00:00:00 (original signal)
+2025-03-19 15:08:16,886 - risk.manager - INFO - New position at 2021-03-10 00:00:00: signal=-1, entry_z=1.80
+2025-03-19 15:08:16,887 - risk.manager - INFO - Position closed at 2021-03-11 00:00:00 (original signal)
+2025-03-19 15:08:16,890 - risk.manager - INFO - New position at 2021-03-17 00:00:00: signal=-1, entry_z=1.64
+2025-03-19 15:08:16,892 - risk.manager - INFO - Position closed at 2021-03-18 00:00:00 (original signal)
+2025-03-19 15:08:16,897 - risk.manager - INFO - New position at 2021-07-06 00:00:00: signal=1, entry_z=-1.88
+2025-03-19 15:08:16,903 - risk.manager - INFO - Position closed at 2021-07-09 00:00:00 (original signal)
+2025-03-19 15:08:16,907 - risk.manager - INFO - New position at 2021-07-16 00:00:00: signal=1, entry_z=-3.36
+2025-03-19 15:08:16,929 - risk.manager - INFO - Position closed at 2021-07-29 00:00:00 (original signal)
+2025-03-19 15:08:16,932 - risk.manager - INFO - New position at 2021-08-03 00:00:00: signal=1, entry_z=-3.05
+2025-03-19 15:08:16,935 - risk.manager - INFO - Position closed at 2021-08-05 00:00:00 (original signal)
+2025-03-19 15:08:16,939 - risk.manager - INFO - New position at 2022-06-22 00:00:00: signal=1, entry_z=-1.64
+2025-03-19 15:08:16,959 - risk.manager - INFO - Position closed at 2022-07-20 00:00:00 (original signal)
+2025-03-19 15:08:16,961 - risk.manager - INFO - New position at 2022-07-26 00:00:00: signal=1, entry_z=-3.32
+2025-03-19 15:08:16,962 - risk.manager - INFO - Position closed at 2022-07-28 00:00:00 (original signal)
+2025-03-19 15:08:16,964 - risk.manager - INFO - New position at 2022-11-11 00:00:00: signal=-1, entry_z=1.65
+2025-03-19 15:08:16,965 - risk.manager - INFO - Position closed at 2022-11-14 00:00:00 (original signal)
+2025-03-19 15:08:16,966 - risk.manager - INFO - New position at 2023-01-11 00:00:00: signal=-1, entry_z=1.64
+2025-03-19 15:08:16,967 - risk.manager - INFO - Position closed at 2023-01-13 00:00:00 (original signal)
+2025-03-19 15:08:16,968 - risk.manager - INFO - New position at 2023-01-20 00:00:00: signal=-1, entry_z=1.61
+2025-03-19 15:08:16,969 - risk.manager - INFO - Position closed at 2023-01-23 00:00:00 (original signal)
+2025-03-19 15:08:16,971 - risk.manager - INFO - New position at 2023-01-25 00:00:00: signal=-1, entry_z=1.73
+2025-03-19 15:08:16,972 - risk.manager - INFO - Position closed at 2023-01-27 00:00:00 (original signal)
+2025-03-19 15:08:16,973 - risk.manager - INFO - New position at 2023-01-31 00:00:00: signal=-1, entry_z=3.09
+2025-03-19 15:08:16,976 - risk.manager - INFO - Position closed at 2023-02-03 00:00:00 (original signal)
+2025-03-19 15:08:16,977 - risk.manager - INFO - New position at 2023-03-01 00:00:00: signal=-1, entry_z=3.17
+2025-03-19 15:08:16,980 - risk.manager - INFO - Position closed at 2023-03-06 00:00:00 (original signal)
+2025-03-19 15:08:17,344 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XLU', 'XLP'): mean=1.0802, std=0.0586
+2025-03-19 15:08:17,346 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:17,350 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:08:23,921 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:23,922 - regime.detector - INFO - High (0): mean=0.1515, std=1.1267, proportion=0.66
+2025-03-19 15:08:23,922 - regime.detector - INFO - Low (1): mean=-0.1555, std=1.7798, proportion=0.34
+2025-03-19 15:08:23,927 - regime.detector - INFO - Regime High (0) parameters: z_entry=2.60, z_exit=0.50
+2025-03-19 15:08:23,930 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.60, z_exit=0.50
+2025-03-19 15:08:23,995 - risk.manager - INFO - New position at 2017-12-19 00:00:00: signal=-1, entry_z=2.63
+2025-03-19 15:08:24,127 - risk.manager - INFO - Max holding period reached at 2018-01-26 00:00:00: 25 days
+2025-03-19 15:08:24,128 - risk.manager - INFO - New position at 2018-01-29 00:00:00: signal=-1, entry_z=4.34
+2025-03-19 15:08:24,134 - risk.manager - INFO - Position closed at 2018-02-05 00:00:00 (original signal)
+2025-03-19 15:08:24,139 - risk.manager - INFO - New position at 2020-01-28 00:00:00: signal=1, entry_z=-2.62
+2025-03-19 15:08:24,143 - risk.manager - INFO - Position closed at 2020-02-04 00:00:00 (original signal)
+2025-03-19 15:08:24,145 - risk.manager - INFO - New position at 2020-02-18 00:00:00: signal=1, entry_z=-3.01
+2025-03-19 15:08:24,146 - risk.manager - INFO - Position closed at 2020-02-19 00:00:00 (original signal)
+2025-03-19 15:08:24,147 - risk.manager - INFO - New position at 2020-02-24 00:00:00: signal=1, entry_z=-2.76
+2025-03-19 15:08:24,148 - risk.manager - INFO - Position closed at 2020-02-25 00:00:00 (original signal)
+2025-03-19 15:08:24,149 - risk.manager - INFO - New position at 2020-03-20 00:00:00: signal=-1, entry_z=2.65
+2025-03-19 15:08:24,151 - risk.manager - INFO - Profit target reached at 2020-03-24 00:00:00: max PnL 0.0565
+2025-03-19 15:08:24,152 - risk.manager - INFO - New position at 2020-04-03 00:00:00: signal=-1, entry_z=3.14
+2025-03-19 15:08:24,152 - risk.manager - INFO - Position closed at 2020-04-06 00:00:00 (original signal)
+2025-03-19 15:08:24,155 - risk.manager - INFO - New position at 2020-05-06 00:00:00: signal=-1, entry_z=2.84
+2025-03-19 15:08:24,155 - risk.manager - INFO - Position closed at 2020-05-07 00:00:00 (original signal)
+2025-03-19 15:08:24,157 - risk.manager - INFO - New position at 2020-08-25 00:00:00: signal=-1, entry_z=2.64
+2025-03-19 15:08:24,165 - risk.manager - INFO - Position closed at 2020-09-03 00:00:00 (original signal)
+2025-03-19 15:08:24,166 - risk.manager - INFO - New position at 2020-10-22 00:00:00: signal=1, entry_z=-3.05
+2025-03-19 15:08:24,175 - risk.manager - INFO - Position closed at 2020-10-30 00:00:00 (original signal)
+2025-03-19 15:08:24,178 - risk.manager - INFO - New position at 2020-11-10 00:00:00: signal=1, entry_z=-3.12
+2025-03-19 15:08:24,180 - risk.manager - INFO - Position closed at 2020-11-12 00:00:00 (original signal)
+2025-03-19 15:08:24,185 - risk.manager - INFO - New position at 2022-03-08 00:00:00: signal=1, entry_z=-2.68
+2025-03-19 15:08:24,186 - risk.manager - INFO - Position closed at 2022-03-09 00:00:00 (original signal)
+2025-03-19 15:08:24,187 - risk.manager - INFO - New position at 2022-03-10 00:00:00: signal=1, entry_z=-2.72
+2025-03-19 15:08:24,189 - risk.manager - INFO - Position closed at 2022-03-15 00:00:00 (original signal)
+2025-03-19 15:08:24,191 - risk.manager - INFO - New position at 2022-03-30 00:00:00: signal=1, entry_z=-2.62
+2025-03-19 15:08:24,193 - risk.manager - INFO - Position closed at 2022-04-04 00:00:00 (original signal)
+2025-03-19 15:08:24,194 - risk.manager - INFO - New position at 2022-04-05 00:00:00: signal=1, entry_z=-2.64
+2025-03-19 15:08:24,198 - risk.manager - INFO - Position closed at 2022-04-07 00:00:00 (original signal)
+2025-03-19 15:08:24,200 - risk.manager - INFO - New position at 2022-08-12 00:00:00: signal=1, entry_z=-2.61
+2025-03-19 15:08:24,200 - risk.manager - INFO - Position closed at 2022-08-15 00:00:00 (original signal)
+2025-03-19 15:08:24,202 - risk.manager - INFO - New position at 2022-09-08 00:00:00: signal=1, entry_z=-2.62
+2025-03-19 15:08:24,202 - risk.manager - INFO - Position closed at 2022-09-09 00:00:00 (original signal)
+2025-03-19 15:08:24,203 - risk.manager - INFO - New position at 2022-09-13 00:00:00: signal=1, entry_z=-2.65
+2025-03-19 15:08:24,204 - risk.manager - INFO - Position closed at 2022-09-15 00:00:00 (original signal)
+2025-03-19 15:08:24,207 - risk.manager - INFO - New position at 2022-10-12 00:00:00: signal=-1, entry_z=3.50
+2025-03-19 15:08:24,222 - risk.manager - INFO - Position closed at 2022-11-02 00:00:00 (original signal)
+2025-03-19 15:08:24,223 - risk.manager - INFO - New position at 2022-11-07 00:00:00: signal=-1, entry_z=3.31
+2025-03-19 15:08:24,226 - risk.manager - INFO - Position closed at 2022-11-10 00:00:00 (original signal)
+2025-03-19 15:08:24,227 - risk.manager - INFO - New position at 2022-11-17 00:00:00: signal=-1, entry_z=2.75
+2025-03-19 15:08:24,228 - risk.manager - INFO - Position closed at 2022-11-18 00:00:00 (original signal)
+2025-03-19 15:08:24,229 - risk.manager - INFO - New position at 2023-03-01 00:00:00: signal=-1, entry_z=2.67
+2025-03-19 15:08:24,229 - risk.manager - INFO - Position closed at 2023-03-02 00:00:00 (original signal)
+2025-03-19 15:08:24,232 - risk.manager - INFO - New position at 2023-08-07 00:00:00: signal=-1, entry_z=2.71
+2025-03-19 15:08:24,233 - risk.manager - INFO - Position closed at 2023-08-08 00:00:00 (original signal)
+2025-03-19 15:08:24,620 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XRT', 'XLF'): mean=0.4841, std=0.0883
+2025-03-19 15:08:24,621 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:24,625 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:08:33,240 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:33,240 - regime.detector - INFO - High (0): mean=0.0922, std=0.9385, proportion=0.83
+2025-03-19 15:08:33,240 - regime.detector - INFO - Low (1): mean=-0.1125, std=1.4565, proportion=0.17
+2025-03-19 15:08:33,247 - regime.detector - INFO - Regime High (0) parameters: z_entry=3.00, z_exit=0.50
+2025-03-19 15:08:33,249 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.20, z_exit=0.50
+2025-03-19 15:08:33,325 - risk.manager - INFO - New position at 2020-05-12 00:00:00: signal=1, entry_z=-3.11
+2025-03-19 15:08:33,339 - risk.manager - INFO - Position closed at 2020-05-14 00:00:00 (original signal)
+2025-03-19 15:08:33,345 - risk.manager - INFO - New position at 2020-05-15 00:00:00: signal=1, entry_z=-3.06
+2025-03-19 15:08:33,347 - risk.manager - INFO - Position closed at 2020-05-18 00:00:00 (original signal)
+2025-03-19 15:08:33,354 - risk.manager - INFO - New position at 2020-05-19 00:00:00: signal=1, entry_z=-3.07
+2025-03-19 15:08:33,356 - risk.manager - INFO - Position closed at 2020-05-20 00:00:00 (original signal)
+2025-03-19 15:08:33,358 - risk.manager - INFO - New position at 2020-05-21 00:00:00: signal=1, entry_z=-3.12
+2025-03-19 15:08:33,361 - risk.manager - INFO - Position closed at 2020-05-26 00:00:00 (original signal)
+2025-03-19 15:08:33,362 - risk.manager - INFO - New position at 2020-08-05 00:00:00: signal=1, entry_z=-3.16
+2025-03-19 15:08:33,363 - risk.manager - INFO - Position closed at 2020-08-06 00:00:00 (original signal)
+2025-03-19 15:08:33,364 - risk.manager - INFO - New position at 2020-08-17 00:00:00: signal=1, entry_z=-3.47
+2025-03-19 15:08:33,375 - risk.manager - INFO - Position closed at 2020-08-24 00:00:00 (original signal)
+2025-03-19 15:08:33,379 - risk.manager - INFO - New position at 2021-01-21 00:00:00: signal=1, entry_z=-3.09
+2025-03-19 15:08:33,387 - risk.manager - INFO - Stop loss triggered at 2021-01-27 00:00:00: cumulative PnL -0.1498
+2025-03-19 15:08:33,389 - risk.manager - INFO - New position at 2021-01-28 00:00:00: signal=1, entry_z=-4.78
+2025-03-19 15:08:33,393 - risk.manager - INFO - Profit target reached at 2021-02-02 00:00:00: max PnL 0.1063
+2025-03-19 15:08:33,395 - risk.manager - INFO - New position at 2021-02-03 00:00:00: signal=1, entry_z=-2.23
+2025-03-19 15:08:33,397 - risk.manager - INFO - Position closed at 2021-02-04 00:00:00 (original signal)
+2025-03-19 15:08:33,400 - risk.manager - INFO - New position at 2021-03-11 00:00:00: signal=1, entry_z=-2.24
+2025-03-19 15:08:33,403 - risk.manager - INFO - Position closed at 2021-03-15 00:00:00 (original signal)
+2025-03-19 15:08:33,408 - risk.manager - INFO - New position at 2021-10-06 00:00:00: signal=-1, entry_z=3.01
+2025-03-19 15:08:33,409 - risk.manager - INFO - Position closed at 2021-10-07 00:00:00 (original signal)
+2025-03-19 15:08:33,410 - risk.manager - INFO - New position at 2021-10-11 00:00:00: signal=-1, entry_z=3.09
+2025-03-19 15:08:33,412 - risk.manager - INFO - Position closed at 2021-10-12 00:00:00 (original signal)
+2025-03-19 15:08:33,415 - risk.manager - INFO - New position at 2021-12-16 00:00:00: signal=-1, entry_z=2.32
+2025-03-19 15:08:33,417 - risk.manager - INFO - Position closed at 2021-12-17 00:00:00 (original signal)
+2025-03-19 15:08:33,419 - risk.manager - INFO - New position at 2022-01-05 00:00:00: signal=-1, entry_z=2.28
+2025-03-19 15:08:33,445 - risk.manager - INFO - Profit target reached at 2022-01-24 00:00:00: max PnL 0.0572
+2025-03-19 15:08:33,447 - risk.manager - INFO - New position at 2022-01-25 00:00:00: signal=-1, entry_z=4.00
+2025-03-19 15:08:33,469 - risk.manager - INFO - Position closed at 2022-02-24 00:00:00 (original signal)
+2025-03-19 15:08:33,471 - risk.manager - INFO - New position at 2022-02-25 00:00:00: signal=-1, entry_z=3.30
+2025-03-19 15:08:33,472 - risk.manager - INFO - Position closed at 2022-02-28 00:00:00 (original signal)
+2025-03-19 15:08:33,474 - risk.manager - INFO - New position at 2022-05-23 00:00:00: signal=-1, entry_z=2.45
+2025-03-19 15:08:33,475 - risk.manager - INFO - Profit target reached at 2022-05-25 00:00:00: max PnL 0.0608
+2025-03-19 15:08:33,478 - risk.manager - INFO - New position at 2023-02-02 00:00:00: signal=1, entry_z=-2.64
+2025-03-19 15:08:33,479 - risk.manager - INFO - Position closed at 2023-02-06 00:00:00 (original signal)
+2025-03-19 15:08:33,852 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XLV', 'FXE'): mean=2.1913, std=1.4770
+2025-03-19 15:08:33,854 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:33,858 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:08:35,927 - hmmlearn.base - WARNING - Model is not converging.  Current: -41547.47734135227 is not greater than -41547.465764567845. Delta is -0.011576784425415099
+2025-03-19 15:08:41,374 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:41,375 - regime.detector - INFO - High (0): mean=0.6189, std=6.8304, proportion=0.08
+2025-03-19 15:08:41,375 - regime.detector - INFO - Low (1): mean=-2.1641, std=3.9228, proportion=0.92
+2025-03-19 15:08:41,379 - regime.detector - INFO - Regime High (0) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 15:08:41,381 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:08:41,422 - risk.manager - INFO - New position at 2011-08-03 00:00:00: signal=-1, entry_z=2.96
+2025-03-19 15:08:41,494 - risk.manager - INFO - Position closed at 2011-08-24 00:00:00 (original signal)
+2025-03-19 15:08:41,501 - risk.manager - INFO - New position at 2011-12-20 00:00:00: signal=1, entry_z=-1.51
+2025-03-19 15:08:41,513 - risk.manager - INFO - Position closed at 2011-12-27 00:00:00 (original signal)
+2025-03-19 15:08:41,514 - risk.manager - INFO - New position at 2012-01-05 00:00:00: signal=1, entry_z=-2.83
+2025-03-19 15:08:41,522 - risk.manager - INFO - Position closed at 2012-01-12 00:00:00 (original signal)
+2025-03-19 15:08:41,527 - risk.manager - INFO - New position at 2012-01-13 00:00:00: signal=1, entry_z=-2.89
+2025-03-19 15:08:41,530 - risk.manager - INFO - Position closed at 2012-01-18 00:00:00 (original signal)
+2025-03-19 15:08:41,539 - risk.manager - INFO - New position at 2013-04-02 00:00:00: signal=1, entry_z=-2.94
+2025-03-19 15:08:41,540 - risk.manager - INFO - Position closed at 2013-04-03 00:00:00 (original signal)
+2025-03-19 15:08:41,546 - risk.manager - INFO - New position at 2014-11-11 00:00:00: signal=1, entry_z=-1.63
+2025-03-19 15:08:41,547 - risk.manager - INFO - Position closed at 2014-11-12 00:00:00 (original signal)
+2025-03-19 15:08:41,550 - risk.manager - INFO - New position at 2015-01-22 00:00:00: signal=1, entry_z=-2.86
+2025-03-19 15:08:41,552 - risk.manager - INFO - Position closed at 2015-01-27 00:00:00 (original signal)
+2025-03-19 15:08:41,553 - risk.manager - INFO - New position at 2015-03-16 00:00:00: signal=1, entry_z=-2.88
+2025-03-19 15:08:41,555 - risk.manager - INFO - Position closed at 2015-03-17 00:00:00 (original signal)
+2025-03-19 15:08:41,556 - risk.manager - INFO - New position at 2015-03-19 00:00:00: signal=1, entry_z=-2.84
+2025-03-19 15:08:41,556 - risk.manager - INFO - Position closed at 2015-03-20 00:00:00 (original signal)
+2025-03-19 15:08:41,558 - risk.manager - INFO - New position at 2015-08-24 00:00:00: signal=-1, entry_z=1.96
+2025-03-19 15:08:41,561 - risk.manager - INFO - Profit target reached at 2015-08-26 00:00:00: max PnL 0.0559
+2025-03-19 15:08:41,562 - risk.manager - INFO - New position at 2015-09-01 00:00:00: signal=-1, entry_z=3.24
+2025-03-19 15:08:41,562 - risk.manager - INFO - Position closed at 2015-09-02 00:00:00 (original signal)
+2025-03-19 15:08:41,563 - risk.manager - INFO - New position at 2015-09-25 00:00:00: signal=-1, entry_z=3.15
+2025-03-19 15:08:41,568 - risk.manager - INFO - Position closed at 2015-10-02 00:00:00 (original signal)
+2025-03-19 15:08:41,571 - risk.manager - INFO - New position at 2015-10-06 00:00:00: signal=-1, entry_z=3.00
+2025-03-19 15:08:41,571 - risk.manager - INFO - Position closed at 2015-10-07 00:00:00 (original signal)
+2025-03-19 15:08:41,572 - risk.manager - INFO - New position at 2015-10-14 00:00:00: signal=-1, entry_z=2.83
+2025-03-19 15:08:41,573 - risk.manager - INFO - Position closed at 2015-10-15 00:00:00 (original signal)
+2025-03-19 15:08:41,575 - risk.manager - INFO - New position at 2016-02-04 00:00:00: signal=-1, entry_z=3.00
+2025-03-19 15:08:41,582 - risk.manager - INFO - Position closed at 2016-02-16 00:00:00 (original signal)
+2025-03-19 15:08:41,589 - risk.manager - INFO - New position at 2018-12-24 00:00:00: signal=-1, entry_z=1.60
+2025-03-19 15:08:41,590 - risk.manager - INFO - Profit target reached at 2018-12-26 00:00:00: max PnL 0.0487
+2025-03-19 15:08:41,593 - risk.manager - INFO - New position at 2020-03-09 00:00:00: signal=-1, entry_z=1.78
+2025-03-19 15:08:41,594 - risk.manager - INFO - Profit target reached at 2020-03-10 00:00:00: max PnL 0.0476
+2025-03-19 15:08:41,595 - risk.manager - INFO - New position at 2020-03-11 00:00:00: signal=-1, entry_z=1.58
+2025-03-19 15:08:41,596 - risk.manager - INFO - Profit target reached at 2020-03-13 00:00:00: max PnL 0.0755
+2025-03-19 15:08:41,597 - risk.manager - INFO - New position at 2020-03-16 00:00:00: signal=-1, entry_z=2.83
+2025-03-19 15:08:41,598 - risk.manager - INFO - Profit target reached at 2020-03-17 00:00:00: max PnL 0.0781
+2025-03-19 15:08:41,600 - risk.manager - INFO - New position at 2020-03-18 00:00:00: signal=-1, entry_z=2.09
+2025-03-19 15:08:41,604 - risk.manager - INFO - Profit target reached at 2020-03-24 00:00:00: max PnL 0.0722
+2025-03-19 15:08:41,609 - risk.manager - INFO - New position at 2020-03-25 00:00:00: signal=-1, entry_z=2.22
+2025-03-19 15:08:41,611 - risk.manager - INFO - Profit target reached at 2020-03-26 00:00:00: max PnL 0.0509
+2025-03-19 15:08:41,615 - risk.manager - INFO - New position at 2020-03-27 00:00:00: signal=-1, entry_z=1.94
+2025-03-19 15:08:41,616 - risk.manager - INFO - Profit target reached at 2020-03-30 00:00:00: max PnL 0.0531
+2025-03-19 15:08:41,617 - risk.manager - INFO - New position at 2020-04-01 00:00:00: signal=-1, entry_z=1.61
+2025-03-19 15:08:41,617 - risk.manager - INFO - Profit target reached at 2020-04-02 00:00:00: max PnL 0.0366
+2025-03-19 15:08:41,624 - risk.manager - INFO - New position at 2022-04-07 00:00:00: signal=1, entry_z=-1.61
+2025-03-19 15:08:41,625 - risk.manager - INFO - Position closed at 2022-04-11 00:00:00 (original signal)
+2025-03-19 15:08:42,014 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'GLD'): mean=7.1711, std=1.3539
+2025-03-19 15:08:42,015 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:42,019 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:08:47,952 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:47,952 - regime.detector - INFO - High (0): mean=2.4885, std=10.1357, proportion=0.37
+2025-03-19 15:08:47,953 - regime.detector - INFO - Low (1): mean=-0.6430, std=7.2565, proportion=0.63
+2025-03-19 15:08:47,956 - regime.detector - INFO - Regime High (0) parameters: z_entry=3.00, z_exit=0.50
+2025-03-19 15:08:47,958 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.00, z_exit=0.50
+2025-03-19 15:08:47,981 - risk.manager - INFO - New position at 2010-10-14 00:00:00: signal=1, entry_z=-2.13
+2025-03-19 15:08:47,982 - risk.manager - INFO - Position closed at 2010-10-15 00:00:00 (original signal)
+2025-03-19 15:08:47,983 - risk.manager - INFO - New position at 2010-11-04 00:00:00: signal=1, entry_z=-2.41
+2025-03-19 15:08:47,988 - risk.manager - INFO - Position closed at 2010-11-15 00:00:00 (original signal)
+2025-03-19 15:08:47,989 - risk.manager - INFO - New position at 2010-11-18 00:00:00: signal=1, entry_z=-2.61
+2025-03-19 15:08:47,994 - risk.manager - INFO - Position closed at 2010-11-26 00:00:00 (original signal)
+2025-03-19 15:08:47,995 - risk.manager - INFO - New position at 2010-11-29 00:00:00: signal=1, entry_z=-2.03
+2025-03-19 15:08:48,007 - risk.manager - INFO - Position closed at 2010-12-15 00:00:00 (original signal)
+2025-03-19 15:08:48,008 - risk.manager - INFO - New position at 2010-12-16 00:00:00: signal=1, entry_z=-2.16
+2025-03-19 15:08:48,011 - risk.manager - INFO - Position closed at 2010-12-21 00:00:00 (original signal)
+2025-03-19 15:08:48,012 - risk.manager - INFO - New position at 2010-12-28 00:00:00: signal=1, entry_z=-2.03
+2025-03-19 15:08:48,015 - risk.manager - INFO - Position closed at 2011-01-03 00:00:00 (original signal)
+2025-03-19 15:08:48,017 - risk.manager - INFO - New position at 2011-02-28 00:00:00: signal=1, entry_z=-2.17
+2025-03-19 15:08:48,028 - risk.manager - INFO - Position closed at 2011-03-15 00:00:00 (original signal)
+2025-03-19 15:08:48,029 - risk.manager - INFO - New position at 2011-03-31 00:00:00: signal=1, entry_z=-2.44
+2025-03-19 15:08:48,064 - risk.manager - INFO - Profit target reached at 2011-05-02 00:00:00: max PnL 0.0735
+2025-03-19 15:08:48,067 - risk.manager - INFO - New position at 2011-07-11 00:00:00: signal=-1, entry_z=2.00
+2025-03-19 15:08:48,067 - risk.manager - INFO - Position closed at 2011-07-12 00:00:00 (original signal)
+2025-03-19 15:08:48,069 - risk.manager - INFO - New position at 2012-02-28 00:00:00: signal=1, entry_z=-2.15
+2025-03-19 15:08:48,070 - risk.manager - INFO - Position closed at 2012-02-29 00:00:00 (original signal)
+2025-03-19 15:08:48,072 - risk.manager - INFO - New position at 2012-09-18 00:00:00: signal=1, entry_z=-2.27
+2025-03-19 15:08:48,074 - risk.manager - INFO - Position closed at 2012-09-21 00:00:00 (original signal)
+2025-03-19 15:08:48,077 - risk.manager - INFO - New position at 2013-04-23 00:00:00: signal=-1, entry_z=2.09
+2025-03-19 15:08:48,078 - risk.manager - INFO - Position closed at 2013-04-25 00:00:00 (original signal)
+2025-03-19 15:08:48,094 - risk.manager - INFO - New position at 2020-03-16 00:00:00: signal=-1, entry_z=3.10
+2025-03-19 15:08:48,100 - risk.manager - INFO - Position closed at 2020-03-24 00:00:00 (original signal)
+2025-03-19 15:08:48,101 - risk.manager - INFO - New position at 2020-06-10 00:00:00: signal=1, entry_z=-2.75
+2025-03-19 15:08:48,103 - risk.manager - INFO - Position closed at 2020-06-12 00:00:00 (original signal)
+2025-03-19 15:08:48,104 - risk.manager - INFO - New position at 2020-07-15 00:00:00: signal=1, entry_z=-2.13
+2025-03-19 15:08:48,105 - risk.manager - INFO - Position closed at 2020-07-16 00:00:00 (original signal)
+2025-03-19 15:08:48,106 - risk.manager - INFO - New position at 2020-07-20 00:00:00: signal=1, entry_z=-2.32
+2025-03-19 15:08:48,106 - risk.manager - INFO - Position closed at 2020-07-21 00:00:00 (original signal)
+2025-03-19 15:08:48,107 - risk.manager - INFO - New position at 2020-07-22 00:00:00: signal=1, entry_z=-4.24
+2025-03-19 15:08:48,112 - risk.manager - INFO - Position closed at 2020-07-30 00:00:00 (original signal)
+2025-03-19 15:08:48,114 - risk.manager - INFO - New position at 2020-07-31 00:00:00: signal=1, entry_z=-3.46
+2025-03-19 15:08:48,121 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.0822
+2025-03-19 15:08:48,121 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-3.44
+2025-03-19 15:08:48,147 - risk.manager - INFO - Max holding period reached at 2020-09-17 00:00:00: 25 days
+2025-03-19 15:08:48,150 - risk.manager - INFO - New position at 2021-02-08 00:00:00: signal=1, entry_z=-2.21
+2025-03-19 15:08:48,150 - risk.manager - INFO - Position closed at 2021-02-09 00:00:00 (original signal)
+2025-03-19 15:08:48,151 - risk.manager - INFO - New position at 2021-02-12 00:00:00: signal=1, entry_z=-2.01
+2025-03-19 15:08:48,161 - risk.manager - INFO - Position closed at 2021-02-26 00:00:00 (original signal)
+2025-03-19 15:08:48,163 - risk.manager - INFO - New position at 2021-08-18 00:00:00: signal=-1, entry_z=2.01
+2025-03-19 15:08:48,166 - risk.manager - INFO - Position closed at 2021-08-23 00:00:00 (original signal)
+2025-03-19 15:08:48,167 - risk.manager - INFO - New position at 2021-09-20 00:00:00: signal=-1, entry_z=2.05
+2025-03-19 15:08:48,167 - risk.manager - INFO - Position closed at 2021-09-21 00:00:00 (original signal)
+2025-03-19 15:08:48,171 - risk.manager - INFO - New position at 2022-12-09 00:00:00: signal=1, entry_z=-2.02
+2025-03-19 15:08:48,174 - risk.manager - INFO - Position closed at 2022-12-15 00:00:00 (original signal)
+2025-03-19 15:08:48,176 - risk.manager - INFO - New position at 2022-12-20 00:00:00: signal=1, entry_z=-2.13
+2025-03-19 15:08:48,177 - risk.manager - INFO - Position closed at 2022-12-21 00:00:00 (original signal)
+2025-03-19 15:08:48,178 - risk.manager - INFO - New position at 2023-02-27 00:00:00: signal=-1, entry_z=2.25
+2025-03-19 15:08:48,184 - risk.manager - INFO - Position closed at 2023-03-03 00:00:00 (original signal)
+2025-03-19 15:08:48,186 - risk.manager - INFO - New position at 2023-03-06 00:00:00: signal=-1, entry_z=2.03
+2025-03-19 15:08:48,189 - risk.manager - INFO - Position closed at 2023-03-09 00:00:00 (original signal)
+2025-03-19 15:08:48,559 - strategy.regime_switching - INFO - Calculated hedge ratios for ('IEF', 'XLU'): mean=0.4382, std=0.1352
+2025-03-19 15:08:48,560 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:48,565 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:08:54,157 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:08:54,158 - regime.detector - INFO - Low (0): mean=0.1636, std=2.4651, proportion=0.50
+2025-03-19 15:08:54,158 - regime.detector - INFO - High (1): mean=0.5011, std=0.8914, proportion=0.50
+2025-03-19 15:08:54,164 - regime.detector - INFO - Regime Low (0) parameters: z_entry=3.00, z_exit=0.50
+2025-03-19 15:08:54,168 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:08:54,239 - risk.manager - INFO - New position at 2015-03-06 00:00:00: signal=1, entry_z=-2.84
+2025-03-19 15:08:54,278 - risk.manager - INFO - Position closed at 2015-03-11 00:00:00 (original signal)
+2025-03-19 15:08:54,305 - risk.manager - INFO - New position at 2015-03-13 00:00:00: signal=1, entry_z=-2.97
+2025-03-19 15:08:54,315 - risk.manager - INFO - Position closed at 2015-03-16 00:00:00 (original signal)
+2025-03-19 15:08:54,323 - risk.manager - INFO - New position at 2018-01-04 00:00:00: signal=1, entry_z=-3.15
+2025-03-19 15:08:54,324 - risk.manager - INFO - Position closed at 2018-01-08 00:00:00 (original signal)
+2025-03-19 15:08:54,325 - risk.manager - INFO - New position at 2018-01-09 00:00:00: signal=1, entry_z=-2.81
+2025-03-19 15:08:54,326 - risk.manager - INFO - Position closed at 2018-01-11 00:00:00 (original signal)
+2025-03-19 15:08:54,332 - risk.manager - INFO - New position at 2020-01-21 00:00:00: signal=-1, entry_z=2.90
+2025-03-19 15:08:54,335 - risk.manager - INFO - Position closed at 2020-01-27 00:00:00 (original signal)
+2025-03-19 15:08:54,338 - risk.manager - INFO - New position at 2020-01-28 00:00:00: signal=-1, entry_z=3.06
+2025-03-19 15:08:54,340 - risk.manager - INFO - Position closed at 2020-01-31 00:00:00 (original signal)
+2025-03-19 15:08:54,341 - risk.manager - INFO - New position at 2020-02-03 00:00:00: signal=-1, entry_z=2.85
+2025-03-19 15:08:54,341 - risk.manager - INFO - Position closed at 2020-02-04 00:00:00 (original signal)
+2025-03-19 15:08:54,344 - risk.manager - INFO - New position at 2020-02-05 00:00:00: signal=-1, entry_z=2.93
+2025-03-19 15:08:54,345 - risk.manager - INFO - Position closed at 2020-02-07 00:00:00 (original signal)
+2025-03-19 15:08:54,346 - risk.manager - INFO - New position at 2020-02-13 00:00:00: signal=-1, entry_z=3.24
+2025-03-19 15:08:54,352 - risk.manager - INFO - Position closed at 2020-02-21 00:00:00 (original signal)
+2025-03-19 15:08:54,353 - risk.manager - INFO - New position at 2020-03-11 00:00:00: signal=1, entry_z=-3.07
+2025-03-19 15:08:54,354 - risk.manager - INFO - Stop loss triggered at 2020-03-12 00:00:00: cumulative PnL -0.1014
+2025-03-19 15:08:54,355 - risk.manager - INFO - New position at 2020-03-13 00:00:00: signal=1, entry_z=-3.90
+2025-03-19 15:08:54,356 - risk.manager - INFO - Stop loss triggered at 2020-03-16 00:00:00: cumulative PnL -0.1400
+2025-03-19 15:08:54,357 - risk.manager - INFO - New position at 2020-03-17 00:00:00: signal=1, entry_z=-3.74
+2025-03-19 15:08:54,360 - risk.manager - INFO - Stop loss triggered at 2020-03-20 00:00:00: cumulative PnL -0.1048
+2025-03-19 15:08:54,361 - risk.manager - INFO - New position at 2020-03-23 00:00:00: signal=1, entry_z=-8.23
+2025-03-19 15:08:54,375 - risk.manager - INFO - Position closed at 2020-04-08 00:00:00 (original signal)
+2025-03-19 15:08:54,376 - risk.manager - INFO - New position at 2020-06-03 00:00:00: signal=-1, entry_z=4.29
+2025-03-19 15:08:54,376 - risk.manager - INFO - Position closed at 2020-06-04 00:00:00 (original signal)
+2025-03-19 15:08:54,380 - risk.manager - INFO - New position at 2021-06-23 00:00:00: signal=1, entry_z=-2.84
+2025-03-19 15:08:54,382 - risk.manager - INFO - Position closed at 2021-06-25 00:00:00 (original signal)
+2025-03-19 15:08:54,383 - risk.manager - INFO - New position at 2021-09-02 00:00:00: signal=-1, entry_z=2.86
+2025-03-19 15:08:54,383 - risk.manager - INFO - Position closed at 2021-09-03 00:00:00 (original signal)
+2025-03-19 15:08:54,387 - risk.manager - INFO - New position at 2022-04-01 00:00:00: signal=-1, entry_z=3.33
+2025-03-19 15:08:54,402 - risk.manager - INFO - Position closed at 2022-04-22 00:00:00 (original signal)
+2025-03-19 15:08:54,774 - strategy.regime_switching - INFO - Calculated hedge ratios for ('FXY', 'XLU'): mean=0.4689, std=0.2408
+2025-03-19 15:08:54,775 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:08:54,780 - regime.detector - INFO - Reduced features from 18 to 12 using PCA
+2025-03-19 15:09:02,639 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:09:02,640 - regime.detector - INFO - High (0): mean=0.6489, std=1.5532, proportion=0.86
+2025-03-19 15:09:02,640 - regime.detector - INFO - Low (1): mean=0.4004, std=3.8145, proportion=0.14
+2025-03-19 15:09:02,649 - regime.detector - INFO - Regime High (0) parameters: z_entry=3.00, z_exit=0.50
+2025-03-19 15:09:02,651 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.40, z_exit=0.50
+2025-03-19 15:09:02,702 - risk.manager - INFO - New position at 2018-01-24 00:00:00: signal=1, entry_z=-3.10
+2025-03-19 15:09:02,703 - risk.manager - INFO - Position closed at 2018-01-25 00:00:00 (original signal)
+2025-03-19 15:09:02,703 - risk.manager - INFO - New position at 2018-02-05 00:00:00: signal=1, entry_z=-3.22
+2025-03-19 15:09:02,713 - risk.manager - INFO - Position closed at 2018-02-16 00:00:00 (original signal)
+2025-03-19 15:09:02,719 - risk.manager - INFO - New position at 2020-02-20 00:00:00: signal=-1, entry_z=3.22
+2025-03-19 15:09:02,719 - risk.manager - INFO - Position closed at 2020-02-21 00:00:00 (original signal)
+2025-03-19 15:09:02,720 - risk.manager - INFO - New position at 2020-03-12 00:00:00: signal=1, entry_z=-3.25
+2025-03-19 15:09:02,721 - risk.manager - INFO - Profit target reached at 2020-03-13 00:00:00: max PnL 0.0811
+2025-03-19 15:09:02,722 - risk.manager - INFO - New position at 2020-03-16 00:00:00: signal=1, entry_z=-3.90
+2025-03-19 15:09:02,722 - risk.manager - INFO - Profit target reached at 2020-03-17 00:00:00: max PnL 0.1449
+2025-03-19 15:09:02,724 - risk.manager - INFO - New position at 2020-03-18 00:00:00: signal=1, entry_z=-2.60
+2025-03-19 15:09:02,727 - risk.manager - INFO - Profit target reached at 2020-03-24 00:00:00: max PnL 0.1095
+2025-03-19 15:09:02,729 - risk.manager - INFO - New position at 2020-03-25 00:00:00: signal=1, entry_z=-2.72
+2025-03-19 15:09:02,730 - risk.manager - INFO - Profit target reached at 2020-03-26 00:00:00: max PnL 0.0678
+2025-03-19 15:09:02,731 - risk.manager - INFO - New position at 2020-04-01 00:00:00: signal=1, entry_z=-2.88
+2025-03-19 15:09:02,731 - risk.manager - INFO - Position closed at 2020-04-02 00:00:00 (original signal)
+2025-03-19 15:09:02,732 - risk.manager - INFO - New position at 2020-04-03 00:00:00: signal=1, entry_z=-2.69
+2025-03-19 15:09:02,733 - risk.manager - INFO - Profit target reached at 2020-04-06 00:00:00: max PnL 0.0844
+2025-03-19 15:09:02,735 - risk.manager - INFO - New position at 2020-05-07 00:00:00: signal=1, entry_z=-3.49
+2025-03-19 15:09:02,735 - risk.manager - INFO - Position closed at 2020-05-08 00:00:00 (original signal)
+2025-03-19 15:09:02,739 - risk.manager - INFO - New position at 2021-04-16 00:00:00: signal=-1, entry_z=3.05
+2025-03-19 15:09:02,739 - risk.manager - INFO - Position closed at 2021-04-19 00:00:00 (original signal)
+2025-03-19 15:09:02,742 - risk.manager - INFO - New position at 2022-04-06 00:00:00: signal=-1, entry_z=2.73
+2025-03-19 15:09:02,753 - risk.manager - INFO - Position closed at 2022-04-22 00:00:00 (original signal)
+2025-03-19 15:09:02,756 - risk.manager - INFO - New position at 2022-08-15 00:00:00: signal=-1, entry_z=3.16
+2025-03-19 15:09:02,760 - risk.manager - INFO - Position closed at 2022-08-18 00:00:00 (original signal)
+2025-03-19 15:09:02,763 - risk.manager - INFO - New position at 2022-08-22 00:00:00: signal=-1, entry_z=3.55
+2025-03-19 15:09:02,764 - risk.manager - INFO - Position closed at 2022-08-23 00:00:00 (original signal)
+2025-03-19 15:09:02,765 - risk.manager - INFO - New position at 2022-08-24 00:00:00: signal=-1, entry_z=3.13
+2025-03-19 15:09:02,769 - risk.manager - INFO - Position closed at 2022-08-26 00:00:00 (original signal)
+2025-03-19 15:09:02,771 - risk.manager - INFO - New position at 2022-08-29 00:00:00: signal=-1, entry_z=3.13
+2025-03-19 15:09:02,772 - risk.manager - INFO - Position closed at 2022-08-30 00:00:00 (original signal)
+2025-03-19 15:09:02,774 - risk.manager - INFO - New position at 2022-09-01 00:00:00: signal=-1, entry_z=3.13
+2025-03-19 15:09:02,775 - risk.manager - INFO - Position closed at 2022-09-02 00:00:00 (original signal)
+2025-03-19 15:09:02,777 - risk.manager - INFO - New position at 2022-11-11 00:00:00: signal=1, entry_z=-3.02
+2025-03-19 15:09:02,779 - risk.manager - INFO - Position closed at 2022-11-15 00:00:00 (original signal)
+2025-03-19 15:09:02,780 - risk.manager - INFO - New position at 2023-01-25 00:00:00: signal=1, entry_z=-3.11
+2025-03-19 15:09:02,782 - risk.manager - INFO - Position closed at 2023-01-26 00:00:00 (original signal)
+2025-03-19 15:09:03,162 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'XLP'): mean=2.2996, std=0.9736
+2025-03-19 15:09:03,163 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:09:03,167 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:09:04,176 - hmmlearn.base - WARNING - Model is not converging.  Current: -35447.11669787208 is not greater than -35447.11406256635. Delta is -0.002635305732837878
+2025-03-19 15:09:11,971 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:09:11,972 - regime.detector - INFO - Low (0): mean=-1.0994, std=6.0415, proportion=0.07
+2025-03-19 15:09:11,972 - regime.detector - INFO - High (1): mean=0.5442, std=2.9654, proportion=0.93
+2025-03-19 15:09:11,976 - regime.detector - INFO - Regime Low (0) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 15:09:11,981 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:09:12,039 - risk.manager - INFO - New position at 2019-09-03 00:00:00: signal=1, entry_z=-2.83
+2025-03-19 15:09:12,040 - risk.manager - INFO - Position closed at 2019-09-05 00:00:00 (original signal)
+2025-03-19 15:09:12,042 - risk.manager - INFO - New position at 2020-03-17 00:00:00: signal=-1, entry_z=1.93
+2025-03-19 15:09:12,045 - risk.manager - INFO - Profit target reached at 2020-03-19 00:00:00: max PnL 0.0432
+2025-03-19 15:09:12,047 - risk.manager - INFO - New position at 2020-07-21 00:00:00: signal=1, entry_z=-3.11
+2025-03-19 15:09:12,065 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.1290
+2025-03-19 15:09:12,066 - risk.manager - INFO - New position at 2020-08-13 00:00:00: signal=1, entry_z=-2.20
+2025-03-19 15:09:12,074 - risk.manager - INFO - Position closed at 2020-08-24 00:00:00 (original signal)
+2025-03-19 15:09:12,076 - risk.manager - INFO - New position at 2020-08-26 00:00:00: signal=1, entry_z=-1.51
+2025-03-19 15:09:12,076 - risk.manager - INFO - Position closed at 2020-08-27 00:00:00 (original signal)
+2025-03-19 15:09:12,077 - risk.manager - INFO - New position at 2020-08-31 00:00:00: signal=1, entry_z=-1.49
+2025-03-19 15:09:12,077 - risk.manager - INFO - Position closed at 2020-09-01 00:00:00 (original signal)
+2025-03-19 15:09:12,080 - risk.manager - INFO - New position at 2021-02-01 00:00:00: signal=1, entry_z=-1.59
+2025-03-19 15:09:12,081 - risk.manager - INFO - Profit target reached at 2021-02-02 00:00:00: max PnL 0.0897
+2025-03-19 15:09:12,083 - risk.manager - INFO - New position at 2021-08-10 00:00:00: signal=-1, entry_z=2.83
+2025-03-19 15:09:12,083 - risk.manager - INFO - Position closed at 2021-08-11 00:00:00 (original signal)
+2025-03-19 15:09:12,088 - risk.manager - INFO - New position at 2021-08-12 00:00:00: signal=-1, entry_z=2.89
+2025-03-19 15:09:12,091 - risk.manager - INFO - Position closed at 2021-08-13 00:00:00 (original signal)
+2025-03-19 15:09:12,095 - risk.manager - INFO - New position at 2021-08-19 00:00:00: signal=-1, entry_z=2.81
+2025-03-19 15:09:12,098 - risk.manager - INFO - Position closed at 2021-08-23 00:00:00 (original signal)
+2025-03-19 15:09:12,102 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=1, entry_z=-2.93
+2025-03-19 15:09:12,103 - risk.manager - INFO - Position closed at 2022-03-02 00:00:00 (original signal)
+2025-03-19 15:09:12,104 - risk.manager - INFO - New position at 2022-03-07 00:00:00: signal=1, entry_z=-2.95
+2025-03-19 15:09:12,110 - risk.manager - INFO - Position closed at 2022-03-15 00:00:00 (original signal)
+2025-03-19 15:09:12,113 - risk.manager - INFO - New position at 2022-05-09 00:00:00: signal=-1, entry_z=2.86
+2025-03-19 15:09:12,119 - risk.manager - INFO - Position closed at 2022-05-17 00:00:00 (original signal)
+2025-03-19 15:09:12,121 - risk.manager - INFO - New position at 2022-07-14 00:00:00: signal=-1, entry_z=3.08
+2025-03-19 15:09:12,122 - risk.manager - INFO - Position closed at 2022-07-18 00:00:00 (original signal)
+2025-03-19 15:09:12,124 - risk.manager - INFO - New position at 2022-07-20 00:00:00: signal=-1, entry_z=1.50
+2025-03-19 15:09:12,125 - risk.manager - INFO - Position closed at 2022-07-21 00:00:00 (original signal)
+2025-03-19 15:09:12,126 - risk.manager - INFO - New position at 2022-07-25 00:00:00: signal=-1, entry_z=2.93
+2025-03-19 15:09:12,126 - risk.manager - INFO - Position closed at 2022-07-26 00:00:00 (original signal)
+2025-03-19 15:09:12,128 - risk.manager - INFO - New position at 2022-10-03 00:00:00: signal=1, entry_z=-1.48
+2025-03-19 15:09:12,133 - risk.manager - INFO - Position closed at 2022-10-10 00:00:00 (original signal)
+2025-03-19 15:09:12,519 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'FXE'): mean=5.7231, std=1.2584
+2025-03-19 15:09:12,520 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:09:12,524 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:09:20,461 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:09:20,461 - regime.detector - INFO - Low (0): mean=-0.4557, std=8.1215, proportion=0.92
+2025-03-19 15:09:20,461 - regime.detector - INFO - High (1): mean=1.6141, std=12.4592, proportion=0.08
+2025-03-19 15:09:20,465 - regime.detector - INFO - Regime Low (0) parameters: z_entry=2.80, z_exit=0.50
+2025-03-19 15:09:20,466 - regime.detector - INFO - Regime High (1) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 15:09:20,489 - risk.manager - INFO - New position at 2010-11-05 00:00:00: signal=1, entry_z=-2.93
+2025-03-19 15:09:20,492 - risk.manager - INFO - Profit target reached at 2010-11-12 00:00:00: max PnL 0.0611
+2025-03-19 15:09:20,493 - risk.manager - INFO - New position at 2010-11-22 00:00:00: signal=1, entry_z=-3.01
+2025-03-19 15:09:20,496 - risk.manager - INFO - Position closed at 2010-11-26 00:00:00 (original signal)
+2025-03-19 15:09:20,497 - risk.manager - INFO - New position at 2010-11-30 00:00:00: signal=1, entry_z=-3.47
+2025-03-19 15:09:20,504 - risk.manager - INFO - Position closed at 2010-12-08 00:00:00 (original signal)
+2025-03-19 15:09:20,506 - risk.manager - INFO - New position at 2010-12-09 00:00:00: signal=1, entry_z=-2.80
+2025-03-19 15:09:20,506 - risk.manager - INFO - Position closed at 2010-12-10 00:00:00 (original signal)
+2025-03-19 15:09:20,507 - risk.manager - INFO - New position at 2010-12-13 00:00:00: signal=1, entry_z=-2.98
+2025-03-19 15:09:20,509 - risk.manager - INFO - Position closed at 2010-12-15 00:00:00 (original signal)
+2025-03-19 15:09:20,511 - risk.manager - INFO - New position at 2011-03-04 00:00:00: signal=1, entry_z=-1.64
+2025-03-19 15:09:20,512 - risk.manager - INFO - Position closed at 2011-03-08 00:00:00 (original signal)
+2025-03-19 15:09:20,514 - risk.manager - INFO - New position at 2011-04-08 00:00:00: signal=1, entry_z=-2.90
+2025-03-19 15:09:20,515 - risk.manager - INFO - Position closed at 2011-04-11 00:00:00 (original signal)
+2025-03-19 15:09:20,516 - risk.manager - INFO - New position at 2011-04-14 00:00:00: signal=1, entry_z=-3.08
+2025-03-19 15:09:20,527 - risk.manager - INFO - Profit target reached at 2011-05-02 00:00:00: max PnL 0.0880
+2025-03-19 15:09:20,529 - risk.manager - INFO - New position at 2011-08-19 00:00:00: signal=1, entry_z=-1.53
+2025-03-19 15:09:20,531 - risk.manager - INFO - Profit target reached at 2011-08-23 00:00:00: max PnL 0.0524
+2025-03-19 15:09:20,532 - risk.manager - INFO - New position at 2011-09-23 00:00:00: signal=-1, entry_z=1.80
+2025-03-19 15:09:20,534 - risk.manager - INFO - Profit target reached at 2011-09-27 00:00:00: max PnL 0.0409
+2025-03-19 15:09:20,535 - risk.manager - INFO - New position at 2011-09-28 00:00:00: signal=-1, entry_z=2.13
+2025-03-19 15:09:20,541 - risk.manager - INFO - Profit target reached at 2011-10-06 00:00:00: max PnL 0.0439
+2025-03-19 15:09:20,542 - risk.manager - INFO - New position at 2011-10-07 00:00:00: signal=-1, entry_z=1.57
+2025-03-19 15:09:20,545 - risk.manager - INFO - Position closed at 2011-10-12 00:00:00 (original signal)
+2025-03-19 15:09:20,546 - risk.manager - INFO - New position at 2011-10-13 00:00:00: signal=-1, entry_z=1.59
+2025-03-19 15:09:20,553 - risk.manager - INFO - Position closed at 2011-10-18 00:00:00 (original signal)
+2025-03-19 15:09:20,555 - risk.manager - INFO - New position at 2011-10-19 00:00:00: signal=-1, entry_z=2.83
+2025-03-19 15:09:20,562 - risk.manager - INFO - Position closed at 2011-10-24 00:00:00 (original signal)
+2025-03-19 15:09:20,565 - risk.manager - INFO - New position at 2012-09-11 00:00:00: signal=1, entry_z=-1.40
+2025-03-19 15:09:20,566 - risk.manager - INFO - Position closed at 2012-09-12 00:00:00 (original signal)
+2025-03-19 15:09:20,570 - risk.manager - INFO - New position at 2013-04-15 00:00:00: signal=-1, entry_z=2.06
+2025-03-19 15:09:20,578 - risk.manager - INFO - Profit target reached at 2013-04-25 00:00:00: max PnL 0.0487
+2025-03-19 15:09:20,580 - risk.manager - INFO - New position at 2013-06-20 00:00:00: signal=-1, entry_z=3.09
+2025-03-19 15:09:20,580 - risk.manager - INFO - Position closed at 2013-06-21 00:00:00 (original signal)
+2025-03-19 15:09:20,582 - risk.manager - INFO - New position at 2013-06-24 00:00:00: signal=-1, entry_z=2.81
+2025-03-19 15:09:20,582 - risk.manager - INFO - Position closed at 2013-06-25 00:00:00 (original signal)
+2025-03-19 15:09:20,583 - risk.manager - INFO - New position at 2013-06-26 00:00:00: signal=-1, entry_z=3.23
+2025-03-19 15:09:20,585 - risk.manager - INFO - Position closed at 2013-06-28 00:00:00 (original signal)
+2025-03-19 15:09:20,590 - risk.manager - INFO - New position at 2015-01-21 00:00:00: signal=1, entry_z=-1.68
+2025-03-19 15:09:20,590 - risk.manager - INFO - Position closed at 2015-01-22 00:00:00 (original signal)
+2025-03-19 15:09:20,591 - risk.manager - INFO - New position at 2015-01-27 00:00:00: signal=1, entry_z=-1.68
+2025-03-19 15:09:20,592 - risk.manager - INFO - Position closed at 2015-01-28 00:00:00 (original signal)
+2025-03-19 15:09:20,596 - risk.manager - INFO - New position at 2016-07-01 00:00:00: signal=1, entry_z=-1.62
+2025-03-19 15:09:20,599 - risk.manager - INFO - Position closed at 2016-07-07 00:00:00 (original signal)
+2025-03-19 15:09:20,608 - risk.manager - INFO - New position at 2020-03-16 00:00:00: signal=-1, entry_z=2.14
+2025-03-19 15:09:20,611 - risk.manager - INFO - Profit target reached at 2020-03-23 00:00:00: max PnL 0.0541
+2025-03-19 15:09:20,614 - risk.manager - INFO - New position at 2020-07-22 00:00:00: signal=1, entry_z=-2.39
+2025-03-19 15:09:20,620 - risk.manager - INFO - Position closed at 2020-07-30 00:00:00 (original signal)
+2025-03-19 15:09:20,621 - risk.manager - INFO - New position at 2020-07-31 00:00:00: signal=1, entry_z=-3.20
+2025-03-19 15:09:20,628 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.1355
+2025-03-19 15:09:20,630 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-1.79
+2025-03-19 15:09:20,631 - risk.manager - INFO - Profit target reached at 2020-08-14 00:00:00: max PnL 0.0365
+2025-03-19 15:09:20,632 - risk.manager - INFO - New position at 2020-08-17 00:00:00: signal=1, entry_z=-3.51
+2025-03-19 15:09:20,634 - risk.manager - INFO - Position closed at 2020-08-19 00:00:00 (original signal)
+2025-03-19 15:09:20,635 - risk.manager - INFO - New position at 2020-08-20 00:00:00: signal=1, entry_z=-3.13
+2025-03-19 15:09:20,636 - risk.manager - INFO - Position closed at 2020-08-21 00:00:00 (original signal)
+2025-03-19 15:09:20,638 - risk.manager - INFO - New position at 2021-02-01 00:00:00: signal=1, entry_z=-1.45
+2025-03-19 15:09:20,639 - risk.manager - INFO - Profit target reached at 2021-02-02 00:00:00: max PnL 0.0816
+2025-03-19 15:09:21,002 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'XLV'): mean=3.7947, std=1.8864
+2025-03-19 15:09:21,003 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:09:21,008 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:09:27,169 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:09:27,170 - regime.detector - INFO - High (0): mean=0.9995, std=6.2487, proportion=0.04
+2025-03-19 15:09:27,170 - regime.detector - INFO - Low (1): mean=0.9045, std=5.7280, proportion=0.96
+2025-03-19 15:09:27,176 - regime.detector - INFO - Regime High (0) parameters: z_entry=1.80, z_exit=0.50
+2025-03-19 15:09:27,181 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.40, z_exit=0.50
+2025-03-19 15:09:27,245 - risk.manager - INFO - New position at 2016-02-12 00:00:00: signal=1, entry_z=-1.82
+2025-03-19 15:09:27,245 - risk.manager - INFO - Profit target reached at 2016-02-16 00:00:00: max PnL 0.0508
+2025-03-19 15:09:27,265 - risk.manager - INFO - New position at 2019-08-27 00:00:00: signal=1, entry_z=-2.58
+2025-03-19 15:09:27,267 - risk.manager - INFO - Position closed at 2019-08-29 00:00:00 (original signal)
+2025-03-19 15:09:27,271 - risk.manager - INFO - New position at 2019-09-03 00:00:00: signal=1, entry_z=-3.03
+2025-03-19 15:09:27,276 - risk.manager - INFO - Profit target reached at 2019-09-05 00:00:00: max PnL 0.0606
+2025-03-19 15:09:27,284 - risk.manager - INFO - New position at 2020-07-21 00:00:00: signal=1, entry_z=-2.81
+2025-03-19 15:09:27,308 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.1296
+2025-03-19 15:09:27,310 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-3.32
+2025-03-19 15:09:27,328 - risk.manager - INFO - Position closed at 2020-09-03 00:00:00 (original signal)
+2025-03-19 15:09:27,330 - risk.manager - INFO - New position at 2020-09-04 00:00:00: signal=1, entry_z=-2.61
+2025-03-19 15:09:27,333 - risk.manager - INFO - Position closed at 2020-09-11 00:00:00 (original signal)
+2025-03-19 15:09:27,336 - risk.manager - INFO - New position at 2021-02-01 00:00:00: signal=1, entry_z=-2.41
+2025-03-19 15:09:27,337 - risk.manager - INFO - Profit target reached at 2021-02-02 00:00:00: max PnL 0.0858
+2025-03-19 15:09:27,339 - risk.manager - INFO - New position at 2021-07-27 00:00:00: signal=-1, entry_z=2.49
+2025-03-19 15:09:27,339 - risk.manager - INFO - Position closed at 2021-07-28 00:00:00 (original signal)
+2025-03-19 15:09:27,341 - risk.manager - INFO - New position at 2021-08-06 00:00:00: signal=-1, entry_z=2.79
+2025-03-19 15:09:27,369 - risk.manager - INFO - Position closed at 2021-08-27 00:00:00 (original signal)
+2025-03-19 15:09:27,372 - risk.manager - INFO - New position at 2022-02-23 00:00:00: signal=1, entry_z=-2.88
+2025-03-19 15:09:27,372 - risk.manager - INFO - Position closed at 2022-02-24 00:00:00 (original signal)
+2025-03-19 15:09:27,373 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=1, entry_z=-3.14
+2025-03-19 15:09:27,377 - risk.manager - INFO - Position closed at 2022-03-03 00:00:00 (original signal)
+2025-03-19 15:09:27,378 - risk.manager - INFO - New position at 2022-03-04 00:00:00: signal=1, entry_z=-2.54
+2025-03-19 15:09:27,384 - risk.manager - INFO - Position closed at 2022-03-14 00:00:00 (original signal)
+2025-03-19 15:09:27,386 - risk.manager - INFO - New position at 2022-05-12 00:00:00: signal=-1, entry_z=2.07
+2025-03-19 15:09:27,388 - risk.manager - INFO - Position closed at 2022-05-16 00:00:00 (original signal)
+2025-03-19 15:09:27,390 - risk.manager - INFO - New position at 2022-07-05 00:00:00: signal=-1, entry_z=2.82
+2025-03-19 15:09:27,408 - risk.manager - INFO - Position closed at 2022-07-28 00:00:00 (original signal)
+2025-03-19 15:09:27,410 - risk.manager - INFO - New position at 2022-10-03 00:00:00: signal=1, entry_z=-2.62
+2025-03-19 15:09:27,411 - risk.manager - INFO - Position closed at 2022-10-05 00:00:00 (original signal)
+2025-03-19 15:09:27,413 - risk.manager - INFO - New position at 2022-12-20 00:00:00: signal=1, entry_z=-3.10
+2025-03-19 15:09:27,415 - risk.manager - INFO - Position closed at 2022-12-22 00:00:00 (original signal)
+2025-03-19 15:09:27,416 - risk.manager - INFO - New position at 2022-12-27 00:00:00: signal=1, entry_z=-2.29
+2025-03-19 15:09:27,416 - risk.manager - INFO - Position closed at 2022-12-28 00:00:00 (original signal)
+2025-03-19 15:09:27,419 - risk.manager - INFO - New position at 2023-04-12 00:00:00: signal=1, entry_z=-2.05
+2025-03-19 15:09:27,421 - risk.manager - INFO - Position closed at 2023-04-14 00:00:00 (original signal)
+2025-03-19 15:09:27,422 - risk.manager - INFO - New position at 2023-05-04 00:00:00: signal=1, entry_z=-2.55
+2025-03-19 15:09:27,422 - risk.manager - INFO - Position closed at 2023-05-05 00:00:00 (original signal)
+2025-03-19 15:09:27,798 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SLV', 'SHY'): mean=3.8489, std=0.9573
+2025-03-19 15:09:27,799 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 15:09:27,804 - regime.detector - INFO - Reduced features from 18 to 13 using PCA
+2025-03-19 15:09:31,775 - hmmlearn.base - WARNING - Model is not converging.  Current: -53926.68802900024 is not greater than -53926.688027843. Delta is -1.1572337825782597e-06
+2025-03-19 15:09:35,901 - regime.detector - INFO - Best HMM model: 2 regimes with full covariance
+2025-03-19 15:09:35,902 - regime.detector - INFO - High (0): mean=0.2100, std=5.2698, proportion=0.84
+2025-03-19 15:09:35,902 - regime.detector - INFO - Low (1): mean=-0.7890, std=8.5355, proportion=0.16
+2025-03-19 15:09:35,908 - regime.detector - INFO - Regime High (0) parameters: z_entry=2.20, z_exit=0.50
+2025-03-19 15:09:35,912 - regime.detector - INFO - Regime Low (1) parameters: z_entry=2.40, z_exit=0.50
+2025-03-19 15:09:35,934 - risk.manager - INFO - New position at 2010-10-05 00:00:00: signal=1, entry_z=-2.43
+2025-03-19 15:09:35,936 - risk.manager - INFO - Position closed at 2010-10-07 00:00:00 (original signal)
+2025-03-19 15:09:35,937 - risk.manager - INFO - New position at 2010-10-08 00:00:00: signal=1, entry_z=-2.48
+2025-03-19 15:09:35,952 - risk.manager - INFO - Position closed at 2010-10-19 00:00:00 (original signal)
+2025-03-19 15:09:35,954 - risk.manager - INFO - New position at 2010-10-20 00:00:00: signal=1, entry_z=-2.23
+2025-03-19 15:09:35,955 - risk.manager - INFO - Position closed at 2010-10-21 00:00:00 (original signal)
+2025-03-19 15:09:35,957 - risk.manager - INFO - New position at 2010-10-29 00:00:00: signal=1, entry_z=-2.29
+2025-03-19 15:09:35,959 - risk.manager - INFO - Position closed at 2010-11-01 00:00:00 (original signal)
+2025-03-19 15:09:35,962 - risk.manager - INFO - New position at 2010-11-02 00:00:00: signal=1, entry_z=-2.22
+2025-03-19 15:09:35,963 - risk.manager - INFO - Position closed at 2010-11-03 00:00:00 (original signal)
+2025-03-19 15:09:35,967 - risk.manager - INFO - New position at 2010-11-04 00:00:00: signal=1, entry_z=-2.90
+2025-03-19 15:09:35,978 - risk.manager - INFO - Profit target reached at 2010-11-12 00:00:00: max PnL 0.0586
+2025-03-19 15:09:35,980 - risk.manager - INFO - New position at 2010-11-18 00:00:00: signal=1, entry_z=-2.36
+2025-03-19 15:09:35,991 - risk.manager - INFO - Position closed at 2010-11-26 00:00:00 (original signal)
+2025-03-19 15:09:35,994 - risk.manager - INFO - New position at 2010-11-30 00:00:00: signal=1, entry_z=-2.37
+2025-03-19 15:09:36,007 - risk.manager - INFO - Position closed at 2010-12-08 00:00:00 (original signal)
+2025-03-19 15:09:36,011 - risk.manager - INFO - New position at 2010-12-13 00:00:00: signal=1, entry_z=-2.37
+2025-03-19 15:09:36,014 - risk.manager - INFO - Position closed at 2010-12-15 00:00:00 (original signal)
+2025-03-19 15:09:36,018 - risk.manager - INFO - New position at 2011-03-08 00:00:00: signal=1, entry_z=-2.59
+2025-03-19 15:09:36,021 - risk.manager - INFO - Position closed at 2011-03-10 00:00:00 (original signal)
+2025-03-19 15:09:36,023 - risk.manager - INFO - New position at 2011-03-11 00:00:00: signal=1, entry_z=-2.30
+2025-03-19 15:09:36,024 - risk.manager - INFO - Position closed at 2011-03-15 00:00:00 (original signal)
+2025-03-19 15:09:36,026 - risk.manager - INFO - New position at 2011-03-23 00:00:00: signal=1, entry_z=-2.50
+2025-03-19 15:09:36,029 - risk.manager - INFO - Position closed at 2011-03-29 00:00:00 (original signal)
+2025-03-19 15:09:36,031 - risk.manager - INFO - New position at 2011-03-30 00:00:00: signal=1, entry_z=-2.23
+2025-03-19 15:09:36,054 - risk.manager - INFO - Profit target reached at 2011-05-02 00:00:00: max PnL 0.0862
+2025-03-19 15:09:36,057 - risk.manager - INFO - New position at 2011-10-21 00:00:00: signal=-1, entry_z=2.31
+2025-03-19 15:09:36,057 - risk.manager - INFO - Position closed at 2011-10-24 00:00:00 (original signal)
+2025-03-19 15:09:36,063 - risk.manager - INFO - New position at 2012-09-18 00:00:00: signal=1, entry_z=-2.64
+2025-03-19 15:09:36,075 - risk.manager - INFO - Position closed at 2012-09-24 00:00:00 (original signal)
+2025-03-19 15:09:36,078 - risk.manager - INFO - New position at 2013-05-17 00:00:00: signal=-1, entry_z=2.28
+2025-03-19 15:09:36,079 - risk.manager - INFO - Position closed at 2013-05-20 00:00:00 (original signal)
+2025-03-19 15:09:36,080 - risk.manager - INFO - New position at 2013-06-20 00:00:00: signal=-1, entry_z=2.46
+2025-03-19 15:09:36,080 - risk.manager - INFO - Position closed at 2013-06-21 00:00:00 (original signal)
+2025-03-19 15:09:36,082 - risk.manager - INFO - New position at 2013-06-24 00:00:00: signal=-1, entry_z=2.30
+2025-03-19 15:09:36,086 - risk.manager - INFO - Profit target reached at 2013-06-28 00:00:00: max PnL 0.0605
+2025-03-19 15:09:36,087 - risk.manager - INFO - New position at 2013-07-05 00:00:00: signal=-1, entry_z=2.22
+2025-03-19 15:09:36,088 - risk.manager - INFO - Position closed at 2013-07-08 00:00:00 (original signal)
+2025-03-19 15:09:36,089 - risk.manager - INFO - New position at 2013-08-26 00:00:00: signal=1, entry_z=-2.31
+2025-03-19 15:09:36,092 - risk.manager - INFO - Position closed at 2013-08-29 00:00:00 (original signal)
+2025-03-19 15:09:36,099 - risk.manager - INFO - New position at 2016-07-08 00:00:00: signal=1, entry_z=-2.35
+2025-03-19 15:09:36,100 - risk.manager - INFO - Position closed at 2016-07-12 00:00:00 (original signal)
+2025-03-19 15:09:36,101 - risk.manager - INFO - New position at 2016-07-13 00:00:00: signal=1, entry_z=-2.31
+2025-03-19 15:09:36,102 - risk.manager - INFO - Position closed at 2016-07-14 00:00:00 (original signal)
+2025-03-19 15:09:36,109 - risk.manager - INFO - New position at 2019-09-03 00:00:00: signal=1, entry_z=-2.55
+2025-03-19 15:09:36,110 - risk.manager - INFO - Position closed at 2019-09-05 00:00:00 (original signal)
+2025-03-19 15:09:36,112 - risk.manager - INFO - New position at 2020-03-16 00:00:00: signal=-1, entry_z=2.71
+2025-03-19 15:09:36,118 - risk.manager - INFO - Profit target reached at 2020-03-23 00:00:00: max PnL 0.0582
+2025-03-19 15:09:36,120 - risk.manager - INFO - New position at 2020-06-08 00:00:00: signal=1, entry_z=-2.22
+2025-03-19 15:09:36,120 - risk.manager - INFO - Position closed at 2020-06-09 00:00:00 (original signal)
+2025-03-19 15:09:36,122 - risk.manager - INFO - New position at 2020-07-20 00:00:00: signal=1, entry_z=-2.27
+2025-03-19 15:09:36,122 - risk.manager - INFO - Position closed at 2020-07-21 00:00:00 (original signal)
+2025-03-19 15:09:36,123 - risk.manager - INFO - New position at 2020-07-22 00:00:00: signal=1, entry_z=-2.82
+2025-03-19 15:09:36,130 - risk.manager - INFO - Position closed at 2020-07-30 00:00:00 (original signal)
+2025-03-19 15:09:36,131 - risk.manager - INFO - New position at 2020-07-31 00:00:00: signal=1, entry_z=-2.71
+2025-03-19 15:09:36,138 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.1357
+2025-03-19 15:09:36,139 - risk.manager - INFO - New position at 2020-08-13 00:00:00: signal=1, entry_z=-2.95
+2025-03-19 15:09:36,157 - risk.manager - INFO - Position closed at 2020-09-08 00:00:00 (original signal)
+2025-03-19 15:09:36,158 - risk.manager - INFO - New position at 2020-09-09 00:00:00: signal=1, entry_z=-2.23
+2025-03-19 15:09:36,159 - risk.manager - INFO - Position closed at 2020-09-10 00:00:00 (original signal)
+2025-03-19 15:09:36,165 - risk.manager - INFO - New position at 2022-12-14 00:00:00: signal=1, entry_z=-2.22
+2025-03-19 15:09:36,166 - risk.manager - INFO - Position closed at 2022-12-15 00:00:00 (original signal)
+2025-03-19 15:09:36,168 - strategy.enhanced - INFO - Backtesting strategy...
+2025-03-19 15:09:36,833 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('TLT', 'XLU'): Return=-0.2523, Sharpe=-0.2948, Drawdown=-0.3044, Transaction Costs=$13533.04
+2025-03-19 15:09:37,575 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XOP', 'USO'): Return=0.1998, Sharpe=0.1869, Drawdown=-0.1636, Transaction Costs=$22964.80
+2025-03-19 15:09:38,120 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XME', 'XRT'): Return=0.0286, Sharpe=0.0402, Drawdown=-0.2358, Transaction Costs=$8162.72
+2025-03-19 15:09:38,574 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'XLU'): Return=0.0610, Sharpe=0.1398, Drawdown=-0.0618, Transaction Costs=$7771.64
+2025-03-19 15:09:39,042 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XLV', 'XLB'): Return=0.0798, Sharpe=0.3362, Drawdown=-0.0319, Transaction Costs=$10016.22
+2025-03-19 15:09:39,597 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XLU', 'XLP'): Return=0.0640, Sharpe=0.2677, Drawdown=-0.0426, Transaction Costs=$11231.66
+2025-03-19 15:09:40,039 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XRT', 'XLF'): Return=-0.2468, Sharpe=-0.3301, Drawdown=-0.3010, Transaction Costs=$7798.22
+2025-03-19 15:09:40,695 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('XLV', 'FXE'): Return=0.1356, Sharpe=0.2276, Drawdown=-0.1363, Transaction Costs=$11086.07
+2025-03-19 15:09:41,360 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'GLD'): Return=-0.1348, Sharpe=-0.3435, Drawdown=-0.1530, Transaction Costs=$11579.90
+2025-03-19 15:09:41,920 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('IEF', 'XLU'): Return=0.0412, Sharpe=0.1027, Drawdown=-0.0824, Transaction Costs=$8050.66
+2025-03-19 15:09:42,428 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('FXY', 'XLU'): Return=0.1218, Sharpe=0.3007, Drawdown=-0.0708, Transaction Costs=$9293.70
+2025-03-19 15:09:42,895 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'XLP'): Return=0.1784, Sharpe=0.5340, Drawdown=-0.0410, Transaction Costs=$8030.69
+2025-03-19 15:09:43,566 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'FXE'): Return=0.0446, Sharpe=0.1155, Drawdown=-0.0822, Transaction Costs=$14051.27
+2025-03-19 15:09:44,104 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'XLV'): Return=0.2649, Sharpe=0.4274, Drawdown=-0.0673, Transaction Costs=$10826.62
+2025-03-19 15:09:44,803 - execution.simulator - INFO - Backtest results with twap execution and simple costs for ('SLV', 'SHY'): Return=0.0086, Sharpe=0.0230, Drawdown=-0.1144, Transaction Costs=$14633.10
+2025-03-19 15:09:44,803 - strategy.enhanced - INFO - Optimizing portfolio allocation...
+2025-03-19 15:09:44,804 - portfolio.allocator - WARNING - Error scaling weights to target vol: cannot access free variable 'cov_matrix' where it is not associated with a value in enclosing scope
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO - Allocation method: equal_weight
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('TLT', 'XLU'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XOP', 'USO'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XME', 'XRT'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'XLU'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XLV', 'XLB'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XLU', 'XLP'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XRT', 'XLF'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('XLV', 'FXE'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'GLD'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('IEF', 'XLU'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('FXY', 'XLU'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'XLP'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'FXE'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'XLV'): 0.0667
+2025-03-19 15:09:44,804 - portfolio.allocator - INFO -   ('SLV', 'SHY'): 0.0667
+2025-03-19 15:09:44,865 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-04-29 00:00:00, transaction cost: $0.00
+2025-03-19 15:09:44,866 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-04-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,900 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-06-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,923 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-07-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,935 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-08-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,947 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,957 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-10-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,968 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-11-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,980 - portfolio.optimizer - INFO - Rebalanced portfolio on 2010-12-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:44,990 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-01-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,000 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-02-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,012 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-03-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,023 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-04-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,034 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,045 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-06-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,056 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-07-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,068 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-08-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,079 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,090 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-10-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,101 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-11-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,112 - portfolio.optimizer - INFO - Rebalanced portfolio on 2011-12-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,123 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-01-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,133 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-02-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,145 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-03-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,155 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-04-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,166 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,177 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-06-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,188 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,200 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-08-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,210 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-09-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,221 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-10-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,232 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-11-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,242 - portfolio.optimizer - INFO - Rebalanced portfolio on 2012-12-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,253 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-01-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,263 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-02-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,284 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-04-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,295 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,305 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-06-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,316 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,328 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-08-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,338 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,350 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-10-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,360 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-11-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,371 - portfolio.optimizer - INFO - Rebalanced portfolio on 2013-12-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,382 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-01-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,392 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-02-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,402 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-03-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,413 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-04-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,424 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-05-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,435 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-06-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,446 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,457 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-08-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,468 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,480 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-10-31 00:00:00, transaction cost: $538.07
+2025-03-19 15:09:45,490 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-11-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,501 - portfolio.optimizer - INFO - Rebalanced portfolio on 2014-12-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,512 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-01-30 00:00:00, transaction cost: $546.99
+2025-03-19 15:09:45,522 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-02-27 00:00:00, transaction cost: $508.72
+2025-03-19 15:09:45,533 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-03-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,544 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-04-30 00:00:00, transaction cost: $505.25
+2025-03-19 15:09:45,554 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-05-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,565 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-06-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,577 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,588 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-08-31 00:00:00, transaction cost: $553.08
+2025-03-19 15:09:45,599 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,610 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-10-30 00:00:00, transaction cost: $525.24
+2025-03-19 15:09:45,620 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-11-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,631 - portfolio.optimizer - INFO - Rebalanced portfolio on 2015-12-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,641 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-01-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,651 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-02-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,662 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-03-31 00:00:00, transaction cost: $501.95
+2025-03-19 15:09:45,673 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-04-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,684 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,695 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-06-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,705 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-07-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,717 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-08-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,727 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-09-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,738 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-10-31 00:00:00, transaction cost: $563.30
+2025-03-19 15:09:45,748 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-11-30 00:00:00, transaction cost: $579.25
+2025-03-19 15:09:45,758 - portfolio.optimizer - INFO - Rebalanced portfolio on 2016-12-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,768 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-01-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,778 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-02-28 00:00:00, transaction cost: $510.56
+2025-03-19 15:09:45,789 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-03-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,799 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-04-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,810 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,821 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-06-30 00:00:00, transaction cost: $532.07
+2025-03-19 15:09:45,831 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,842 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-08-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,852 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-09-29 00:00:00, transaction cost: $515.75
+2025-03-19 15:09:45,863 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-10-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,874 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-11-30 00:00:00, transaction cost: $547.13
+2025-03-19 15:09:45,884 - portfolio.optimizer - INFO - Rebalanced portfolio on 2017-12-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,895 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-01-31 00:00:00, transaction cost: $551.54
+2025-03-19 15:09:45,904 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-02-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,925 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-04-30 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,936 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-05-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:45,946 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-06-29 00:00:00, transaction cost: $539.46
+2025-03-19 15:09:45,986 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-07-31 00:00:00, transaction cost: $578.23
+2025-03-19 15:09:45,998 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-08-31 00:00:00, transaction cost: $588.84
+2025-03-19 15:09:46,007 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-09-28 00:00:00, transaction cost: $501.80
+2025-03-19 15:09:46,019 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-10-31 00:00:00, transaction cost: $564.28
+2025-03-19 15:09:46,029 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-11-30 00:00:00, transaction cost: $634.12
+2025-03-19 15:09:46,039 - portfolio.optimizer - INFO - Rebalanced portfolio on 2018-12-31 00:00:00, transaction cost: $593.83
+2025-03-19 15:09:46,050 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-01-31 00:00:00, transaction cost: $526.74
+2025-03-19 15:09:46,059 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-02-28 00:00:00, transaction cost: $526.54
+2025-03-19 15:09:46,070 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-03-29 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:46,080 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-04-30 00:00:00, transaction cost: $517.90
+2025-03-19 15:09:46,092 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-05-31 00:00:00, transaction cost: $511.18
+2025-03-19 15:09:46,102 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-06-28 00:00:00, transaction cost: $575.76
+2025-03-19 15:09:46,113 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-07-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:46,124 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-08-30 00:00:00, transaction cost: $508.54
+2025-03-19 15:09:46,134 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-09-30 00:00:00, transaction cost: $536.63
+2025-03-19 15:09:46,145 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-10-31 00:00:00, transaction cost: $526.48
+2025-03-19 15:09:46,155 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-11-29 00:00:00, transaction cost: $549.76
+2025-03-19 15:09:46,166 - portfolio.optimizer - INFO - Rebalanced portfolio on 2019-12-31 00:00:00, transaction cost: $547.04
+2025-03-19 15:09:46,176 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-01-31 00:00:00, transaction cost: $570.87
+2025-03-19 15:09:46,186 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-02-28 00:00:00, transaction cost: $808.16
+2025-03-19 15:09:46,197 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-03-31 00:00:00, transaction cost: $1357.50
+2025-03-19 15:09:46,207 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-04-30 00:00:00, transaction cost: $1149.19
+2025-03-19 15:09:46,217 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-05-29 00:00:00, transaction cost: $1511.99
+2025-03-19 15:09:46,228 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-06-30 00:00:00, transaction cost: $753.52
+2025-03-19 15:09:46,239 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-07-31 00:00:00, transaction cost: $871.79
+2025-03-19 15:09:46,250 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-08-31 00:00:00, transaction cost: $751.50
+2025-03-19 15:09:46,260 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-09-30 00:00:00, transaction cost: $699.93
+2025-03-19 15:09:46,271 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-10-30 00:00:00, transaction cost: $626.79
+2025-03-19 15:09:46,281 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-11-30 00:00:00, transaction cost: $837.29
+2025-03-19 15:09:46,292 - portfolio.optimizer - INFO - Rebalanced portfolio on 2020-12-31 00:00:00, transaction cost: $551.38
+2025-03-19 15:09:46,302 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-01-29 00:00:00, transaction cost: $1514.20
+2025-03-19 15:09:46,312 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-02-26 00:00:00, transaction cost: $1571.34
+2025-03-19 15:09:46,323 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-03-31 00:00:00, transaction cost: $1357.23
+2025-03-19 15:09:46,334 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-04-30 00:00:00, transaction cost: $597.58
+2025-03-19 15:09:46,354 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-06-30 00:00:00, transaction cost: $969.37
+2025-03-19 15:09:46,364 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-07-30 00:00:00, transaction cost: $766.28
+2025-03-19 15:09:46,375 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-08-31 00:00:00, transaction cost: $703.75
+2025-03-19 15:09:46,386 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-09-30 00:00:00, transaction cost: $552.79
+2025-03-19 15:09:46,396 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-10-29 00:00:00, transaction cost: $629.98
+2025-03-19 15:09:46,407 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-11-30 00:00:00, transaction cost: $555.26
+2025-03-19 15:09:46,418 - portfolio.optimizer - INFO - Rebalanced portfolio on 2021-12-31 00:00:00, transaction cost: $1156.70
+2025-03-19 15:09:46,427 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-01-31 00:00:00, transaction cost: $897.21
+2025-03-19 15:09:46,437 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-02-28 00:00:00, transaction cost: $870.66
+2025-03-19 15:09:46,449 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-03-31 00:00:00, transaction cost: $1360.78
+2025-03-19 15:09:46,459 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-04-29 00:00:00, transaction cost: $819.45
+2025-03-19 15:09:46,469 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-05-31 00:00:00, transaction cost: $540.94
+2025-03-19 15:09:46,479 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-06-30 00:00:00, transaction cost: $820.82
+2025-03-19 15:09:46,490 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-07-29 00:00:00, transaction cost: $675.73
+2025-03-19 15:09:46,501 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-08-31 00:00:00, transaction cost: $668.51
+2025-03-19 15:09:46,512 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-09-30 00:00:00, transaction cost: $951.17
+2025-03-19 15:09:46,523 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-10-31 00:00:00, transaction cost: $658.32
+2025-03-19 15:09:46,533 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-11-30 00:00:00, transaction cost: $640.30
+2025-03-19 15:09:46,544 - portfolio.optimizer - INFO - Rebalanced portfolio on 2022-12-30 00:00:00, transaction cost: $784.65
+2025-03-19 15:09:46,555 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-01-31 00:00:00, transaction cost: $866.20
+2025-03-19 15:09:46,564 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-02-28 00:00:00, transaction cost: $628.64
+2025-03-19 15:09:46,576 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-03-31 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:46,585 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-04-28 00:00:00, transaction cost: $500.00
+2025-03-19 15:09:46,596 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-05-31 00:00:00, transaction cost: $537.98
+2025-03-19 15:09:46,607 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-06-30 00:00:00, transaction cost: $625.48
+2025-03-19 15:09:46,617 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-07-31 00:00:00, transaction cost: $726.85
+2025-03-19 15:09:46,628 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-08-31 00:00:00, transaction cost: $511.35
+2025-03-19 15:09:46,638 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-09-29 00:00:00, transaction cost: $824.75
+2025-03-19 15:09:46,649 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-10-31 00:00:00, transaction cost: $589.63
+2025-03-19 15:09:46,660 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-11-30 00:00:00, transaction cost: $583.47
+2025-03-19 15:09:46,669 - portfolio.optimizer - INFO - Rebalanced portfolio on 2023-12-29 00:00:00, transaction cost: $754.05
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - 
+Portfolio Performance Summary:
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Total Return: 16571.59%
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Annual Return: 45.40%
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Annual Volatility: 56.66%
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Sharpe Ratio: 0.80
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Max Drawdown: -2.67%
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Win Rate (daily): 53.05%
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Profit Factor: 8.47
+2025-03-19 15:09:46,675 - portfolio.optimizer - INFO - Positive Months: 161/165 (97.58%)
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - 
+Strategy Performance Summary:
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Total Return: 16571.59%
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Annual Return: 45.40%
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Annual Volatility: 56.66%
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Sharpe Ratio: 0.80
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Max Drawdown: -2.67%
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Calmar Ratio: 16.99
+2025-03-19 15:09:46,676 - EnhancedStatArb - INFO - Win Rate: 53.05%

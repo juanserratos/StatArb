@@ -281,7 +281,7 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                 return None
         
         # Initialize portfolio and positions
-        portfolio = pd.Series(index=aligned_data.index, data=initial_capital)
+        portfolio_df = pd.Series(index=aligned_data.index, data=initial_capital)
         positions = pd.DataFrame(index=aligned_data.index, columns=[stock1, stock2], data=0.0)
         cash = pd.Series(index=aligned_data.index, data=initial_capital)
         trades = []
@@ -315,7 +315,7 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
             stock1_return = aligned_data[stock1].iloc[i] / aligned_data[stock1].iloc[i-1] - 1
             stock2_return = aligned_data[stock2].iloc[i] / aligned_data[stock2].iloc[i-1] - 1
             
-            portfolio.iloc[i] = portfolio.iloc[i-1] + stock1_value * stock1_return + stock2_value * stock2_return
+            portfolio_df.iloc[i] = portfolio_df.iloc[i-1] + stock1_value * stock1_return + stock2_value * stock2_return
             cash.iloc[i] = cash.iloc[i-1]
             
             # Carry forward positions if no signal change
@@ -342,7 +342,7 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                         # Update cash (deduct trade value and costs)
                         trade_value = stock1_qty * stock1_price + stock2_qty * stock2_price
                         cash.iloc[i] -= trade_value + execution_cost
-                        portfolio.iloc[i] -= execution_cost
+                        portfolio_df.iloc[i] -= execution_cost
                         
                         trades.append({
                             'date': current_date,
@@ -363,7 +363,7 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                 if current_signal != 0:
                     # Determine position sizes
                     # Allocate 80% of current portfolio value
-                    allocation = portfolio.iloc[i] * 0.8
+                    allocation = portfolio_df.iloc[i] * 0.8
                     
                     if current_signal == 1:  # Long spread (short stock1, long stock2)
                         # Maintain dollar-neutral positions based on hedge ratio
@@ -429,7 +429,7 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                     # Update cash (deduct trade value and costs)
                     trade_value = stock1_qty * aligned_data[stock1].iloc[i] + stock2_qty * aligned_data[stock2].iloc[i]
                     cash.iloc[i] -= trade_value + execution_cost
-                    portfolio.iloc[i] -= execution_cost
+                    portfolio_df.iloc[i] -= execution_cost
                     
                     trades.append({
                         'date': current_date,
@@ -446,6 +446,9 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                     # TWAP execution: spread over 3 days
                     execution_days = 3
                     daily_ratio = 1.0 / execution_days
+                    
+                    # List to store execution rows
+                    new_execs = []
                     
                     for day in range(execution_days):
                         execution_date = aligned_data.index[min(i + day, len(aligned_data) - 1)]
@@ -505,20 +508,22 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                             
                             day_cost = day_spread_cost + day_commission + day_impact1 + day_impact2
                         
-                        # Add to pending executions
-                        new_exec = {
+                        # Add to new executions list
+                        new_execs.append({
                             'execution_date': execution_date,
                             'stock1_qty': day_stock1_qty,
                             'stock2_qty': day_stock2_qty,
                             'stock1_price': stock1_price,
                             'stock2_price': stock2_price,
                             'cost': day_cost
-                        }
-                        
-                        if pending_executions.empty:
-                            pending_executions = pd.DataFrame([new_exec])
-                        else:
-                            pending_executions = pending_executions.append(new_exec, ignore_index=True)
+                        })
+                    
+                    # Add new executions to pending executions
+                    if pending_executions.empty:
+                        pending_executions = pd.DataFrame(new_execs)
+                    else:
+                        # Use concat instead of append
+                        pending_executions = pd.concat([pending_executions, pd.DataFrame(new_execs)], ignore_index=True)
                 
                 elif execution_model == 'participation':
                     # Similar to TWAP but with market-adaptive execution speed
@@ -529,15 +534,15 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                     # Non-uniform distribution (front-loaded)
                     day_weights = [0.3, 0.25, 0.2, 0.15, 0.1]  # 30% day 1, 25% day 2, etc.
                     
+                    # List to store execution rows
+                    new_execs = []
+                    
                     for day in range(execution_days):
                         execution_date = aligned_data.index[min(i + day, len(aligned_data) - 1)]
                         
                         # Weighted fraction of order for this day
                         day_stock1_qty = stock1_qty * day_weights[day]
                         day_stock2_qty = stock2_qty * day_weights[day]
-                        
-                        # Similar price and cost logic as TWAP...
-                        # (Implementation would be similar to TWAP case above)
                         
                         # For brevity, reuse TWAP logic but with different weights
                         if i + day < len(aligned_data):
@@ -562,49 +567,51 @@ def backtest_with_realistic_execution(pair, signals, price_data, hedge_ratios=No
                         day_trade_value = abs(day_stock1_qty * stock1_price) + abs(day_stock2_qty * stock2_price)
                         day_cost = day_trade_value * 0.0006  # Slightly higher cost for participation
                         
-                        # Add to pending executions
-                        new_exec = {
+                        # Add to new executions list
+                        new_execs.append({
                             'execution_date': execution_date,
                             'stock1_qty': day_stock1_qty,
                             'stock2_qty': day_stock2_qty,
                             'stock1_price': stock1_price,
                             'stock2_price': stock2_price,
                             'cost': day_cost
-                        }
-                        
-                        if pending_executions.empty:
-                            pending_executions = pd.DataFrame([new_exec])
-                        else:
-                            pending_executions = pending_executions.append(new_exec, ignore_index=True)
+                        })
+                    
+                    # Add new executions to pending executions
+                    if pending_executions.empty:
+                        pending_executions = pd.DataFrame(new_execs)
+                    else:
+                        # Use concat instead of append
+                        pending_executions = pd.concat([pending_executions, pd.DataFrame(new_execs)], ignore_index=True)
             
             prev_signal = current_signal
         
         # Calculate returns
-        returns = portfolio.pct_change().fillna(0)
+        returns = portfolio_df.pct_change().fillna(0)
         
         # Calculate metrics
-        total_return = (portfolio.iloc[-1] / portfolio.iloc[0]) - 1
-        annual_return = ((1 + total_return) ** (252 / len(portfolio))) - 1
+        total_return = (portfolio_df.iloc[-1] / initial_capital) - 1
+        annual_return = ((1 + total_return) ** (252 / len(portfolio_df))) - 1
         daily_returns = returns[1:]  # Skip first day
         annual_volatility = daily_returns.std() * np.sqrt(252)
         sharpe_ratio = annual_return / annual_volatility if annual_volatility != 0 else 0
         
         # Maximum drawdown
-        running_max = portfolio.cummax()
-        drawdown = (portfolio / running_max) - 1
+        running_max = portfolio_df.cummax()
+        drawdown = (portfolio_df / running_max) - 1
         max_drawdown = drawdown.min()
         
         # Trade statistics
         trade_stats = {
             'total_trades': sum(t['action'] == 'immediate' for t in trades),
-            'avg_holding_period': len(portfolio) / (sum(t['action'] == 'immediate' for t in trades) + 1e-10),
+            'avg_holding_period': len(portfolio_df) / (sum(t['action'] == 'immediate' for t in trades) + 1e-10),
             'transaction_costs': sum(t.get('cost', 0) for t in trades)
         }
         
         # Results
         results = {
             'pair': pair,
-            'portfolio': portfolio,
+            'portfolio': portfolio_df,
             'positions': positions,
             'returns': returns,
             'trades': trades,

@@ -1,0 +1,454 @@
+2025-03-19 14:30:41,853 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:30:41,853 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, confidence=0.05, holding_period=20
+2025-03-19 14:30:41,853 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:30:41,853 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:30:41,853 - utils.helpers - INFO - Expanded universe from 20 to 32 tickers
+2025-03-19 14:30:41,853 - strategy.regime_switching - INFO - Fetching price data for 32 tickers from 2016-12-19 to 2023-12-31
+2025-03-19 14:30:42,253 - data.market_data - INFO - Successfully downloaded XRT data: 1769 rows
+2025-03-19 14:30:42,383 - data.market_data - INFO - Successfully downloaded FXY data: 1769 rows
+2025-03-19 14:30:42,554 - data.market_data - INFO - Successfully downloaded XLF data: 1769 rows
+2025-03-19 14:30:42,700 - data.market_data - INFO - Successfully downloaded FXE data: 1769 rows
+2025-03-19 14:30:42,867 - data.market_data - INFO - Successfully downloaded XLP data: 1769 rows
+2025-03-19 14:30:43,091 - data.market_data - INFO - Successfully downloaded XOP data: 1769 rows
+2025-03-19 14:30:43,229 - data.market_data - INFO - Successfully downloaded XME data: 1769 rows
+2025-03-19 14:30:43,397 - data.market_data - INFO - Successfully downloaded XLU data: 1769 rows
+2025-03-19 14:30:43,595 - data.market_data - INFO - Successfully downloaded XLE data: 1769 rows
+2025-03-19 14:30:43,717 - data.market_data - INFO - Successfully downloaded GLD data: 1769 rows
+2025-03-19 14:30:43,860 - data.market_data - INFO - Successfully downloaded SLV data: 1769 rows
+2025-03-19 14:30:44,044 - data.market_data - INFO - Successfully downloaded TLT data: 1769 rows
+2025-03-19 14:30:44,215 - data.market_data - INFO - Successfully downloaded DIA data: 1769 rows
+2025-03-19 14:30:44,329 - data.market_data - INFO - Successfully downloaded UUP data: 1769 rows
+2025-03-19 14:30:44,446 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 14:30:44,600 - data.market_data - INFO - Successfully downloaded KRE data: 1769 rows
+2025-03-19 14:30:44,818 - data.market_data - INFO - Successfully downloaded XLRE data: 1769 rows
+2025-03-19 14:30:44,990 - data.market_data - INFO - Successfully downloaded IEF data: 1769 rows
+2025-03-19 14:30:45,132 - data.market_data - INFO - Successfully downloaded XPH data: 1769 rows
+2025-03-19 14:30:45,286 - data.market_data - INFO - Successfully downloaded XLK data: 1769 rows
+2025-03-19 14:30:45,484 - data.market_data - INFO - Successfully downloaded SHY data: 1769 rows
+2025-03-19 14:30:45,637 - data.market_data - INFO - Successfully downloaded SPY data: 1769 rows
+2025-03-19 14:30:45,791 - data.market_data - INFO - Successfully downloaded XLY data: 1769 rows
+2025-03-19 14:30:45,946 - data.market_data - INFO - Successfully downloaded XLV data: 1769 rows
+2025-03-19 14:30:46,076 - data.market_data - INFO - Successfully downloaded XHB data: 1769 rows
+2025-03-19 14:30:46,233 - data.market_data - INFO - Successfully downloaded XLB data: 1769 rows
+2025-03-19 14:30:46,380 - data.market_data - INFO - Successfully downloaded XLI data: 1769 rows
+2025-03-19 14:30:46,530 - data.market_data - INFO - Successfully downloaded KBE data: 1769 rows
+2025-03-19 14:30:46,638 - data.market_data - INFO - Successfully downloaded USO data: 1769 rows
+2025-03-19 14:30:46,788 - data.market_data - INFO - Successfully downloaded QQQ data: 1769 rows
+2025-03-19 14:30:46,956 - data.market_data - INFO - Successfully downloaded IWM data: 1769 rows
+2025-03-19 14:30:47,113 - data.market_data - INFO - Successfully downloaded XBI data: 1769 rows
+2025-03-19 14:30:47,115 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/1592 valid points
+2025-03-19 14:30:47,117 - data.market_data - INFO - Successfully fetched data for 31/32 tickers
+2025-03-19 14:30:47,117 - data.market_data - INFO - Date range: 2016-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:30:47,117 - data.market_data - INFO - Data shape: (1769, 31)
+2025-03-19 14:30:47,117 - strategy.regime_switching - INFO - Successfully fetched data for 31/32 tickers
+2025-03-19 14:30:47,118 - strategy.regime_switching - INFO - Date range: 2018-01-02 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:30:47,118 - strategy.regime_switching - INFO - Data shape: (1509, 31)
+2025-03-19 14:30:47,118 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:30:47,120 - utils.helpers - INFO - Filtered universe from 31 to 31 tickers
+2025-03-19 14:30:47,120 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:30:47,120 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2016-12-19 to 2023-12-31
+2025-03-19 14:30:47,299 - data.market_data - INFO - Successfully downloaded ^VIX data: 1769 rows
+2025-03-19 14:30:47,404 - data.market_data - INFO - Successfully downloaded ^VVIX data: 1761 rows
+2025-03-19 14:30:47,546 - data.market_data - INFO - Successfully downloaded ^TNX data: 1769 rows
+2025-03-19 14:30:47,647 - data.market_data - INFO - Successfully downloaded ^TYX data: 1769 rows
+2025-03-19 14:30:47,752 - data.market_data - INFO - Successfully downloaded ^IRX data: 1769 rows
+2025-03-19 14:30:47,881 - data.market_data - INFO - Successfully downloaded ^FVX data: 1769 rows
+2025-03-19 14:30:48,042 - data.market_data - INFO - Successfully downloaded LQD data: 1769 rows
+2025-03-19 14:30:48,216 - data.market_data - INFO - Successfully downloaded HYG data: 1769 rows
+2025-03-19 14:30:48,245 - data.market_data - INFO - Successfully downloaded SPY data: 1769 rows
+2025-03-19 14:30:48,273 - data.market_data - INFO - Successfully downloaded QQQ data: 1769 rows
+2025-03-19 14:30:48,300 - data.market_data - INFO - Successfully downloaded IWM data: 1769 rows
+2025-03-19 14:30:48,329 - data.market_data - INFO - Successfully downloaded TLT data: 1769 rows
+2025-03-19 14:30:48,356 - data.market_data - INFO - Successfully downloaded IEF data: 1769 rows
+2025-03-19 14:30:48,384 - data.market_data - INFO - Successfully downloaded SHY data: 1769 rows
+2025-03-19 14:30:48,483 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 1769 rows
+2025-03-19 14:30:48,499 - data.market_data - INFO - Successfully downloaded UUP data: 1769 rows
+2025-03-19 14:30:48,512 - data.market_data - INFO - Successfully downloaded GLD data: 1769 rows
+2025-03-19 14:30:48,527 - data.market_data - INFO - Successfully downloaded USO data: 1769 rows
+2025-03-19 14:30:48,689 - data.market_data - INFO - Successfully downloaded BIL data: 1769 rows
+2025-03-19 14:30:48,691 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:30:48,691 - data.market_data - INFO - Date range: 2016-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:30:48,691 - data.market_data - INFO - Data shape: (1769, 19)
+2025-03-19 14:30:48,759 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (1509, 40)
+2025-03-19 14:30:48,759 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:30:48,760 - regime.macro_indicators - INFO - Detected market regime: bull_low_vol
+2025-03-19 14:30:48,760 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:30:48,760 - strategy.enhanced - INFO - Adapted parameters for bull_low_vol regime: {'z_entry': 2.5, 'z_exit': 0.7, 'holding_period': 15}
+2025-03-19 14:30:48,760 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:30:54,662 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:30:54,662 - pairs.selection - INFO - Unknown: 31 tickers
+2025-03-19 14:30:54,662 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:30:54,663 - pairs.selection - INFO - Testing 465 potential pairs with enhanced criteria...
+2025-03-19 14:30:54,767 - pairs.cointegration - INFO - Calculated half-life: 34.6787 days
+2025-03-19 14:30:54,778 - pairs.cointegration - INFO - Calculated half-life: 33.3885 days
+2025-03-19 14:30:54,804 - pairs.cointegration - INFO - Calculated half-life: 56.6175 days
+2025-03-19 14:30:54,810 - pairs.cointegration - INFO - Calculated half-life: 43.4117 days
+2025-03-19 14:30:54,822 - pairs.cointegration - INFO - Calculated half-life: 41.1389 days
+2025-03-19 14:30:54,855 - pairs.cointegration - INFO - Calculated half-life: 31.5089 days
+2025-03-19 14:30:54,894 - pairs.selection - INFO - Found 0 valid pairs after enhanced filtering
+2025-03-19 14:30:54,894 - strategy.enhanced - ERROR - No suitable pairs found
+2025-03-19 14:30:54,894 - EnhancedStatArb - ERROR - Strategy execution failed: No suitable pairs found
+2025-03-19 14:33:06,340 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:33:06,340 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, confidence=0.05, holding_period=20
+2025-03-19 14:33:06,340 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:33:06,340 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:33:06,340 - utils.helpers - INFO - Expanded universe from 20 to 32 tickers
+2025-03-19 14:33:06,340 - strategy.regime_switching - INFO - Fetching price data for 32 tickers from 2016-12-19 to 2023-12-31
+2025-03-19 14:33:06,670 - data.market_data - INFO - Successfully downloaded USO data: 1769 rows
+2025-03-19 14:33:06,833 - data.market_data - INFO - Successfully downloaded XLE data: 1769 rows
+2025-03-19 14:33:06,951 - data.market_data - INFO - Successfully downloaded FXY data: 1769 rows
+2025-03-19 14:33:07,079 - data.market_data - INFO - Successfully downloaded XBI data: 1769 rows
+2025-03-19 14:33:07,239 - data.market_data - INFO - Successfully downloaded SHY data: 1769 rows
+2025-03-19 14:33:07,437 - data.market_data - INFO - Successfully downloaded XME data: 1769 rows
+2025-03-19 14:33:07,606 - data.market_data - INFO - Successfully downloaded TLT data: 1769 rows
+2025-03-19 14:33:07,771 - data.market_data - INFO - Successfully downloaded XLI data: 1769 rows
+2025-03-19 14:33:07,977 - data.market_data - INFO - Successfully downloaded XOP data: 1769 rows
+2025-03-19 14:33:08,136 - data.market_data - INFO - Successfully downloaded FXE data: 1769 rows
+2025-03-19 14:33:08,251 - data.market_data - INFO - Successfully downloaded XLRE data: 1769 rows
+2025-03-19 14:33:08,390 - data.market_data - INFO - Successfully downloaded XPH data: 1769 rows
+2025-03-19 14:33:08,526 - data.market_data - INFO - Successfully downloaded XRT data: 1769 rows
+2025-03-19 14:33:08,626 - data.market_data - INFO - Successfully downloaded GLD data: 1769 rows
+2025-03-19 14:33:08,777 - data.market_data - INFO - Successfully downloaded SLV data: 1769 rows
+2025-03-19 14:33:08,939 - data.market_data - INFO - Successfully downloaded KBE data: 1769 rows
+2025-03-19 14:33:09,118 - data.market_data - INFO - Successfully downloaded DIA data: 1769 rows
+2025-03-19 14:33:09,280 - data.market_data - INFO - Successfully downloaded XLB data: 1769 rows
+2025-03-19 14:33:09,406 - data.market_data - INFO - Successfully downloaded UUP data: 1769 rows
+2025-03-19 14:33:09,572 - data.market_data - INFO - Successfully downloaded SPY data: 1769 rows
+2025-03-19 14:33:09,720 - data.market_data - INFO - Successfully downloaded IWM data: 1769 rows
+2025-03-19 14:33:09,874 - data.market_data - INFO - Successfully downloaded XLY data: 1769 rows
+2025-03-19 14:33:10,020 - data.market_data - INFO - Successfully downloaded XLP data: 1769 rows
+2025-03-19 14:33:10,126 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 14:33:10,353 - data.market_data - INFO - Successfully downloaded XLK data: 1769 rows
+2025-03-19 14:33:10,503 - data.market_data - INFO - Successfully downloaded QQQ data: 1769 rows
+2025-03-19 14:33:10,630 - data.market_data - INFO - Successfully downloaded XHB data: 1769 rows
+2025-03-19 14:33:10,781 - data.market_data - INFO - Successfully downloaded XLF data: 1769 rows
+2025-03-19 14:33:10,940 - data.market_data - INFO - Successfully downloaded IEF data: 1769 rows
+2025-03-19 14:33:11,097 - data.market_data - INFO - Successfully downloaded XLU data: 1769 rows
+2025-03-19 14:33:11,252 - data.market_data - INFO - Successfully downloaded KRE data: 1769 rows
+2025-03-19 14:33:11,414 - data.market_data - INFO - Successfully downloaded XLV data: 1769 rows
+2025-03-19 14:33:11,417 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/1592 valid points
+2025-03-19 14:33:11,418 - data.market_data - INFO - Successfully fetched data for 31/32 tickers
+2025-03-19 14:33:11,418 - data.market_data - INFO - Date range: 2016-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:11,418 - data.market_data - INFO - Data shape: (1769, 31)
+2025-03-19 14:33:11,419 - strategy.regime_switching - INFO - Successfully fetched data for 31/32 tickers
+2025-03-19 14:33:11,419 - strategy.regime_switching - INFO - Date range: 2018-01-02 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:11,419 - strategy.regime_switching - INFO - Data shape: (1509, 31)
+2025-03-19 14:33:11,419 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:33:11,422 - utils.helpers - INFO - Filtered universe from 31 to 31 tickers
+2025-03-19 14:33:11,423 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:33:11,423 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2016-12-19 to 2023-12-31
+2025-03-19 14:33:11,539 - data.market_data - INFO - Successfully downloaded ^VIX data: 1769 rows
+2025-03-19 14:33:11,645 - data.market_data - INFO - Successfully downloaded ^VVIX data: 1761 rows
+2025-03-19 14:33:11,779 - data.market_data - INFO - Successfully downloaded ^TNX data: 1769 rows
+2025-03-19 14:33:11,889 - data.market_data - INFO - Successfully downloaded ^TYX data: 1769 rows
+2025-03-19 14:33:11,992 - data.market_data - INFO - Successfully downloaded ^IRX data: 1769 rows
+2025-03-19 14:33:12,095 - data.market_data - INFO - Successfully downloaded ^FVX data: 1769 rows
+2025-03-19 14:33:12,285 - data.market_data - INFO - Successfully downloaded LQD data: 1769 rows
+2025-03-19 14:33:12,490 - data.market_data - INFO - Successfully downloaded HYG data: 1769 rows
+2025-03-19 14:33:12,516 - data.market_data - INFO - Successfully downloaded SPY data: 1769 rows
+2025-03-19 14:33:12,543 - data.market_data - INFO - Successfully downloaded QQQ data: 1769 rows
+2025-03-19 14:33:12,557 - data.market_data - INFO - Successfully downloaded IWM data: 1769 rows
+2025-03-19 14:33:12,572 - data.market_data - INFO - Successfully downloaded TLT data: 1769 rows
+2025-03-19 14:33:12,598 - data.market_data - INFO - Successfully downloaded IEF data: 1769 rows
+2025-03-19 14:33:12,623 - data.market_data - INFO - Successfully downloaded SHY data: 1769 rows
+2025-03-19 14:33:12,724 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 1769 rows
+2025-03-19 14:33:12,739 - data.market_data - INFO - Successfully downloaded UUP data: 1769 rows
+2025-03-19 14:33:12,752 - data.market_data - INFO - Successfully downloaded GLD data: 1769 rows
+2025-03-19 14:33:12,767 - data.market_data - INFO - Successfully downloaded USO data: 1769 rows
+2025-03-19 14:33:12,920 - data.market_data - INFO - Successfully downloaded BIL data: 1769 rows
+2025-03-19 14:33:12,922 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:33:12,922 - data.market_data - INFO - Date range: 2016-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:12,922 - data.market_data - INFO - Data shape: (1769, 19)
+2025-03-19 14:33:12,987 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (1509, 40)
+2025-03-19 14:33:12,988 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:33:12,988 - regime.macro_indicators - INFO - Detected market regime: bull_low_vol
+2025-03-19 14:33:12,988 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:33:12,988 - strategy.enhanced - INFO - Adapted parameters for bull_low_vol regime: {'z_entry': 2.5, 'z_exit': 0.7, 'holding_period': 15}
+2025-03-19 14:33:12,988 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:33:19,012 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:33:19,012 - pairs.selection - INFO - Unknown: 31 tickers
+2025-03-19 14:33:19,012 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:33:19,012 - pairs.selection - INFO - Testing 465 potential pairs with enhanced criteria...
+2025-03-19 14:33:19,053 - pairs.cointegration - INFO - Calculated half-life: 44.1952 days
+2025-03-19 14:33:19,070 - pairs.cointegration - INFO - Calculated half-life: 32.0768 days
+2025-03-19 14:33:19,075 - pairs.cointegration - INFO - Calculated half-life: 33.1779 days
+2025-03-19 14:33:19,174 - pairs.cointegration - INFO - Calculated half-life: 56.6177 days
+2025-03-19 14:33:19,240 - pairs.cointegration - INFO - Calculated half-life: 41.2889 days
+2025-03-19 14:33:19,285 - pairs.cointegration - INFO - Calculated half-life: 33.7826 days
+2025-03-19 14:33:19,317 - pairs.selection - INFO - Found 0 valid pairs after enhanced filtering
+2025-03-19 14:33:19,317 - strategy.enhanced - ERROR - No suitable pairs found
+2025-03-19 14:33:19,317 - EnhancedStatArb - ERROR - Strategy execution failed: No suitable pairs found
+2025-03-19 14:33:21,886 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:33:21,886 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, confidence=0.05, holding_period=20
+2025-03-19 14:33:21,886 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:33:21,886 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:33:21,886 - utils.helpers - INFO - Expanded universe from 33 to 33 tickers
+2025-03-19 14:33:21,886 - strategy.regime_switching - INFO - Fetching price data for 33 tickers from 2014-12-19 to 2023-12-31
+2025-03-19 14:33:22,246 - data.market_data - INFO - Successfully downloaded XLE data: 2272 rows
+2025-03-19 14:33:22,437 - data.market_data - INFO - Successfully downloaded XLY data: 2272 rows
+2025-03-19 14:33:22,582 - data.market_data - INFO - Successfully downloaded XOP data: 2272 rows
+2025-03-19 14:33:22,737 - data.market_data - INFO - Successfully downloaded IEF data: 2272 rows
+2025-03-19 14:33:22,881 - data.market_data - INFO - Successfully downloaded KBE data: 2272 rows
+2025-03-19 14:33:23,012 - data.market_data - INFO - Successfully downloaded GLD data: 2272 rows
+2025-03-19 14:33:23,168 - data.market_data - INFO - Successfully downloaded USO data: 2272 rows
+2025-03-19 14:33:23,347 - data.market_data - INFO - Successfully downloaded SPY data: 2272 rows
+2025-03-19 14:33:23,526 - data.market_data - INFO - Successfully downloaded XLP data: 2272 rows
+2025-03-19 14:33:23,702 - data.market_data - INFO - Successfully downloaded XLI data: 2272 rows
+2025-03-19 14:33:23,830 - data.market_data - INFO - Successfully downloaded XLK data: 2272 rows
+2025-03-19 14:33:23,980 - data.market_data - INFO - Successfully downloaded XLU data: 2272 rows
+2025-03-19 14:33:24,198 - data.market_data - INFO - Successfully downloaded XHB data: 2272 rows
+2025-03-19 14:33:24,360 - data.market_data - INFO - Successfully downloaded QQQ data: 2272 rows
+2025-03-19 14:33:24,521 - data.market_data - INFO - Successfully downloaded KRE data: 2272 rows
+2025-03-19 14:33:24,696 - data.market_data - INFO - Successfully downloaded TLT data: 2272 rows
+2025-03-19 14:33:24,845 - data.market_data - INFO - Successfully downloaded XME data: 2272 rows
+2025-03-19 14:33:25,068 - data.market_data - INFO - Successfully downloaded XPH data: 2272 rows
+2025-03-19 14:33:25,239 - data.market_data - INFO - Successfully downloaded XLV data: 2272 rows
+2025-03-19 14:33:25,386 - data.market_data - INFO - Successfully downloaded FXE data: 2272 rows
+2025-03-19 14:33:25,542 - data.market_data - INFO - Successfully downloaded XRT data: 2272 rows
+2025-03-19 14:33:25,700 - data.market_data - INFO - Successfully downloaded XBI data: 2272 rows
+2025-03-19 14:33:25,850 - data.market_data - INFO - Successfully downloaded XLF data: 2272 rows
+2025-03-19 14:33:25,955 - data.market_data - INFO - Successfully downloaded SLV data: 2272 rows
+2025-03-19 14:33:26,143 - data.market_data - INFO - Successfully downloaded DIA data: 2272 rows
+2025-03-19 14:33:26,323 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 14:33:26,465 - data.market_data - INFO - Successfully downloaded BIL data: 2272 rows
+2025-03-19 14:33:26,619 - data.market_data - INFO - Successfully downloaded IWM data: 2272 rows
+2025-03-19 14:33:26,744 - data.market_data - INFO - Successfully downloaded FXY data: 2272 rows
+2025-03-19 14:33:26,876 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 14:33:27,087 - data.market_data - INFO - Successfully downloaded SHY data: 2272 rows
+2025-03-19 14:33:27,266 - data.market_data - INFO - Successfully downloaded UUP data: 2272 rows
+2025-03-19 14:33:27,440 - data.market_data - INFO - Successfully downloaded XLB data: 2272 rows
+2025-03-19 14:33:27,443 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/2044 valid points
+2025-03-19 14:33:27,444 - data.market_data - INFO - Successfully fetched data for 32/33 tickers
+2025-03-19 14:33:27,444 - data.market_data - INFO - Date range: 2014-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:27,444 - data.market_data - INFO - Data shape: (2272, 32)
+2025-03-19 14:33:27,445 - strategy.regime_switching - INFO - Successfully fetched data for 32/33 tickers
+2025-03-19 14:33:27,445 - strategy.regime_switching - INFO - Date range: 2016-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:27,445 - strategy.regime_switching - INFO - Data shape: (2012, 32)
+2025-03-19 14:33:27,445 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:33:27,447 - utils.helpers - INFO - Filtered universe from 32 to 32 tickers
+2025-03-19 14:33:27,448 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:33:27,448 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2014-12-19 to 2023-12-31
+2025-03-19 14:33:27,564 - data.market_data - INFO - Successfully downloaded ^VIX data: 2272 rows
+2025-03-19 14:33:27,669 - data.market_data - INFO - Successfully downloaded ^VVIX data: 2264 rows
+2025-03-19 14:33:27,788 - data.market_data - INFO - Successfully downloaded ^TNX data: 2271 rows
+2025-03-19 14:33:27,897 - data.market_data - INFO - Successfully downloaded ^TYX data: 2271 rows
+2025-03-19 14:33:28,050 - data.market_data - INFO - Successfully downloaded ^IRX data: 2271 rows
+2025-03-19 14:33:28,202 - data.market_data - INFO - Successfully downloaded ^FVX data: 2271 rows
+2025-03-19 14:33:28,384 - data.market_data - INFO - Successfully downloaded LQD data: 2272 rows
+2025-03-19 14:33:28,552 - data.market_data - INFO - Successfully downloaded HYG data: 2272 rows
+2025-03-19 14:33:28,584 - data.market_data - INFO - Successfully downloaded SPY data: 2272 rows
+2025-03-19 14:33:28,613 - data.market_data - INFO - Successfully downloaded QQQ data: 2272 rows
+2025-03-19 14:33:28,640 - data.market_data - INFO - Successfully downloaded IWM data: 2272 rows
+2025-03-19 14:33:28,668 - data.market_data - INFO - Successfully downloaded TLT data: 2272 rows
+2025-03-19 14:33:28,697 - data.market_data - INFO - Successfully downloaded IEF data: 2272 rows
+2025-03-19 14:33:28,726 - data.market_data - INFO - Successfully downloaded SHY data: 2272 rows
+2025-03-19 14:33:28,838 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 2271 rows
+2025-03-19 14:33:28,865 - data.market_data - INFO - Successfully downloaded UUP data: 2272 rows
+2025-03-19 14:33:28,909 - data.market_data - INFO - Successfully downloaded GLD data: 2272 rows
+2025-03-19 14:33:28,935 - data.market_data - INFO - Successfully downloaded USO data: 2272 rows
+2025-03-19 14:33:28,964 - data.market_data - INFO - Successfully downloaded BIL data: 2272 rows
+2025-03-19 14:33:28,966 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:33:28,966 - data.market_data - INFO - Date range: 2014-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:28,966 - data.market_data - INFO - Data shape: (2272, 19)
+2025-03-19 14:33:29,050 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (2012, 40)
+2025-03-19 14:33:29,051 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:33:29,051 - regime.macro_indicators - INFO - Detected market regime: bull_low_vol
+2025-03-19 14:33:29,051 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:33:29,051 - strategy.enhanced - INFO - Adapted parameters for bull_low_vol regime: {'z_entry': 2.5, 'z_exit': 0.7, 'holding_period': 15}
+2025-03-19 14:33:29,051 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:33:35,076 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:33:35,077 - pairs.selection - INFO - Unknown: 32 tickers
+2025-03-19 14:33:35,077 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:33:35,077 - pairs.selection - INFO - Testing 496 potential pairs with enhanced criteria...
+2025-03-19 14:33:35,181 - pairs.cointegration - INFO - Calculated half-life: 31.5089 days
+2025-03-19 14:33:35,415 - pairs.cointegration - INFO - Calculated half-life: 33.1779 days
+2025-03-19 14:33:35,422 - pairs.cointegration - INFO - Calculated half-life: 44.1952 days
+2025-03-19 14:33:35,474 - pairs.cointegration - INFO - Calculated half-life: 34.6787 days
+2025-03-19 14:33:35,506 - pairs.cointegration - INFO - Calculated half-life: 56.6176 days
+2025-03-19 14:33:35,522 - pairs.cointegration - INFO - Calculated half-life: 41.2888 days
+2025-03-19 14:33:35,565 - pairs.selection - INFO - Found 0 valid pairs after enhanced filtering
+2025-03-19 14:33:35,565 - strategy.enhanced - ERROR - No suitable pairs found
+2025-03-19 14:33:35,565 - EnhancedStatArb - ERROR - Strategy execution failed: No suitable pairs found
+2025-03-19 14:33:53,309 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:33:53,309 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, confidence=0.05, holding_period=20
+2025-03-19 14:33:53,309 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:33:53,309 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:33:53,309 - utils.helpers - INFO - Expanded universe from 33 to 33 tickers
+2025-03-19 14:33:53,309 - strategy.regime_switching - INFO - Fetching price data for 33 tickers from 2014-12-19 to 2023-12-31
+2025-03-19 14:33:53,662 - data.market_data - INFO - Successfully downloaded XLK data: 2272 rows
+2025-03-19 14:33:53,835 - data.market_data - INFO - Successfully downloaded BIL data: 2272 rows
+2025-03-19 14:33:53,997 - data.market_data - INFO - Successfully downloaded FXE data: 2272 rows
+2025-03-19 14:33:54,148 - data.market_data - INFO - Successfully downloaded XLI data: 2272 rows
+2025-03-19 14:33:54,301 - data.market_data - INFO - Successfully downloaded KBE data: 2272 rows
+2025-03-19 14:33:54,506 - data.market_data - INFO - Successfully downloaded XME data: 2272 rows
+2025-03-19 14:33:54,699 - data.market_data - INFO - Successfully downloaded DIA data: 2272 rows
+2025-03-19 14:33:54,826 - data.market_data - INFO - Successfully downloaded KRE data: 2272 rows
+2025-03-19 14:33:55,039 - data.market_data - INFO - Successfully downloaded QQQ data: 2272 rows
+2025-03-19 14:33:55,218 - data.market_data - INFO - Successfully downloaded XPH data: 2272 rows
+2025-03-19 14:33:55,322 - data.market_data - INFO - Successfully downloaded SLV data: 2272 rows
+2025-03-19 14:33:55,527 - data.market_data - INFO - Successfully downloaded SPY data: 2272 rows
+2025-03-19 14:33:55,695 - data.market_data - INFO - Successfully downloaded XLP data: 2272 rows
+2025-03-19 14:33:55,835 - data.market_data - INFO - Successfully downloaded XBI data: 2272 rows
+2025-03-19 14:33:55,973 - data.market_data - INFO - Successfully downloaded IWM data: 2272 rows
+2025-03-19 14:33:56,090 - data.market_data - INFO - Successfully downloaded UUP data: 2272 rows
+2025-03-19 14:33:56,298 - data.market_data - INFO - Successfully downloaded USO data: 2272 rows
+2025-03-19 14:33:56,482 - data.market_data - INFO - Successfully downloaded SHY data: 2272 rows
+2025-03-19 14:33:56,598 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 14:33:56,756 - data.market_data - INFO - Successfully downloaded XRT data: 2272 rows
+2025-03-19 14:33:56,993 - data.market_data - INFO - Successfully downloaded XLV data: 2272 rows
+2025-03-19 14:33:57,207 - data.market_data - INFO - Successfully downloaded XHB data: 2272 rows
+2025-03-19 14:33:57,334 - data.market_data - INFO - Successfully downloaded FXY data: 2272 rows
+2025-03-19 14:33:57,474 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 14:33:57,717 - data.market_data - INFO - Successfully downloaded IEF data: 2272 rows
+2025-03-19 14:33:57,840 - data.market_data - INFO - Successfully downloaded GLD data: 2272 rows
+2025-03-19 14:33:57,983 - data.market_data - INFO - Successfully downloaded XLB data: 2272 rows
+2025-03-19 14:33:58,185 - data.market_data - INFO - Successfully downloaded XLF data: 2272 rows
+2025-03-19 14:33:58,404 - data.market_data - INFO - Successfully downloaded TLT data: 2272 rows
+2025-03-19 14:33:58,614 - data.market_data - INFO - Successfully downloaded XLU data: 2272 rows
+2025-03-19 14:33:58,765 - data.market_data - INFO - Successfully downloaded XLE data: 2272 rows
+2025-03-19 14:33:58,919 - data.market_data - INFO - Successfully downloaded XOP data: 2272 rows
+2025-03-19 14:33:59,125 - data.market_data - INFO - Successfully downloaded XLY data: 2272 rows
+2025-03-19 14:33:59,128 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/2044 valid points
+2025-03-19 14:33:59,129 - data.market_data - INFO - Successfully fetched data for 32/33 tickers
+2025-03-19 14:33:59,129 - data.market_data - INFO - Date range: 2014-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:59,129 - data.market_data - INFO - Data shape: (2272, 32)
+2025-03-19 14:33:59,130 - strategy.regime_switching - INFO - Successfully fetched data for 32/33 tickers
+2025-03-19 14:33:59,130 - strategy.regime_switching - INFO - Date range: 2016-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:33:59,130 - strategy.regime_switching - INFO - Data shape: (2012, 32)
+2025-03-19 14:33:59,130 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:33:59,133 - utils.helpers - INFO - Filtered universe from 32 to 32 tickers
+2025-03-19 14:33:59,134 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:33:59,134 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2014-12-19 to 2023-12-31
+2025-03-19 14:33:59,339 - data.market_data - INFO - Successfully downloaded ^VIX data: 2272 rows
+2025-03-19 14:33:59,438 - data.market_data - INFO - Successfully downloaded ^VVIX data: 2264 rows
+2025-03-19 14:33:59,891 - data.market_data - INFO - Successfully downloaded ^TNX data: 2271 rows
+2025-03-19 14:34:00,089 - data.market_data - INFO - Successfully downloaded ^TYX data: 2271 rows
+2025-03-19 14:34:00,215 - data.market_data - INFO - Successfully downloaded ^IRX data: 2271 rows
+2025-03-19 14:34:00,354 - data.market_data - INFO - Successfully downloaded ^FVX data: 2271 rows
+2025-03-19 14:34:00,557 - data.market_data - INFO - Successfully downloaded LQD data: 2272 rows
+2025-03-19 14:34:00,758 - data.market_data - INFO - Successfully downloaded HYG data: 2272 rows
+2025-03-19 14:34:00,787 - data.market_data - INFO - Successfully downloaded SPY data: 2272 rows
+2025-03-19 14:34:00,815 - data.market_data - INFO - Successfully downloaded QQQ data: 2272 rows
+2025-03-19 14:34:00,843 - data.market_data - INFO - Successfully downloaded IWM data: 2272 rows
+2025-03-19 14:34:00,871 - data.market_data - INFO - Successfully downloaded TLT data: 2272 rows
+2025-03-19 14:34:00,900 - data.market_data - INFO - Successfully downloaded IEF data: 2272 rows
+2025-03-19 14:34:00,926 - data.market_data - INFO - Successfully downloaded SHY data: 2272 rows
+2025-03-19 14:34:01,053 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 2271 rows
+2025-03-19 14:34:01,080 - data.market_data - INFO - Successfully downloaded UUP data: 2272 rows
+2025-03-19 14:34:01,095 - data.market_data - INFO - Successfully downloaded GLD data: 2272 rows
+2025-03-19 14:34:01,110 - data.market_data - INFO - Successfully downloaded USO data: 2272 rows
+2025-03-19 14:34:01,140 - data.market_data - INFO - Successfully downloaded BIL data: 2272 rows
+2025-03-19 14:34:01,141 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:34:01,141 - data.market_data - INFO - Date range: 2014-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:34:01,141 - data.market_data - INFO - Data shape: (2272, 19)
+2025-03-19 14:34:01,220 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (2012, 40)
+2025-03-19 14:34:01,221 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:34:01,221 - regime.macro_indicators - INFO - Detected market regime: bull_low_vol
+2025-03-19 14:34:01,221 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:34:01,221 - strategy.enhanced - INFO - Adapted parameters for bull_low_vol regime: {'z_entry': 2.5, 'z_exit': 0.7, 'holding_period': 15}
+2025-03-19 14:34:01,221 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:34:07,600 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:34:07,600 - pairs.selection - INFO - Unknown: 32 tickers
+2025-03-19 14:34:07,600 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:34:07,600 - pairs.selection - INFO - Testing 496 potential pairs with enhanced criteria...
+2025-03-19 14:34:07,851 - pairs.cointegration - INFO - Calculated half-life: 41.2889 days
+2025-03-19 14:34:07,913 - pairs.cointegration - INFO - Calculated half-life: 56.0807 days
+2025-03-19 14:34:07,917 - pairs.cointegration - INFO - Calculated half-life: 33.7827 days
+2025-03-19 14:34:07,923 - pairs.cointegration - INFO - Calculated half-life: 32.0768 days
+2025-03-19 14:34:07,927 - pairs.cointegration - INFO - Calculated half-life: 44.1952 days
+2025-03-19 14:34:07,932 - pairs.cointegration - INFO - Calculated half-life: 33.1779 days
+2025-03-19 14:34:07,963 - pairs.selection - INFO - Found 0 valid pairs after enhanced filtering
+2025-03-19 14:34:07,963 - strategy.enhanced - ERROR - No suitable pairs found
+2025-03-19 14:34:07,963 - EnhancedStatArb - ERROR - Strategy execution failed: No suitable pairs found
+2025-03-19 14:34:33,714 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:34:33,714 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, confidence=0.05, holding_period=20
+2025-03-19 14:34:33,714 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:34:33,714 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:34:33,714 - utils.helpers - INFO - Expanded universe from 33 to 33 tickers
+2025-03-19 14:34:33,714 - strategy.regime_switching - INFO - Fetching price data for 33 tickers from 2008-12-19 to 2023-12-31
+2025-03-19 14:34:34,080 - data.market_data - INFO - Successfully downloaded XLV data: 3782 rows
+2025-03-19 14:34:34,220 - data.market_data - INFO - Successfully downloaded FXY data: 3782 rows
+2025-03-19 14:34:34,399 - data.market_data - INFO - Successfully downloaded XME data: 3782 rows
+2025-03-19 14:34:34,614 - data.market_data - INFO - Successfully downloaded XLU data: 3782 rows
+2025-03-19 14:34:34,869 - data.market_data - INFO - Successfully downloaded KBE data: 3782 rows
+2025-03-19 14:34:35,081 - data.market_data - INFO - Successfully downloaded DIA data: 3782 rows
+2025-03-19 14:34:35,314 - data.market_data - INFO - Successfully downloaded XLY data: 3782 rows
+2025-03-19 14:34:35,524 - data.market_data - INFO - Successfully downloaded FXE data: 3782 rows
+2025-03-19 14:34:35,706 - data.market_data - INFO - Successfully downloaded XOP data: 3782 rows
+2025-03-19 14:34:35,835 - data.market_data - INFO - Successfully downloaded SLV data: 3782 rows
+2025-03-19 14:34:36,034 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 14:34:36,217 - data.market_data - INFO - Successfully downloaded XLK data: 3782 rows
+2025-03-19 14:34:36,489 - data.market_data - INFO - Successfully downloaded KRE data: 3782 rows
+2025-03-19 14:34:36,683 - data.market_data - INFO - Successfully downloaded XLE data: 3782 rows
+2025-03-19 14:34:36,888 - data.market_data - INFO - Successfully downloaded XPH data: 3782 rows
+2025-03-19 14:34:37,131 - data.market_data - INFO - Successfully downloaded BIL data: 3782 rows
+2025-03-19 14:34:37,335 - data.market_data - INFO - Successfully downloaded XLF data: 3782 rows
+2025-03-19 14:34:37,589 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 14:34:37,801 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 14:34:37,951 - data.market_data - INFO - Successfully downloaded XLRE data: 2071 rows
+2025-03-19 14:34:38,237 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 14:34:38,416 - data.market_data - INFO - Successfully downloaded XRT data: 3782 rows
+2025-03-19 14:34:38,575 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 14:34:38,785 - data.market_data - INFO - Successfully downloaded XHB data: 3782 rows
+2025-03-19 14:34:38,997 - data.market_data - INFO - Successfully downloaded XBI data: 3782 rows
+2025-03-19 14:34:39,176 - data.market_data - INFO - Successfully downloaded XLP data: 3782 rows
+2025-03-19 14:34:39,389 - data.market_data - INFO - Successfully downloaded XLB data: 3782 rows
+2025-03-19 14:34:39,634 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 14:34:39,837 - data.market_data - INFO - Successfully downloaded XLI data: 3782 rows
+2025-03-19 14:34:40,012 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 14:34:40,154 - data.market_data - INFO - Successfully downloaded VXX data: 1493 rows
+2025-03-19 14:34:40,380 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 14:34:40,627 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 14:34:40,629 - data.market_data - WARNING - Dropping XLRE due to insufficient data: 2071/3403 valid points
+2025-03-19 14:34:40,630 - data.market_data - WARNING - Dropping VXX due to insufficient data: 1493/3403 valid points
+2025-03-19 14:34:40,631 - data.market_data - INFO - Successfully fetched data for 31/33 tickers
+2025-03-19 14:34:40,631 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:34:40,631 - data.market_data - INFO - Data shape: (3782, 31)
+2025-03-19 14:34:40,632 - strategy.regime_switching - INFO - Successfully fetched data for 31/33 tickers
+2025-03-19 14:34:40,632 - strategy.regime_switching - INFO - Date range: 2010-01-04 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:34:40,632 - strategy.regime_switching - INFO - Data shape: (3522, 31)
+2025-03-19 14:34:40,632 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:34:40,634 - utils.helpers - INFO - Filtered universe from 31 to 31 tickers
+2025-03-19 14:34:40,635 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:34:40,635 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2008-12-19 to 2023-12-31
+2025-03-19 14:34:40,797 - data.market_data - INFO - Successfully downloaded ^VIX data: 3782 rows
+2025-03-19 14:34:40,926 - data.market_data - INFO - Successfully downloaded ^VVIX data: 3773 rows
+2025-03-19 14:34:41,084 - data.market_data - INFO - Successfully downloaded ^TNX data: 3780 rows
+2025-03-19 14:34:41,302 - data.market_data - INFO - Successfully downloaded ^TYX data: 3780 rows
+2025-03-19 14:34:41,452 - data.market_data - INFO - Successfully downloaded ^IRX data: 3780 rows
+2025-03-19 14:34:41,616 - data.market_data - INFO - Successfully downloaded ^FVX data: 3780 rows
+2025-03-19 14:34:41,882 - data.market_data - INFO - Successfully downloaded LQD data: 3782 rows
+2025-03-19 14:34:42,048 - data.market_data - INFO - Successfully downloaded HYG data: 3782 rows
+2025-03-19 14:34:42,082 - data.market_data - INFO - Successfully downloaded SPY data: 3782 rows
+2025-03-19 14:34:42,113 - data.market_data - INFO - Successfully downloaded QQQ data: 3782 rows
+2025-03-19 14:34:42,144 - data.market_data - INFO - Successfully downloaded IWM data: 3782 rows
+2025-03-19 14:34:42,178 - data.market_data - INFO - Successfully downloaded TLT data: 3782 rows
+2025-03-19 14:34:42,211 - data.market_data - INFO - Successfully downloaded IEF data: 3782 rows
+2025-03-19 14:34:42,243 - data.market_data - INFO - Successfully downloaded SHY data: 3782 rows
+2025-03-19 14:34:42,413 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 3781 rows
+2025-03-19 14:34:42,442 - data.market_data - INFO - Successfully downloaded UUP data: 3782 rows
+2025-03-19 14:34:42,471 - data.market_data - INFO - Successfully downloaded GLD data: 3782 rows
+2025-03-19 14:34:42,498 - data.market_data - INFO - Successfully downloaded USO data: 3782 rows
+2025-03-19 14:34:42,530 - data.market_data - INFO - Successfully downloaded BIL data: 3782 rows
+2025-03-19 14:34:42,531 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:34:42,531 - data.market_data - INFO - Date range: 2008-12-19 00:00:00 to 2023-12-29 00:00:00
+2025-03-19 14:34:42,532 - data.market_data - INFO - Data shape: (3782, 19)
+2025-03-19 14:34:42,683 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (3522, 40)
+2025-03-19 14:34:42,684 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:34:42,684 - regime.macro_indicators - INFO - Detected market regime: bull_low_vol
+2025-03-19 14:34:42,684 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:34:42,684 - strategy.enhanced - INFO - Adapted parameters for bull_low_vol regime: {'z_entry': 2.5, 'z_exit': 0.7, 'holding_period': 15}
+2025-03-19 14:34:42,684 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:34:48,527 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:34:48,527 - pairs.selection - INFO - Unknown: 31 tickers
+2025-03-19 14:34:48,527 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:34:48,527 - pairs.selection - INFO - Testing 465 potential pairs with enhanced criteria...
+2025-03-19 14:34:48,613 - pairs.cointegration - INFO - Calculated half-life: 33.3885 days
+2025-03-19 14:34:48,619 - pairs.cointegration - INFO - Calculated half-life: 34.6787 days
+2025-03-19 14:34:48,781 - pairs.cointegration - INFO - Calculated half-life: 41.2889 days
+2025-03-19 14:34:48,800 - pairs.cointegration - INFO - Calculated half-life: 43.4118 days
+2025-03-19 14:34:48,805 - pairs.cointegration - INFO - Calculated half-life: 56.6177 days
+2025-03-19 14:34:48,810 - pairs.cointegration - INFO - Calculated half-life: 31.5089 days
+2025-03-19 14:34:48,850 - pairs.selection - INFO - Found 0 valid pairs after enhanced filtering
+2025-03-19 14:34:48,850 - strategy.enhanced - ERROR - No suitable pairs found
+2025-03-19 14:34:48,850 - EnhancedStatArb - ERROR - Strategy execution failed: No suitable pairs found

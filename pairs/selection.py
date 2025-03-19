@@ -59,6 +59,14 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
     keys = price_data.keys()
     all_pairs = []
     
+    # Add counters for debugging
+    total_pairs = n * (n - 1) // 2
+    half_life_count = 0
+    coint_count = 0
+    corr_count = 0
+    beta_count = 0
+    stationary_count = 0
+    
     pair_count = n * (n - 1) // 2
     logger.info(f"Testing {pair_count} potential pairs with enhanced criteria...")
     
@@ -109,9 +117,13 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                 # Calculate correlation
                 correlation = recent_data[keys[i]].corr(recent_data[keys[j]])
                 
-                # Skip pairs with positive correlation above threshold if enabled
+                # Check correlation filter
+                pass_correlation = True
                 if correlation_filter and correlation > min_correlation:
-                    continue
+                    pass_correlation = False
+                
+                if pass_correlation or not correlation_filter:
+                    corr_count += 1
                 
                 # Cointegration test
                 is_cointegrated = False
@@ -133,6 +145,9 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                     _, pvalue, _ = coint(recent_data[keys[i]], recent_data[keys[j]])
                     is_cointegrated = pvalue < pvalue_threshold
                 
+                if is_cointegrated:
+                    coint_count += 1
+                
                 if not is_cointegrated:
                     continue
                 
@@ -146,6 +161,9 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                 # Calculate half-life of mean reversion
                 half_life = calculate_half_life(spread)
                 
+                if half_life is not None:
+                    half_life_count += 1
+                
                 # Skip pairs with half-life outside desired range
                 if half_life is None or half_life < min_half_life or half_life > max_half_life:
                     continue
@@ -155,6 +173,9 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                 adf_pvalue = adf_result[1]
                 is_stationary = adf_pvalue < 0.05
                 
+                if is_stationary:
+                    stationary_count += 1
+                
                 # Calculate volatility ratio
                 vol_i = recent_data[keys[i]].pct_change().std()
                 vol_j = recent_data[keys[j]].pct_change().std()
@@ -162,6 +183,8 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                 
                 # Beta neutrality check if enabled
                 beta_neutral_score = 1.0
+                pass_beta_neutral = True
+                
                 if beta_neutral and market_betas is not None:
                     if keys[i] in market_betas and keys[j] in market_betas:
                         beta_i = market_betas[keys[i]]
@@ -182,6 +205,15 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                         
                         # Score based on beta neutrality (lower is better)
                         beta_neutral_score = 1.0 / (1.0 + net_beta_exposure)
+                        
+                        # Apply threshold for beta neutrality (arbitrary threshold of 0.3)
+                        if beta_neutral_score < 0.3:
+                            pass_beta_neutral = False
+                    else:
+                        pass_beta_neutral = False
+                
+                if pass_beta_neutral or not beta_neutral:
+                    beta_count += 1
                 
                 # Sector relationship check
                 same_sector = False
@@ -194,12 +226,12 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
                         sector_bonus = 1.5  # Bonus for same-sector pairs
                 
                 # Calculate an overall score (lower is better)
-                # Combine multiple factors with appropriate weights
-                if is_cointegrated and is_stationary:
+                # Only add pairs that pass all criteria
+                if is_cointegrated and is_stationary and (pass_correlation or not correlation_filter) and (pass_beta_neutral or not beta_neutral):
                     # Factors: p-value, half-life, volatility ratio, correlation, beta neutrality
                     half_life_score = min(1.0, abs(half_life - 30) / 30)  # Prefer half-life around 30 days
                     vol_score = 1.0 - vol_ratio  # Prefer similar volatility
-                    corr_score = min(1.0, abs(correlation + 0.7) / 0.7)  # Prefer correlation around -0.7
+                    corr_score = min(1.0, abs(correlation + 0.7) / 0.7) if correlation_filter else 0.5  # Prefer correlation around -0.7
                     
                     # Combined score (lower is better)
                     score = (
@@ -230,6 +262,18 @@ def find_enhanced_pairs(price_data, lookback=252, min_half_life=5, max_half_life
     all_pairs.sort(key=lambda x: x['score'])
     
     logger.info(f"Found {len(all_pairs)} valid pairs after enhanced filtering")
+    
+    # Add more debug info
+    if len(all_pairs) == 0:
+        logger.warning("No pairs passed all criteria. Debug information:")
+        logger.warning(f"- Total pairs tested: {total_pairs}")
+        logger.warning(f"- Pairs with valid half-life ({min_half_life}-{max_half_life} days): {half_life_count}")
+        logger.warning(f"- Pairs with cointegration p-value < {pvalue_threshold}: {coint_count}")
+        logger.warning(f"- Pairs with stationarity: {stationary_count}")
+        if correlation_filter:
+            logger.warning(f"- Pairs with correlation < {min_correlation}: {corr_count}")
+        if beta_neutral:
+            logger.warning(f"- Pairs with beta neutrality: {beta_count}")
     
     # Log top pairs
     for i, p in enumerate(all_pairs[:10]):

@@ -1,0 +1,522 @@
+2025-03-19 14:09:59,290 - strategy.base - INFO - Initialized EnhancedRegimeSwitchingStatArb
+2025-03-19 14:09:59,290 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, confidence=0.05, holding_period=20
+2025-03-19 14:09:59,290 - strategy.enhanced - INFO - Enhanced strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=3, min_half_life=5, volatility_scaling=True, cost_model=advanced
+2025-03-19 14:09:59,290 - utils.helpers - INFO - Expanded universe from 10 to 32 tickers
+2025-03-19 14:09:59,290 - strategy.enhanced - INFO - Fetching price data...
+2025-03-19 14:09:59,290 - utils.helpers - INFO - Expanded universe from 32 to 32 tickers
+2025-03-19 14:09:59,291 - strategy.regime_switching - INFO - Fetching price data for 32 tickers from 2019-03-08 to 2025-03-19
+2025-03-19 14:09:59,684 - data.market_data - INFO - Successfully downloaded XOP data: 1516 rows
+2025-03-19 14:09:59,921 - data.market_data - INFO - Successfully downloaded XLP data: 1516 rows
+2025-03-19 14:10:00,069 - data.market_data - INFO - Successfully downloaded XHB data: 1516 rows
+2025-03-19 14:10:00,208 - data.market_data - INFO - Successfully downloaded XRT data: 1516 rows
+2025-03-19 14:10:00,374 - data.market_data - INFO - Successfully downloaded IEF data: 1516 rows
+2025-03-19 14:10:00,551 - data.market_data - INFO - Successfully downloaded XLU data: 1516 rows
+2025-03-19 14:10:00,730 - data.market_data - INFO - Successfully downloaded SHY data: 1516 rows
+2025-03-19 14:10:00,858 - data.market_data - INFO - Successfully downloaded IWM data: 1516 rows
+2025-03-19 14:10:01,047 - data.market_data - INFO - Successfully downloaded UUP data: 1516 rows
+2025-03-19 14:10:01,244 - data.market_data - INFO - Successfully downloaded XBI data: 1516 rows
+2025-03-19 14:10:01,400 - data.market_data - INFO - Successfully downloaded SPY data: 1516 rows
+2025-03-19 14:10:01,571 - data.market_data - INFO - Successfully downloaded SLV data: 1516 rows
+2025-03-19 14:10:01,716 - data.market_data - INFO - Successfully downloaded QQQ data: 1516 rows
+2025-03-19 14:10:01,928 - data.market_data - INFO - Successfully downloaded KRE data: 1516 rows
+2025-03-19 14:10:02,156 - data.market_data - INFO - Successfully downloaded XLB data: 1516 rows
+2025-03-19 14:10:02,348 - data.market_data - INFO - Successfully downloaded XLV data: 1516 rows
+2025-03-19 14:10:02,438 - data.market_data - INFO - Successfully downloaded GLD data: 1516 rows
+2025-03-19 14:10:02,564 - data.market_data - INFO - Successfully downloaded XPH data: 1516 rows
+2025-03-19 14:10:02,732 - data.market_data - INFO - Successfully downloaded XME data: 1516 rows
+2025-03-19 14:10:02,900 - data.market_data - INFO - Successfully downloaded KBE data: 1516 rows
+2025-03-19 14:10:03,113 - data.market_data - INFO - Successfully downloaded XLY data: 1516 rows
+2025-03-19 14:10:03,241 - data.market_data - INFO - Successfully downloaded XLK data: 1516 rows
+2025-03-19 14:10:03,343 - data.market_data - INFO - Successfully downloaded VXX data: 1516 rows
+2025-03-19 14:10:03,498 - data.market_data - INFO - Successfully downloaded XLE data: 1516 rows
+2025-03-19 14:10:03,604 - data.market_data - INFO - Successfully downloaded USO data: 1516 rows
+2025-03-19 14:10:03,785 - data.market_data - INFO - Successfully downloaded TLT data: 1516 rows
+2025-03-19 14:10:03,921 - data.market_data - INFO - Successfully downloaded XLF data: 1516 rows
+2025-03-19 14:10:04,039 - data.market_data - INFO - Successfully downloaded FXY data: 1516 rows
+2025-03-19 14:10:04,189 - data.market_data - INFO - Successfully downloaded XLI data: 1516 rows
+2025-03-19 14:10:04,318 - data.market_data - INFO - Successfully downloaded XLRE data: 1516 rows
+2025-03-19 14:10:04,461 - data.market_data - INFO - Successfully downloaded FXE data: 1516 rows
+2025-03-19 14:10:04,737 - data.market_data - INFO - Successfully downloaded DIA data: 1516 rows
+2025-03-19 14:10:04,741 - data.market_data - INFO - Successfully fetched data for 32/32 tickers
+2025-03-19 14:10:04,741 - data.market_data - INFO - Date range: 2019-03-08 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 14:10:04,741 - data.market_data - INFO - Data shape: (1516, 32)
+2025-03-19 14:10:04,742 - strategy.regime_switching - INFO - Successfully fetched data for 32/32 tickers
+2025-03-19 14:10:04,742 - strategy.regime_switching - INFO - Date range: 2020-03-20 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 14:10:04,742 - strategy.regime_switching - INFO - Data shape: (1255, 32)
+2025-03-19 14:10:04,742 - strategy.enhanced - INFO - Filtering universe...
+2025-03-19 14:10:04,745 - utils.helpers - INFO - Filtered universe from 32 to 32 tickers
+2025-03-19 14:10:04,745 - strategy.enhanced - INFO - Fetching macroeconomic data...
+2025-03-19 14:10:04,745 - regime.macro_indicators - INFO - Fetching enhanced macroeconomic data from 2019-03-08 to 2025-03-19
+2025-03-19 14:10:04,864 - data.market_data - INFO - Successfully downloaded ^VIX data: 1516 rows
+2025-03-19 14:10:04,965 - data.market_data - INFO - Successfully downloaded ^VVIX data: 1508 rows
+2025-03-19 14:10:05,083 - data.market_data - INFO - Successfully downloaded ^TNX data: 1516 rows
+2025-03-19 14:10:05,262 - data.market_data - INFO - Successfully downloaded ^TYX data: 1516 rows
+2025-03-19 14:10:05,365 - data.market_data - INFO - Successfully downloaded ^IRX data: 1516 rows
+2025-03-19 14:10:05,481 - data.market_data - INFO - Successfully downloaded ^FVX data: 1516 rows
+2025-03-19 14:10:05,664 - data.market_data - INFO - Successfully downloaded LQD data: 1516 rows
+2025-03-19 14:10:05,829 - data.market_data - INFO - Successfully downloaded HYG data: 1516 rows
+2025-03-19 14:10:05,859 - data.market_data - INFO - Successfully downloaded SPY data: 1516 rows
+2025-03-19 14:10:05,887 - data.market_data - INFO - Successfully downloaded QQQ data: 1516 rows
+2025-03-19 14:10:05,901 - data.market_data - INFO - Successfully downloaded IWM data: 1516 rows
+2025-03-19 14:10:05,928 - data.market_data - INFO - Successfully downloaded TLT data: 1516 rows
+2025-03-19 14:10:05,943 - data.market_data - INFO - Successfully downloaded IEF data: 1516 rows
+2025-03-19 14:10:05,971 - data.market_data - INFO - Successfully downloaded SHY data: 1516 rows
+2025-03-19 14:10:06,076 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 1517 rows
+2025-03-19 14:10:06,091 - data.market_data - INFO - Successfully downloaded UUP data: 1516 rows
+2025-03-19 14:10:06,104 - data.market_data - INFO - Successfully downloaded GLD data: 1516 rows
+2025-03-19 14:10:06,119 - data.market_data - INFO - Successfully downloaded USO data: 1516 rows
+2025-03-19 14:10:06,260 - data.market_data - INFO - Successfully downloaded BIL data: 1516 rows
+2025-03-19 14:10:06,262 - data.market_data - INFO - Successfully fetched data for 19/19 tickers
+2025-03-19 14:10:06,262 - data.market_data - INFO - Date range: 2019-03-08 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 14:10:06,262 - data.market_data - INFO - Data shape: (1516, 19)
+2025-03-19 14:10:06,318 - regime.macro_indicators - INFO - Calculated enhanced macro features, shape: (1255, 40)
+2025-03-19 14:10:06,319 - strategy.enhanced - INFO - Detecting market regime...
+2025-03-19 14:10:06,319 - regime.macro_indicators - INFO - Detected market regime: bear_high_vol
+2025-03-19 14:10:06,319 - strategy.enhanced - INFO - Adapting parameters to market regime...
+2025-03-19 14:10:06,319 - strategy.enhanced - INFO - Adapted parameters for bear_high_vol regime: {'z_entry': 1.5, 'z_exit': 0.4, 'holding_period': 8}
+2025-03-19 14:10:06,319 - strategy.enhanced - INFO - Getting sector information...
+2025-03-19 14:10:12,482 - pairs.selection - INFO - Sector distribution:
+2025-03-19 14:10:12,482 - pairs.selection - INFO - Unknown: 32 tickers
+2025-03-19 14:10:12,482 - strategy.enhanced - INFO - Finding cointegrated pairs with enhanced criteria...
+2025-03-19 14:10:12,482 - pairs.selection - INFO - Testing 496 potential pairs with enhanced criteria...
+2025-03-19 14:10:12,517 - pairs.cointegration - INFO - Calculated half-life: 43.1608 days
+2025-03-19 14:10:12,533 - pairs.cointegration - INFO - Calculated half-life: 36.9836 days
+2025-03-19 14:10:12,546 - pairs.cointegration - INFO - Calculated half-life: 67.5546 days
+2025-03-19 14:10:12,558 - pairs.cointegration - INFO - Calculated half-life: 36.9871 days
+2025-03-19 14:10:12,581 - pairs.cointegration - INFO - Calculated half-life: 36.3027 days
+2025-03-19 14:10:12,612 - pairs.cointegration - INFO - Calculated half-life: 72.8189 days
+2025-03-19 14:10:12,632 - pairs.cointegration - INFO - Calculated half-life: 21.9139 days
+2025-03-19 14:10:12,659 - pairs.cointegration - INFO - Calculated half-life: 7.2612 days
+2025-03-19 14:10:12,684 - pairs.cointegration - INFO - Calculated half-life: 35.0607 days
+2025-03-19 14:10:12,735 - pairs.cointegration - INFO - Calculated half-life: 7.9077 days
+2025-03-19 14:10:12,763 - pairs.cointegration - INFO - Calculated half-life: 8.3194 days
+2025-03-19 14:10:12,793 - pairs.cointegration - INFO - Calculated half-life: 25.5764 days
+2025-03-19 14:10:12,807 - pairs.cointegration - INFO - Calculated half-life: 7.6561 days
+2025-03-19 14:10:12,819 - pairs.cointegration - INFO - Calculated half-life: 34.9932 days
+2025-03-19 14:10:12,827 - pairs.selection - INFO - Found 4 valid pairs after enhanced filtering
+2025-03-19 14:10:12,827 - pairs.selection - INFO - Pair 1: XLK-VXX, Score: 0.2849, Half-life: 7.7, Correlation: -0.674, Same Sector: True
+2025-03-19 14:10:12,828 - pairs.selection - INFO - Pair 2: QQQ-VXX, Score: 0.2875, Half-life: 8.3, Correlation: -0.613, Same Sector: True
+2025-03-19 14:10:12,828 - pairs.selection - INFO - Pair 3: SPY-VXX, Score: 0.3025, Half-life: 7.9, Correlation: -0.514, Same Sector: True
+2025-03-19 14:10:12,828 - pairs.selection - INFO - Pair 4: XRT-VXX, Score: 0.3127, Half-life: 7.3, Correlation: -0.576, Same Sector: True
+2025-03-19 14:10:12,828 - strategy.enhanced - INFO - Generating trading signals...
+2025-03-19 14:10:12,828 - strategy.enhanced - INFO - Generating enhanced signals for 4 pairs
+2025-03-19 14:10:12,973 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XLK', 'VXX'): mean=3.9720, std=5.7017
+2025-03-19 14:10:12,975 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 14:10:12,979 - regime.detector - INFO - Reduced features from 18 to 11 using PCA
+2025-03-19 14:10:13,304 - hmmlearn.base - WARNING - Model is not converging.  Current: -11552.549299778198 is not greater than -11552.518704745724. Delta is -0.03059503247459361
+2025-03-19 14:10:16,383 - regime.detector - INFO - Best HMM model: 3 regimes with full covariance
+2025-03-19 14:10:16,384 - regime.detector - INFO - Low (0): mean=-190.8930, std=173.2474, proportion=0.31
+2025-03-19 14:10:16,384 - regime.detector - INFO - High (1): mean=-1.0119, std=52.8101, proportion=0.32
+2025-03-19 14:10:16,384 - regime.detector - INFO - Medium (2): mean=-25.6427, std=26.1290, proportion=0.37
+2025-03-19 14:10:16,389 - regime.detector - INFO - Regime Low (0) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:16,391 - regime.detector - INFO - Regime High (1) parameters: z_entry=2.00, z_exit=0.50
+2025-03-19 14:10:16,392 - regime.detector - INFO - Regime Medium (2) parameters: z_entry=1.00, z_exit=0.30
+2025-03-19 14:10:16,414 - risk.manager - INFO - New position at 2020-07-17 00:00:00: signal=1, entry_z=-1.68
+2025-03-19 14:10:16,418 - risk.manager - INFO - Profit target reached at 2020-07-23 00:00:00: max PnL 0.0572
+2025-03-19 14:10:16,424 - risk.manager - INFO - New position at 2020-07-27 00:00:00: signal=1, entry_z=-1.49
+2025-03-19 14:10:16,426 - risk.manager - INFO - Position closed at 2020-07-28 00:00:00 (original signal)
+2025-03-19 14:10:16,428 - risk.manager - INFO - New position at 2020-07-29 00:00:00: signal=1, entry_z=-1.61
+2025-03-19 14:10:16,429 - risk.manager - INFO - Position closed at 2020-07-30 00:00:00 (original signal)
+2025-03-19 14:10:16,431 - risk.manager - INFO - New position at 2020-07-31 00:00:00: signal=1, entry_z=-1.82
+2025-03-19 14:10:16,456 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.0646
+2025-03-19 14:10:16,459 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-2.48
+2025-03-19 14:10:16,477 - risk.manager - INFO - Max holding period reached at 2020-08-24 00:00:00: 8 days
+2025-03-19 14:10:16,480 - risk.manager - INFO - New position at 2020-08-25 00:00:00: signal=1, entry_z=-2.57
+2025-03-19 14:10:16,495 - risk.manager - INFO - Profit target reached at 2020-09-03 00:00:00: max PnL 0.1919
+2025-03-19 14:10:16,499 - risk.manager - INFO - New position at 2020-10-28 00:00:00: signal=-1, entry_z=2.51
+2025-03-19 14:10:16,500 - risk.manager - INFO - Profit target reached at 2020-10-29 00:00:00: max PnL 0.0881
+2025-03-19 14:10:16,504 - risk.manager - INFO - New position at 2020-10-30 00:00:00: signal=-1, entry_z=2.12
+2025-03-19 14:10:16,510 - risk.manager - INFO - Profit target reached at 2020-11-03 00:00:00: max PnL 0.0728
+2025-03-19 14:10:16,515 - risk.manager - INFO - New position at 2020-11-10 00:00:00: signal=1, entry_z=-6.65
+2025-03-19 14:10:16,515 - risk.manager - INFO - Position closed at 2020-11-11 00:00:00 (original signal)
+2025-03-19 14:10:16,518 - risk.manager - INFO - New position at 2020-11-16 00:00:00: signal=1, entry_z=-1.42
+2025-03-19 14:10:16,522 - risk.manager - INFO - Profit target reached at 2020-11-18 00:00:00: max PnL 0.0402
+2025-03-19 14:10:16,525 - risk.manager - INFO - New position at 2020-11-25 00:00:00: signal=1, entry_z=-1.50
+2025-03-19 14:10:16,535 - risk.manager - INFO - Position closed at 2020-12-03 00:00:00 (original signal)
+2025-03-19 14:10:16,539 - risk.manager - INFO - New position at 2020-12-04 00:00:00: signal=1, entry_z=-1.42
+2025-03-19 14:10:16,540 - risk.manager - INFO - Position closed at 2020-12-07 00:00:00 (original signal)
+2025-03-19 14:10:16,541 - risk.manager - INFO - New position at 2020-12-08 00:00:00: signal=1, entry_z=-1.50
+2025-03-19 14:10:16,542 - risk.manager - INFO - Profit target reached at 2020-12-09 00:00:00: max PnL 0.0559
+2025-03-19 14:10:16,546 - risk.manager - INFO - New position at 2021-01-27 00:00:00: signal=-1, entry_z=1.51
+2025-03-19 14:10:16,548 - risk.manager - INFO - Position closed at 2021-01-28 00:00:00 (original signal)
+2025-03-19 14:10:16,550 - risk.manager - INFO - New position at 2021-01-29 00:00:00: signal=-1, entry_z=2.06
+2025-03-19 14:10:16,550 - risk.manager - INFO - Profit target reached at 2021-02-01 00:00:00: max PnL 0.0820
+2025-03-19 14:10:16,555 - risk.manager - INFO - New position at 2021-03-11 00:00:00: signal=1, entry_z=-3.23
+2025-03-19 14:10:16,555 - risk.manager - INFO - Position closed at 2021-03-12 00:00:00 (original signal)
+2025-03-19 14:10:16,557 - risk.manager - INFO - New position at 2021-03-25 00:00:00: signal=1, entry_z=-4.22
+2025-03-19 14:10:16,557 - risk.manager - INFO - Position closed at 2021-03-26 00:00:00 (original signal)
+2025-03-19 14:10:16,558 - risk.manager - INFO - New position at 2021-04-01 00:00:00: signal=1, entry_z=-11.11
+2025-03-19 14:10:16,559 - risk.manager - INFO - Position closed at 2021-04-05 00:00:00 (original signal)
+2025-03-19 14:10:16,560 - risk.manager - INFO - New position at 2021-06-10 00:00:00: signal=1, entry_z=-3.15
+2025-03-19 14:10:16,560 - risk.manager - INFO - Position closed at 2021-06-11 00:00:00 (original signal)
+2025-03-19 14:10:16,563 - risk.manager - INFO - New position at 2021-11-03 00:00:00: signal=1, entry_z=-2.02
+2025-03-19 14:10:16,563 - risk.manager - INFO - Position closed at 2021-11-04 00:00:00 (original signal)
+2025-03-19 14:10:16,565 - risk.manager - INFO - New position at 2021-12-03 00:00:00: signal=-1, entry_z=1.44
+2025-03-19 14:10:16,565 - risk.manager - INFO - Profit target reached at 2021-12-06 00:00:00: max PnL 0.0875
+2025-03-19 14:10:16,566 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=-1, entry_z=2.18
+2025-03-19 14:10:16,567 - risk.manager - INFO - Profit target reached at 2022-03-02 00:00:00: max PnL 0.0858
+2025-03-19 14:10:16,569 - risk.manager - INFO - New position at 2022-03-04 00:00:00: signal=-1, entry_z=2.08
+2025-03-19 14:10:16,569 - risk.manager - INFO - Stop loss triggered at 2022-03-07 00:00:00: cumulative PnL -0.1240
+2025-03-19 14:10:16,570 - risk.manager - INFO - New position at 2022-03-08 00:00:00: signal=-1, entry_z=2.84
+2025-03-19 14:10:16,570 - risk.manager - INFO - Profit target reached at 2022-03-09 00:00:00: max PnL 0.0793
+2025-03-19 14:10:16,571 - risk.manager - INFO - New position at 2022-03-11 00:00:00: signal=-1, entry_z=2.16
+2025-03-19 14:10:16,572 - risk.manager - INFO - Stop loss triggered at 2022-03-14 00:00:00: cumulative PnL -0.1123
+2025-03-19 14:10:16,573 - risk.manager - INFO - New position at 2022-03-15 00:00:00: signal=-1, entry_z=2.71
+2025-03-19 14:10:16,574 - risk.manager - INFO - Profit target reached at 2022-03-16 00:00:00: max PnL 0.1283
+2025-03-19 14:10:16,577 - risk.manager - INFO - New position at 2022-03-18 00:00:00: signal=-1, entry_z=1.44
+2025-03-19 14:10:16,579 - risk.manager - INFO - Profit target reached at 2022-03-22 00:00:00: max PnL 0.0361
+2025-03-19 14:10:16,582 - risk.manager - INFO - New position at 2022-03-23 00:00:00: signal=-1, entry_z=1.46
+2025-03-19 14:10:16,584 - risk.manager - INFO - Profit target reached at 2022-03-24 00:00:00: max PnL 0.0374
+2025-03-19 14:10:16,589 - risk.manager - INFO - New position at 2022-07-27 00:00:00: signal=1, entry_z=-1.14
+2025-03-19 14:10:16,591 - risk.manager - INFO - Profit target reached at 2022-08-01 00:00:00: max PnL 0.0432
+2025-03-19 14:10:16,592 - risk.manager - INFO - New position at 2022-08-02 00:00:00: signal=1, entry_z=-1.01
+2025-03-19 14:10:16,598 - risk.manager - INFO - Profit target reached at 2022-08-08 00:00:00: max PnL 0.0350
+2025-03-19 14:10:16,599 - risk.manager - INFO - New position at 2022-08-10 00:00:00: signal=1, entry_z=-1.21
+2025-03-19 14:10:16,600 - risk.manager - INFO - Position closed at 2022-08-11 00:00:00 (original signal)
+2025-03-19 14:10:16,601 - risk.manager - INFO - New position at 2022-08-15 00:00:00: signal=1, entry_z=-1.32
+2025-03-19 14:10:16,604 - risk.manager - INFO - Position closed at 2022-08-19 00:00:00 (original signal)
+2025-03-19 14:10:16,606 - risk.manager - INFO - New position at 2022-08-24 00:00:00: signal=1, entry_z=-1.08
+2025-03-19 14:10:16,607 - risk.manager - INFO - Profit target reached at 2022-08-26 00:00:00: max PnL 0.0655
+2025-03-19 14:10:16,609 - risk.manager - INFO - New position at 2022-11-17 00:00:00: signal=1, entry_z=-1.01
+2025-03-19 14:10:16,614 - risk.manager - INFO - Profit target reached at 2022-11-28 00:00:00: max PnL 0.0583
+2025-03-19 14:10:16,616 - risk.manager - INFO - New position at 2022-11-29 00:00:00: signal=1, entry_z=-1.23
+2025-03-19 14:10:16,619 - risk.manager - INFO - Profit target reached at 2022-12-05 00:00:00: max PnL 0.0340
+2025-03-19 14:10:16,620 - risk.manager - INFO - New position at 2022-12-06 00:00:00: signal=1, entry_z=-1.34
+2025-03-19 14:10:16,622 - risk.manager - INFO - Profit target reached at 2022-12-09 00:00:00: max PnL 0.0275
+2025-03-19 14:10:16,623 - risk.manager - INFO - New position at 2022-12-12 00:00:00: signal=1, entry_z=-1.42
+2025-03-19 14:10:16,626 - risk.manager - INFO - Profit target reached at 2022-12-15 00:00:00: max PnL 0.0999
+2025-03-19 14:10:16,627 - risk.manager - INFO - New position at 2022-12-21 00:00:00: signal=1, entry_z=-1.30
+2025-03-19 14:10:16,627 - risk.manager - INFO - Profit target reached at 2022-12-22 00:00:00: max PnL 0.0795
+2025-03-19 14:10:16,629 - risk.manager - INFO - New position at 2023-01-18 00:00:00: signal=1, entry_z=-1.01
+2025-03-19 14:10:16,630 - risk.manager - INFO - Position closed at 2023-01-19 00:00:00 (original signal)
+2025-03-19 14:10:16,631 - risk.manager - INFO - New position at 2023-01-20 00:00:00: signal=1, entry_z=-1.21
+2025-03-19 14:10:16,636 - risk.manager - INFO - Profit target reached at 2023-01-30 00:00:00: max PnL 0.0439
+2025-03-19 14:10:16,637 - risk.manager - INFO - New position at 2023-01-31 00:00:00: signal=1, entry_z=-1.48
+2025-03-19 14:10:16,641 - risk.manager - INFO - Profit target reached at 2023-02-06 00:00:00: max PnL 0.0369
+2025-03-19 14:10:16,642 - risk.manager - INFO - New position at 2023-02-07 00:00:00: signal=1, entry_z=-1.59
+2025-03-19 14:10:16,642 - risk.manager - INFO - Profit target reached at 2023-02-08 00:00:00: max PnL 0.0494
+2025-03-19 14:10:16,644 - risk.manager - INFO - New position at 2023-02-14 00:00:00: signal=1, entry_z=-1.15
+2025-03-19 14:10:16,646 - risk.manager - INFO - Profit target reached at 2023-02-16 00:00:00: max PnL 0.0725
+2025-03-19 14:10:16,647 - risk.manager - INFO - New position at 2023-06-01 00:00:00: signal=1, entry_z=-1.23
+2025-03-19 14:10:16,655 - risk.manager - INFO - Max holding period reached at 2023-06-13 00:00:00: 8 days
+2025-03-19 14:10:16,656 - risk.manager - INFO - New position at 2023-06-14 00:00:00: signal=1, entry_z=-1.50
+2025-03-19 14:10:16,662 - risk.manager - INFO - Position closed at 2023-06-26 00:00:00 (original signal)
+2025-03-19 14:10:16,664 - risk.manager - INFO - New position at 2023-06-27 00:00:00: signal=1, entry_z=-1.07
+2025-03-19 14:10:16,668 - risk.manager - INFO - Position closed at 2023-07-05 00:00:00 (original signal)
+2025-03-19 14:10:16,670 - risk.manager - INFO - New position at 2023-08-17 00:00:00: signal=-1, entry_z=1.07
+2025-03-19 14:10:16,671 - risk.manager - INFO - Profit target reached at 2023-08-18 00:00:00: max PnL 0.0269
+2025-03-19 14:10:16,673 - risk.manager - INFO - New position at 2024-07-24 00:00:00: signal=-1, entry_z=1.15
+2025-03-19 14:10:16,674 - risk.manager - INFO - Position closed at 2024-07-25 00:00:00 (original signal)
+2025-03-19 14:10:16,675 - risk.manager - INFO - New position at 2024-07-29 00:00:00: signal=-1, entry_z=1.04
+2025-03-19 14:10:16,676 - risk.manager - INFO - Profit target reached at 2024-07-31 00:00:00: max PnL 0.0660
+2025-03-19 14:10:16,677 - risk.manager - INFO - New position at 2024-08-01 00:00:00: signal=-1, entry_z=1.27
+2025-03-19 14:10:16,677 - risk.manager - INFO - Stop loss triggered at 2024-08-02 00:00:00: cumulative PnL -0.2690
+2025-03-19 14:10:16,679 - risk.manager - INFO - New position at 2024-08-28 00:00:00: signal=-1, entry_z=1.02
+2025-03-19 14:10:16,680 - risk.manager - INFO - Profit target reached at 2024-08-29 00:00:00: max PnL 0.0266
+2025-03-19 14:10:16,681 - risk.manager - INFO - New position at 2024-09-10 00:00:00: signal=-1, entry_z=1.22
+2025-03-19 14:10:16,681 - risk.manager - INFO - Profit target reached at 2024-09-11 00:00:00: max PnL 0.0766
+2025-03-19 14:10:16,682 - risk.manager - INFO - New position at 2024-09-12 00:00:00: signal=-1, entry_z=1.03
+2025-03-19 14:10:16,686 - risk.manager - INFO - Profit target reached at 2024-09-19 00:00:00: max PnL 0.0730
+2025-03-19 14:10:16,687 - risk.manager - INFO - New position at 2024-09-27 00:00:00: signal=-1, entry_z=1.00
+2025-03-19 14:10:16,688 - risk.manager - INFO - Profit target reached at 2024-09-30 00:00:00: max PnL 0.0252
+2025-03-19 14:10:16,690 - risk.manager - INFO - New position at 2024-10-08 00:00:00: signal=-1, entry_z=1.09
+2025-03-19 14:10:16,690 - risk.manager - INFO - Profit target reached at 2024-10-09 00:00:00: max PnL 0.0357
+2025-03-19 14:10:16,691 - risk.manager - INFO - New position at 2024-10-10 00:00:00: signal=-1, entry_z=1.02
+2025-03-19 14:10:16,692 - risk.manager - INFO - Position closed at 2024-10-11 00:00:00 (original signal)
+2025-03-19 14:10:16,692 - risk.manager - INFO - New position at 2024-10-25 00:00:00: signal=-1, entry_z=1.01
+2025-03-19 14:10:16,693 - risk.manager - INFO - Profit target reached at 2024-10-28 00:00:00: max PnL 0.0464
+2025-03-19 14:10:16,697 - risk.manager - INFO - New position at 2024-12-18 00:00:00: signal=-1, entry_z=1.10
+2025-03-19 14:10:16,701 - risk.manager - INFO - Profit target reached at 2024-12-20 00:00:00: max PnL 0.1585
+2025-03-19 14:10:16,705 - risk.manager - INFO - New position at 2025-02-24 00:00:00: signal=-1, entry_z=1.04
+2025-03-19 14:10:16,706 - risk.manager - INFO - Profit target reached at 2025-02-26 00:00:00: max PnL 0.0339
+2025-03-19 14:10:16,707 - risk.manager - INFO - New position at 2025-03-10 00:00:00: signal=-1, entry_z=1.61
+2025-03-19 14:10:16,708 - risk.manager - INFO - Position closed at 2025-03-11 00:00:00 (original signal)
+2025-03-19 14:10:16,816 - strategy.regime_switching - INFO - Calculated hedge ratios for ('QQQ', 'VXX'): mean=1.6719, std=2.3446
+2025-03-19 14:10:16,817 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 14:10:16,820 - regime.detector - INFO - Reduced features from 18 to 11 using PCA
+2025-03-19 14:10:16,970 - hmmlearn.base - WARNING - Model is not converging.  Current: -10117.380102076699 is not greater than -10117.365430634856. Delta is -0.014671441842438071
+2025-03-19 14:10:17,224 - hmmlearn.base - WARNING - Model is not converging.  Current: -9063.007597452812 is not greater than -9062.988660243542. Delta is -0.01893720927000686
+2025-03-19 14:10:17,498 - hmmlearn.base - WARNING - Model is not converging.  Current: -9053.304634584014 is not greater than -9053.266615201479. Delta is -0.03801938253491244
+2025-03-19 14:10:19,673 - regime.detector - INFO - Best HMM model: 3 regimes with full covariance
+2025-03-19 14:10:19,674 - regime.detector - INFO - High (0): mean=-2.0226, std=69.6424, proportion=0.17
+2025-03-19 14:10:19,674 - regime.detector - INFO - Medium (1): mean=-19.3611, std=21.1183, proportion=0.47
+2025-03-19 14:10:19,674 - regime.detector - INFO - Low (2): mean=-163.4753, std=177.1898, proportion=0.36
+2025-03-19 14:10:19,678 - regime.detector - INFO - Regime High (0) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:19,681 - regime.detector - INFO - Regime Medium (1) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:19,684 - regime.detector - INFO - Regime Low (2) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:19,706 - risk.manager - INFO - New position at 2020-07-16 00:00:00: signal=1, entry_z=-1.73
+2025-03-19 14:10:19,712 - risk.manager - INFO - Profit target reached at 2020-07-23 00:00:00: max PnL 0.0573
+2025-03-19 14:10:19,716 - risk.manager - INFO - New position at 2020-07-27 00:00:00: signal=1, entry_z=-1.82
+2025-03-19 14:10:19,731 - risk.manager - INFO - Max holding period reached at 2020-08-06 00:00:00: 8 days
+2025-03-19 14:10:19,733 - risk.manager - INFO - New position at 2020-08-07 00:00:00: signal=1, entry_z=-2.48
+2025-03-19 14:10:19,738 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.0655
+2025-03-19 14:10:19,741 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-2.52
+2025-03-19 14:10:19,759 - risk.manager - INFO - Max holding period reached at 2020-08-24 00:00:00: 8 days
+2025-03-19 14:10:19,762 - risk.manager - INFO - New position at 2020-08-25 00:00:00: signal=1, entry_z=-2.63
+2025-03-19 14:10:19,778 - risk.manager - INFO - Profit target reached at 2020-09-03 00:00:00: max PnL 0.1856
+2025-03-19 14:10:19,781 - risk.manager - INFO - New position at 2020-10-12 00:00:00: signal=1, entry_z=-1.41
+2025-03-19 14:10:19,782 - risk.manager - INFO - Position closed at 2020-10-13 00:00:00 (original signal)
+2025-03-19 14:10:19,785 - risk.manager - INFO - New position at 2020-10-28 00:00:00: signal=-1, entry_z=2.14
+2025-03-19 14:10:19,788 - risk.manager - INFO - Profit target reached at 2020-10-29 00:00:00: max PnL 0.0889
+2025-03-19 14:10:19,791 - risk.manager - INFO - New position at 2020-10-30 00:00:00: signal=-1, entry_z=1.79
+2025-03-19 14:10:19,793 - risk.manager - INFO - Profit target reached at 2020-11-03 00:00:00: max PnL 0.0724
+2025-03-19 14:10:19,797 - risk.manager - INFO - New position at 2020-11-10 00:00:00: signal=1, entry_z=-4.98
+2025-03-19 14:10:19,798 - risk.manager - INFO - Position closed at 2020-11-11 00:00:00 (original signal)
+2025-03-19 14:10:19,800 - risk.manager - INFO - New position at 2020-11-16 00:00:00: signal=1, entry_z=-1.54
+2025-03-19 14:10:19,803 - risk.manager - INFO - Profit target reached at 2020-11-18 00:00:00: max PnL 0.0369
+2025-03-19 14:10:19,807 - risk.manager - INFO - New position at 2020-11-24 00:00:00: signal=1, entry_z=-1.49
+2025-03-19 14:10:19,833 - risk.manager - INFO - Max holding period reached at 2020-12-07 00:00:00: 8 days
+2025-03-19 14:10:19,835 - risk.manager - INFO - New position at 2020-12-08 00:00:00: signal=1, entry_z=-1.72
+2025-03-19 14:10:19,837 - risk.manager - INFO - Profit target reached at 2020-12-09 00:00:00: max PnL 0.0594
+2025-03-19 14:10:19,840 - risk.manager - INFO - New position at 2021-01-29 00:00:00: signal=-1, entry_z=1.82
+2025-03-19 14:10:19,841 - risk.manager - INFO - Profit target reached at 2021-02-01 00:00:00: max PnL 0.0819
+2025-03-19 14:10:19,844 - risk.manager - INFO - New position at 2021-03-11 00:00:00: signal=1, entry_z=-2.29
+2025-03-19 14:10:19,845 - risk.manager - INFO - Position closed at 2021-03-12 00:00:00 (original signal)
+2025-03-19 14:10:19,849 - risk.manager - INFO - New position at 2021-03-25 00:00:00: signal=1, entry_z=-3.08
+2025-03-19 14:10:19,850 - risk.manager - INFO - Position closed at 2021-03-26 00:00:00 (original signal)
+2025-03-19 14:10:19,853 - risk.manager - INFO - New position at 2021-04-01 00:00:00: signal=1, entry_z=-4.34
+2025-03-19 14:10:19,854 - risk.manager - INFO - Position closed at 2021-04-05 00:00:00 (original signal)
+2025-03-19 14:10:19,858 - risk.manager - INFO - New position at 2021-06-10 00:00:00: signal=1, entry_z=-2.43
+2025-03-19 14:10:19,858 - risk.manager - INFO - Position closed at 2021-06-11 00:00:00 (original signal)
+2025-03-19 14:10:19,865 - risk.manager - INFO - New position at 2022-01-27 00:00:00: signal=-1, entry_z=1.46
+2025-03-19 14:10:19,866 - risk.manager - INFO - Profit target reached at 2022-01-28 00:00:00: max PnL 0.0943
+2025-03-19 14:10:19,869 - risk.manager - INFO - New position at 2022-02-23 00:00:00: signal=-1, entry_z=1.47
+2025-03-19 14:10:19,871 - risk.manager - INFO - Profit target reached at 2022-02-24 00:00:00: max PnL 0.0650
+2025-03-19 14:10:19,875 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=-1, entry_z=1.58
+2025-03-19 14:10:19,875 - risk.manager - INFO - Profit target reached at 2022-03-02 00:00:00: max PnL 0.0809
+2025-03-19 14:10:19,878 - risk.manager - INFO - New position at 2022-03-04 00:00:00: signal=-1, entry_z=1.63
+2025-03-19 14:10:19,880 - risk.manager - INFO - Stop loss triggered at 2022-03-07 00:00:00: cumulative PnL -0.1243
+2025-03-19 14:10:19,882 - risk.manager - INFO - New position at 2022-03-08 00:00:00: signal=-1, entry_z=2.21
+2025-03-19 14:10:19,884 - risk.manager - INFO - Profit target reached at 2022-03-09 00:00:00: max PnL 0.0758
+2025-03-19 14:10:19,886 - risk.manager - INFO - New position at 2022-03-10 00:00:00: signal=-1, entry_z=1.51
+2025-03-19 14:10:19,891 - risk.manager - INFO - Stop loss triggered at 2022-03-14 00:00:00: cumulative PnL -0.1130
+2025-03-19 14:10:19,893 - risk.manager - INFO - New position at 2022-03-15 00:00:00: signal=-1, entry_z=1.74
+2025-03-19 14:10:19,894 - risk.manager - INFO - Profit target reached at 2022-03-16 00:00:00: max PnL 0.1329
+2025-03-19 14:10:19,896 - risk.manager - INFO - New position at 2022-05-09 00:00:00: signal=-1, entry_z=1.43
+2025-03-19 14:10:19,896 - risk.manager - INFO - Profit target reached at 2022-05-10 00:00:00: max PnL 0.0462
+2025-03-19 14:10:19,897 - risk.manager - INFO - New position at 2022-08-03 00:00:00: signal=1, entry_z=-1.73
+2025-03-19 14:10:19,900 - risk.manager - INFO - Position closed at 2022-08-08 00:00:00 (original signal)
+2025-03-19 14:10:19,901 - risk.manager - INFO - New position at 2022-08-10 00:00:00: signal=1, entry_z=-1.77
+2025-03-19 14:10:19,902 - risk.manager - INFO - Position closed at 2022-08-11 00:00:00 (original signal)
+2025-03-19 14:10:19,903 - risk.manager - INFO - New position at 2022-08-15 00:00:00: signal=1, entry_z=-1.91
+2025-03-19 14:10:19,907 - risk.manager - INFO - Position closed at 2022-08-19 00:00:00 (original signal)
+2025-03-19 14:10:19,908 - risk.manager - INFO - New position at 2022-08-24 00:00:00: signal=1, entry_z=-1.58
+2025-03-19 14:10:19,910 - risk.manager - INFO - Profit target reached at 2022-08-26 00:00:00: max PnL 0.0638
+2025-03-19 14:10:19,911 - risk.manager - INFO - New position at 2022-09-08 00:00:00: signal=1, entry_z=-1.63
+2025-03-19 14:10:19,913 - risk.manager - INFO - Profit target reached at 2022-09-13 00:00:00: max PnL 0.1022
+2025-03-19 14:10:19,915 - risk.manager - INFO - New position at 2022-11-21 00:00:00: signal=1, entry_z=-1.46
+2025-03-19 14:10:19,915 - risk.manager - INFO - Position closed at 2022-11-22 00:00:00 (original signal)
+2025-03-19 14:10:19,916 - risk.manager - INFO - New position at 2022-11-28 00:00:00: signal=1, entry_z=-1.54
+2025-03-19 14:10:19,919 - risk.manager - INFO - Position closed at 2022-12-01 00:00:00 (original signal)
+2025-03-19 14:10:19,920 - risk.manager - INFO - New position at 2022-12-06 00:00:00: signal=1, entry_z=-1.73
+2025-03-19 14:10:19,921 - risk.manager - INFO - Position closed at 2022-12-08 00:00:00 (original signal)
+2025-03-19 14:10:19,922 - risk.manager - INFO - New position at 2022-12-09 00:00:00: signal=1, entry_z=-1.48
+2025-03-19 14:10:19,926 - risk.manager - INFO - Profit target reached at 2022-12-15 00:00:00: max PnL 0.0961
+2025-03-19 14:10:19,927 - risk.manager - INFO - New position at 2022-12-21 00:00:00: signal=1, entry_z=-1.67
+2025-03-19 14:10:19,928 - risk.manager - INFO - Profit target reached at 2022-12-22 00:00:00: max PnL 0.0788
+2025-03-19 14:10:19,930 - risk.manager - INFO - New position at 2023-01-10 00:00:00: signal=1, entry_z=-1.54
+2025-03-19 14:10:19,942 - risk.manager - INFO - Profit target reached at 2023-01-18 00:00:00: max PnL 0.0485
+2025-03-19 14:10:19,943 - risk.manager - INFO - New position at 2023-01-20 00:00:00: signal=1, entry_z=-1.77
+2025-03-19 14:10:19,948 - risk.manager - INFO - Profit target reached at 2023-01-30 00:00:00: max PnL 0.0450
+2025-03-19 14:10:19,952 - risk.manager - INFO - New position at 2023-01-31 00:00:00: signal=1, entry_z=-2.20
+2025-03-19 14:10:19,958 - risk.manager - INFO - Profit target reached at 2023-02-08 00:00:00: max PnL 0.0551
+2025-03-19 14:10:19,959 - risk.manager - INFO - New position at 2023-02-14 00:00:00: signal=1, entry_z=-1.65
+2025-03-19 14:10:19,960 - risk.manager - INFO - Profit target reached at 2023-02-16 00:00:00: max PnL 0.0739
+2025-03-19 14:10:19,962 - risk.manager - INFO - New position at 2023-03-10 00:00:00: signal=-1, entry_z=1.46
+2025-03-19 14:10:19,963 - risk.manager - INFO - Profit target reached at 2023-03-14 00:00:00: max PnL 0.0758
+2025-03-19 14:10:19,964 - risk.manager - INFO - New position at 2023-03-15 00:00:00: signal=-1, entry_z=1.56
+2025-03-19 14:10:19,965 - risk.manager - INFO - Profit target reached at 2023-03-16 00:00:00: max PnL 0.1082
+2025-03-19 14:10:19,966 - risk.manager - INFO - New position at 2023-03-17 00:00:00: signal=-1, entry_z=1.62
+2025-03-19 14:10:19,967 - risk.manager - INFO - Profit target reached at 2023-03-20 00:00:00: max PnL 0.0547
+2025-03-19 14:10:19,968 - risk.manager - INFO - New position at 2023-05-18 00:00:00: signal=1, entry_z=-1.45
+2025-03-19 14:10:19,969 - risk.manager - INFO - Position closed at 2023-05-19 00:00:00 (original signal)
+2025-03-19 14:10:19,970 - risk.manager - INFO - New position at 2023-06-01 00:00:00: signal=1, entry_z=-1.76
+2025-03-19 14:10:19,978 - risk.manager - INFO - Max holding period reached at 2023-06-13 00:00:00: 8 days
+2025-03-19 14:10:19,979 - risk.manager - INFO - New position at 2023-06-14 00:00:00: signal=1, entry_z=-2.11
+2025-03-19 14:10:19,987 - risk.manager - INFO - Max holding period reached at 2023-06-27 00:00:00: 8 days
+2025-03-19 14:10:19,988 - risk.manager - INFO - New position at 2023-06-28 00:00:00: signal=1, entry_z=-1.71
+2025-03-19 14:10:19,993 - risk.manager - INFO - Profit target reached at 2023-07-06 00:00:00: max PnL 0.0651
+2025-03-19 14:10:19,994 - risk.manager - INFO - New position at 2023-09-26 00:00:00: signal=-1, entry_z=1.42
+2025-03-19 14:10:19,995 - risk.manager - INFO - Profit target reached at 2023-09-27 00:00:00: max PnL 0.0451
+2025-03-19 14:10:19,996 - risk.manager - INFO - New position at 2023-10-03 00:00:00: signal=-1, entry_z=1.53
+2025-03-19 14:10:19,997 - risk.manager - INFO - Profit target reached at 2023-10-04 00:00:00: max PnL 0.0637
+2025-03-19 14:10:19,998 - risk.manager - INFO - New position at 2023-10-25 00:00:00: signal=-1, entry_z=1.60
+2025-03-19 14:10:19,998 - risk.manager - INFO - Position closed at 2023-10-26 00:00:00 (original signal)
+2025-03-19 14:10:19,999 - risk.manager - INFO - New position at 2023-10-30 00:00:00: signal=-1, entry_z=1.40
+2025-03-19 14:10:19,999 - risk.manager - INFO - Profit target reached at 2023-10-31 00:00:00: max PnL 0.0690
+2025-03-19 14:10:20,002 - risk.manager - INFO - New position at 2024-08-08 00:00:00: signal=-1, entry_z=1.82
+2025-03-19 14:10:20,003 - risk.manager - INFO - Profit target reached at 2024-08-09 00:00:00: max PnL 0.1264
+2025-03-19 14:10:20,146 - strategy.regime_switching - INFO - Calculated hedge ratios for ('SPY', 'VXX'): mean=1.3871, std=1.9479
+2025-03-19 14:10:20,147 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 14:10:20,151 - regime.detector - INFO - Reduced features from 18 to 11 using PCA
+2025-03-19 14:10:20,474 - hmmlearn.base - WARNING - Model is not converging.  Current: -10021.99029175732 is not greater than -10021.975184820116. Delta is -0.015106937204109272
+2025-03-19 14:10:20,643 - hmmlearn.base - WARNING - Model is not converging.  Current: -9286.240204180865 is not greater than -9286.233217578374. Delta is -0.006986602491451777
+2025-03-19 14:10:22,456 - regime.detector - INFO - Best HMM model: 3 regimes with full covariance
+2025-03-19 14:10:22,457 - regime.detector - INFO - High (0): mean=9.9799, std=51.0709, proportion=0.10
+2025-03-19 14:10:22,457 - regime.detector - INFO - Medium (1): mean=-17.6231, std=22.0824, proportion=0.53
+2025-03-19 14:10:22,457 - regime.detector - INFO - Low (2): mean=-160.2574, std=166.2644, proportion=0.37
+2025-03-19 14:10:22,461 - regime.detector - INFO - Regime High (0) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:22,465 - regime.detector - INFO - Regime Medium (1) parameters: z_entry=2.20, z_exit=0.50
+2025-03-19 14:10:22,467 - regime.detector - INFO - Regime Low (2) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:22,500 - risk.manager - INFO - New position at 2020-07-16 00:00:00: signal=1, entry_z=-1.40
+2025-03-19 14:10:22,565 - risk.manager - INFO - Profit target reached at 2020-07-23 00:00:00: max PnL 0.0431
+2025-03-19 14:10:22,569 - risk.manager - INFO - New position at 2020-07-27 00:00:00: signal=1, entry_z=-1.68
+2025-03-19 14:10:22,588 - risk.manager - INFO - Max holding period reached at 2020-08-06 00:00:00: 8 days
+2025-03-19 14:10:22,590 - risk.manager - INFO - New position at 2020-08-07 00:00:00: signal=1, entry_z=-2.40
+2025-03-19 14:10:22,594 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.0549
+2025-03-19 14:10:22,597 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-2.55
+2025-03-19 14:10:22,614 - risk.manager - INFO - Max holding period reached at 2020-08-24 00:00:00: 8 days
+2025-03-19 14:10:22,616 - risk.manager - INFO - New position at 2020-08-25 00:00:00: signal=1, entry_z=-2.40
+2025-03-19 14:10:22,625 - risk.manager - INFO - Profit target reached at 2020-08-31 00:00:00: max PnL 0.0533
+2025-03-19 14:10:22,629 - risk.manager - INFO - New position at 2020-10-28 00:00:00: signal=-1, entry_z=2.32
+2025-03-19 14:10:22,630 - risk.manager - INFO - Profit target reached at 2020-10-29 00:00:00: max PnL 0.0816
+2025-03-19 14:10:22,633 - risk.manager - INFO - New position at 2020-10-30 00:00:00: signal=-1, entry_z=1.87
+2025-03-19 14:10:22,636 - risk.manager - INFO - Profit target reached at 2020-11-03 00:00:00: max PnL 0.0728
+2025-03-19 14:10:22,639 - risk.manager - INFO - New position at 2020-11-10 00:00:00: signal=1, entry_z=-1.47
+2025-03-19 14:10:22,641 - risk.manager - INFO - Profit target reached at 2020-11-12 00:00:00: max PnL 0.0803
+2025-03-19 14:10:22,644 - risk.manager - INFO - New position at 2020-11-13 00:00:00: signal=1, entry_z=-1.60
+2025-03-19 14:10:22,645 - risk.manager - INFO - Profit target reached at 2020-11-18 00:00:00: max PnL 0.0415
+2025-03-19 14:10:22,648 - risk.manager - INFO - New position at 2020-11-19 00:00:00: signal=1, entry_z=-1.56
+2025-03-19 14:10:22,664 - risk.manager - INFO - Max holding period reached at 2020-12-02 00:00:00: 8 days
+2025-03-19 14:10:22,666 - risk.manager - INFO - New position at 2020-12-03 00:00:00: signal=1, entry_z=-1.58
+2025-03-19 14:10:22,675 - risk.manager - INFO - Profit target reached at 2020-12-09 00:00:00: max PnL 0.0457
+2025-03-19 14:10:22,679 - risk.manager - INFO - New position at 2021-01-27 00:00:00: signal=-1, entry_z=1.56
+2025-03-19 14:10:22,681 - risk.manager - INFO - Profit target reached at 2021-01-28 00:00:00: max PnL 0.0313
+2025-03-19 14:10:22,684 - risk.manager - INFO - New position at 2021-01-29 00:00:00: signal=-1, entry_z=2.06
+2025-03-19 14:10:22,690 - risk.manager - INFO - Profit target reached at 2021-02-01 00:00:00: max PnL 0.0736
+2025-03-19 14:10:22,698 - risk.manager - INFO - New position at 2021-06-10 00:00:00: signal=1, entry_z=-3.52
+2025-03-19 14:10:22,706 - risk.manager - INFO - Position closed at 2021-06-11 00:00:00 (original signal)
+2025-03-19 14:10:22,714 - risk.manager - INFO - New position at 2021-07-26 00:00:00: signal=1, entry_z=-2.00
+2025-03-19 14:10:22,715 - risk.manager - INFO - Position closed at 2021-07-27 00:00:00 (original signal)
+2025-03-19 14:10:22,719 - risk.manager - INFO - New position at 2021-08-16 00:00:00: signal=1, entry_z=-2.15
+2025-03-19 14:10:22,721 - risk.manager - INFO - Position closed at 2021-08-17 00:00:00 (original signal)
+2025-03-19 14:10:22,723 - risk.manager - INFO - New position at 2021-10-26 00:00:00: signal=1, entry_z=-1.89
+2025-03-19 14:10:22,730 - risk.manager - INFO - Position closed at 2021-11-02 00:00:00 (original signal)
+2025-03-19 14:10:22,731 - risk.manager - INFO - New position at 2021-12-28 00:00:00: signal=1, entry_z=-1.50
+2025-03-19 14:10:22,732 - risk.manager - INFO - Position closed at 2021-12-29 00:00:00 (original signal)
+2025-03-19 14:10:22,733 - risk.manager - INFO - New position at 2022-01-27 00:00:00: signal=-1, entry_z=1.43
+2025-03-19 14:10:22,734 - risk.manager - INFO - Profit target reached at 2022-01-28 00:00:00: max PnL 0.0877
+2025-03-19 14:10:22,735 - risk.manager - INFO - New position at 2022-02-23 00:00:00: signal=-1, entry_z=1.44
+2025-03-19 14:10:22,735 - risk.manager - INFO - Profit target reached at 2022-02-24 00:00:00: max PnL 0.0464
+2025-03-19 14:10:22,736 - risk.manager - INFO - New position at 2022-03-01 00:00:00: signal=-1, entry_z=1.88
+2025-03-19 14:10:22,737 - risk.manager - INFO - Profit target reached at 2022-03-02 00:00:00: max PnL 0.0825
+2025-03-19 14:10:22,739 - risk.manager - INFO - New position at 2022-03-04 00:00:00: signal=-1, entry_z=1.70
+2025-03-19 14:10:22,739 - risk.manager - INFO - Stop loss triggered at 2022-03-07 00:00:00: cumulative PnL -0.1169
+2025-03-19 14:10:22,740 - risk.manager - INFO - New position at 2022-03-08 00:00:00: signal=-1, entry_z=2.48
+2025-03-19 14:10:22,740 - risk.manager - INFO - Profit target reached at 2022-03-09 00:00:00: max PnL 0.0666
+2025-03-19 14:10:22,741 - risk.manager - INFO - New position at 2022-03-10 00:00:00: signal=-1, entry_z=1.54
+2025-03-19 14:10:22,743 - risk.manager - INFO - Stop loss triggered at 2022-03-14 00:00:00: cumulative PnL -0.1011
+2025-03-19 14:10:22,744 - risk.manager - INFO - New position at 2022-03-15 00:00:00: signal=-1, entry_z=1.74
+2025-03-19 14:10:22,745 - risk.manager - INFO - Profit target reached at 2022-03-16 00:00:00: max PnL 0.1180
+2025-03-19 14:10:22,747 - risk.manager - INFO - New position at 2022-09-27 00:00:00: signal=-1, entry_z=2.30
+2025-03-19 14:10:22,748 - risk.manager - INFO - Profit target reached at 2022-09-28 00:00:00: max PnL 0.0617
+2025-03-19 14:10:22,749 - risk.manager - INFO - New position at 2022-09-30 00:00:00: signal=-1, entry_z=2.76
+2025-03-19 14:10:22,749 - risk.manager - INFO - Profit target reached at 2022-10-03 00:00:00: max PnL 0.0764
+2025-03-19 14:10:22,750 - risk.manager - INFO - New position at 2022-10-07 00:00:00: signal=-1, entry_z=2.41
+2025-03-19 14:10:22,751 - risk.manager - INFO - Position closed at 2022-10-11 00:00:00 (original signal)
+2025-03-19 14:10:22,753 - risk.manager - INFO - New position at 2022-10-13 00:00:00: signal=-1, entry_z=2.32
+2025-03-19 14:10:22,754 - risk.manager - INFO - Profit target reached at 2022-10-17 00:00:00: max PnL 0.0541
+2025-03-19 14:10:22,756 - risk.manager - INFO - New position at 2022-11-22 00:00:00: signal=1, entry_z=-2.47
+2025-03-19 14:10:22,759 - risk.manager - INFO - Profit target reached at 2022-11-28 00:00:00: max PnL 0.0529
+2025-03-19 14:10:22,760 - risk.manager - INFO - New position at 2022-11-30 00:00:00: signal=1, entry_z=-2.83
+2025-03-19 14:10:22,764 - risk.manager - INFO - Position closed at 2022-12-06 00:00:00 (original signal)
+2025-03-19 14:10:22,765 - risk.manager - INFO - New position at 2022-12-13 00:00:00: signal=1, entry_z=-2.38
+2025-03-19 14:10:22,766 - risk.manager - INFO - Profit target reached at 2022-12-15 00:00:00: max PnL 0.0870
+2025-03-19 14:10:22,767 - risk.manager - INFO - New position at 2023-01-12 00:00:00: signal=1, entry_z=-2.20
+2025-03-19 14:10:22,769 - risk.manager - INFO - Position closed at 2023-01-17 00:00:00 (original signal)
+2025-03-19 14:10:22,770 - risk.manager - INFO - New position at 2023-02-01 00:00:00: signal=1, entry_z=-2.25
+2025-03-19 14:10:22,771 - risk.manager - INFO - Position closed at 2023-02-02 00:00:00 (original signal)
+2025-03-19 14:10:22,886 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XRT', 'VXX'): mean=8.7047, std=13.8167
+2025-03-19 14:10:22,887 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 14:10:22,890 - regime.detector - INFO - Reduced features from 18 to 11 using PCA
+2025-03-19 14:10:23,138 - hmmlearn.base - WARNING - Model is not converging.  Current: -9981.886628072883 is not greater than -9981.85997118276. Delta is -0.026656890124286292
+2025-03-19 14:10:25,038 - regime.detector - INFO - Best HMM model: 3 regimes with full covariance
+2025-03-19 14:10:25,039 - regime.detector - INFO - Medium (0): mean=-8.3637, std=34.2509, proportion=0.60
+2025-03-19 14:10:25,039 - regime.detector - INFO - High (1): mean=-3.7247, std=48.5495, proportion=0.09
+2025-03-19 14:10:25,039 - regime.detector - INFO - Low (2): mean=-236.6417, std=205.2873, proportion=0.31
+2025-03-19 14:10:25,045 - regime.detector - INFO - Regime Medium (0) parameters: z_entry=2.00, z_exit=0.50
+2025-03-19 14:10:25,048 - regime.detector - INFO - Regime High (1) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:25,049 - regime.detector - INFO - Regime Low (2) parameters: z_entry=1.40, z_exit=0.42
+2025-03-19 14:10:25,060 - risk.manager - INFO - New position at 2020-07-16 00:00:00: signal=1, entry_z=-1.42
+2025-03-19 14:10:25,064 - risk.manager - INFO - Profit target reached at 2020-07-23 00:00:00: max PnL 0.0355
+2025-03-19 14:10:25,067 - risk.manager - INFO - New position at 2020-07-27 00:00:00: signal=1, entry_z=-1.61
+2025-03-19 14:10:25,079 - risk.manager - INFO - Max holding period reached at 2020-08-06 00:00:00: 8 days
+2025-03-19 14:10:25,081 - risk.manager - INFO - New position at 2020-08-07 00:00:00: signal=1, entry_z=-2.50
+2025-03-19 14:10:25,085 - risk.manager - INFO - Profit target reached at 2020-08-11 00:00:00: max PnL 0.0531
+2025-03-19 14:10:25,088 - risk.manager - INFO - New position at 2020-08-12 00:00:00: signal=1, entry_z=-2.49
+2025-03-19 14:10:25,106 - risk.manager - INFO - Max holding period reached at 2020-08-24 00:00:00: 8 days
+2025-03-19 14:10:25,108 - risk.manager - INFO - New position at 2020-08-25 00:00:00: signal=1, entry_z=-2.17
+2025-03-19 14:10:25,117 - risk.manager - INFO - Profit target reached at 2020-08-31 00:00:00: max PnL 0.0643
+2025-03-19 14:10:25,118 - risk.manager - INFO - New position at 2020-10-28 00:00:00: signal=-1, entry_z=2.01
+2025-03-19 14:10:25,118 - risk.manager - INFO - Profit target reached at 2020-10-29 00:00:00: max PnL 0.0648
+2025-03-19 14:10:25,119 - risk.manager - INFO - New position at 2020-10-30 00:00:00: signal=-1, entry_z=1.91
+2025-03-19 14:10:25,120 - risk.manager - INFO - Profit target reached at 2020-11-02 00:00:00: max PnL 0.0389
+2025-03-19 14:10:25,124 - risk.manager - INFO - New position at 2020-11-23 00:00:00: signal=1, entry_z=-1.55
+2025-03-19 14:10:25,138 - risk.manager - INFO - Max holding period reached at 2020-12-04 00:00:00: 8 days
+2025-03-19 14:10:25,141 - risk.manager - INFO - New position at 2020-12-08 00:00:00: signal=1, entry_z=-1.54
+2025-03-19 14:10:25,142 - risk.manager - INFO - Profit target reached at 2020-12-09 00:00:00: max PnL 0.0419
+2025-03-19 14:10:25,144 - risk.manager - INFO - New position at 2021-05-19 00:00:00: signal=1, entry_z=-1.64
+2025-03-19 14:10:25,144 - risk.manager - INFO - Position closed at 2021-05-20 00:00:00 (original signal)
+2025-03-19 14:10:25,147 - risk.manager - INFO - New position at 2021-06-10 00:00:00: signal=1, entry_z=-3.43
+2025-03-19 14:10:25,148 - risk.manager - INFO - Position closed at 2021-06-11 00:00:00 (original signal)
+2025-03-19 14:10:25,152 - risk.manager - INFO - New position at 2021-10-26 00:00:00: signal=1, entry_z=-1.47
+2025-03-19 14:10:25,153 - risk.manager - INFO - Profit target reached at 2021-10-27 00:00:00: max PnL 0.0453
+2025-03-19 14:10:25,157 - risk.manager - INFO - New position at 2021-11-01 00:00:00: signal=1, entry_z=-1.62
+2025-03-19 14:10:25,159 - risk.manager - INFO - Position closed at 2021-11-04 00:00:00 (original signal)
+2025-03-19 14:10:25,160 - risk.manager - INFO - New position at 2021-12-01 00:00:00: signal=-1, entry_z=1.54
+2025-03-19 14:10:25,161 - risk.manager - INFO - Profit target reached at 2021-12-02 00:00:00: max PnL 0.0773
+2025-03-19 14:10:25,164 - risk.manager - INFO - New position at 2021-12-03 00:00:00: signal=-1, entry_z=1.58
+2025-03-19 14:10:25,164 - risk.manager - INFO - Profit target reached at 2021-12-06 00:00:00: max PnL 0.0963
+2025-03-19 14:10:25,165 - risk.manager - INFO - New position at 2022-01-21 00:00:00: signal=-1, entry_z=1.95
+2025-03-19 14:10:25,174 - risk.manager - INFO - Profit target reached at 2022-01-28 00:00:00: max PnL 0.0724
+2025-03-19 14:10:25,175 - risk.manager - INFO - New position at 2022-02-03 00:00:00: signal=-1, entry_z=1.42
+2025-03-19 14:10:25,175 - risk.manager - INFO - Profit target reached at 2022-02-04 00:00:00: max PnL 0.0380
+2025-03-19 14:10:25,177 - risk.manager - INFO - New position at 2022-02-11 00:00:00: signal=-1, entry_z=1.47
+2025-03-19 14:10:25,182 - risk.manager - INFO - Profit target reached at 2022-02-15 00:00:00: max PnL 0.1162
+2025-03-19 14:10:25,184 - risk.manager - INFO - New position at 2022-02-18 00:00:00: signal=-1, entry_z=2.23
+2025-03-19 14:10:25,190 - risk.manager - INFO - Profit target reached at 2022-02-24 00:00:00: max PnL 0.0707
+2025-03-19 14:10:25,194 - risk.manager - INFO - New position at 2022-02-28 00:00:00: signal=-1, entry_z=2.38
+2025-03-19 14:10:25,196 - risk.manager - INFO - Stop loss triggered at 2022-03-01 00:00:00: cumulative PnL -0.1368
+2025-03-19 14:10:25,198 - risk.manager - INFO - New position at 2022-03-02 00:00:00: signal=-1, entry_z=2.71
+2025-03-19 14:10:25,204 - risk.manager - INFO - Stop loss triggered at 2022-03-07 00:00:00: cumulative PnL -0.1315
+2025-03-19 14:10:25,212 - risk.manager - INFO - New position at 2022-03-08 00:00:00: signal=-1, entry_z=4.56
+2025-03-19 14:10:25,226 - risk.manager - INFO - Stop loss triggered at 2022-03-14 00:00:00: cumulative PnL -0.1051
+2025-03-19 14:10:25,229 - risk.manager - INFO - New position at 2022-03-15 00:00:00: signal=-1, entry_z=4.40
+2025-03-19 14:10:25,230 - risk.manager - INFO - Profit target reached at 2022-03-16 00:00:00: max PnL 0.1346
+2025-03-19 14:10:25,234 - risk.manager - INFO - New position at 2022-03-17 00:00:00: signal=-1, entry_z=2.58
+2025-03-19 14:10:25,234 - risk.manager - INFO - Profit target reached at 2022-03-18 00:00:00: max PnL 0.0571
+2025-03-19 14:10:25,237 - risk.manager - INFO - New position at 2022-03-21 00:00:00: signal=-1, entry_z=2.54
+2025-03-19 14:10:25,238 - risk.manager - INFO - Position closed at 2022-03-22 00:00:00 (original signal)
+2025-03-19 14:10:25,241 - risk.manager - INFO - New position at 2022-03-23 00:00:00: signal=-1, entry_z=2.17
+2025-03-19 14:10:25,241 - risk.manager - INFO - Position closed at 2022-03-24 00:00:00 (original signal)
+2025-03-19 14:10:25,244 - risk.manager - INFO - New position at 2022-03-31 00:00:00: signal=-1, entry_z=2.08
+2025-03-19 14:10:25,245 - risk.manager - INFO - Position closed at 2022-04-01 00:00:00 (original signal)
+2025-03-19 14:10:25,249 - risk.manager - INFO - New position at 2022-04-27 00:00:00: signal=-1, entry_z=1.62
+2025-03-19 14:10:25,250 - risk.manager - INFO - Profit target reached at 2022-04-28 00:00:00: max PnL 0.0621
+2025-03-19 14:10:25,254 - risk.manager - INFO - New position at 2022-04-29 00:00:00: signal=-1, entry_z=2.71
+2025-03-19 14:10:25,257 - risk.manager - INFO - Position closed at 2022-05-03 00:00:00 (original signal)
+2025-03-19 14:10:25,260 - risk.manager - INFO - New position at 2022-05-05 00:00:00: signal=-1, entry_z=2.00
+2025-03-19 14:10:25,268 - risk.manager - INFO - Profit target reached at 2022-05-12 00:00:00: max PnL 0.0464
+2025-03-19 14:10:25,269 - risk.manager - INFO - New position at 2022-05-18 00:00:00: signal=-1, entry_z=1.55
+2025-03-19 14:10:25,270 - risk.manager - INFO - Position closed at 2022-05-19 00:00:00 (original signal)
+2025-03-19 14:10:25,271 - risk.manager - INFO - New position at 2022-05-20 00:00:00: signal=-1, entry_z=2.00
+2025-03-19 14:10:25,271 - risk.manager - INFO - Position closed at 2022-05-23 00:00:00 (original signal)
+2025-03-19 14:10:25,274 - risk.manager - INFO - New position at 2022-06-13 00:00:00: signal=-1, entry_z=2.42
+2025-03-19 14:10:25,275 - risk.manager - INFO - Profit target reached at 2022-06-15 00:00:00: max PnL 0.0737
+2025-03-19 14:10:25,276 - risk.manager - INFO - New position at 2022-06-16 00:00:00: signal=-1, entry_z=1.57
+2025-03-19 14:10:25,276 - risk.manager - INFO - Profit target reached at 2022-06-17 00:00:00: max PnL 0.0482
+2025-03-19 14:10:25,279 - risk.manager - INFO - New position at 2022-08-16 00:00:00: signal=1, entry_z=-2.14
+2025-03-19 14:10:25,279 - risk.manager - INFO - Position closed at 2022-08-17 00:00:00 (original signal)
+2025-03-19 14:10:25,281 - risk.manager - INFO - New position at 2022-11-22 00:00:00: signal=1, entry_z=-2.14
+2025-03-19 14:10:25,284 - risk.manager - INFO - Profit target reached at 2022-11-28 00:00:00: max PnL 0.0462
+2025-03-19 14:10:25,285 - risk.manager - INFO - New position at 2022-11-30 00:00:00: signal=1, entry_z=-2.28
+2025-03-19 14:10:25,289 - risk.manager - INFO - Position closed at 2022-12-06 00:00:00 (original signal)
+2025-03-19 14:10:25,290 - risk.manager - INFO - New position at 2023-02-01 00:00:00: signal=1, entry_z=-2.28
+2025-03-19 14:10:25,293 - risk.manager - INFO - Position closed at 2023-02-06 00:00:00 (original signal)
+2025-03-19 14:10:25,298 - strategy.enhanced - INFO - Backtesting strategy...
+2025-03-19 14:10:25,300 - execution.simulator - ERROR - Error during realistic execution backtest for ('XLK', 'VXX'): 'DataFrame' object has no attribute 'append'
+2025-03-19 14:10:25,301 - execution.simulator - ERROR - Error during realistic execution backtest for ('QQQ', 'VXX'): 'DataFrame' object has no attribute 'append'
+2025-03-19 14:10:25,303 - execution.simulator - ERROR - Error during realistic execution backtest for ('SPY', 'VXX'): 'DataFrame' object has no attribute 'append'
+2025-03-19 14:10:25,305 - execution.simulator - ERROR - Error during realistic execution backtest for ('XRT', 'VXX'): 'DataFrame' object has no attribute 'append'
+2025-03-19 14:10:25,305 - EnhancedStatArbExample - INFO - 
+Strategy Performance Summary:

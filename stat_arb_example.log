@@ -1,0 +1,46 @@
+2025-03-19 01:53:34,768 - strategy.base - INFO - Initialized RegimeSwitchingStatArb
+2025-03-19 01:53:34,768 - strategy.regime_switching - INFO - Strategy initialized with parameters: lookback=252, z_entry=2.0, z_exit=0.5, n_regimes=2, confidence=0.05, holding_period=20
+2025-03-19 01:53:34,768 - strategy.regime_switching - INFO - Fetching price data...
+2025-03-19 01:53:34,768 - strategy.regime_switching - INFO - Fetching price data for 8 tickers from 2019-03-08 to 2025-03-19
+2025-03-19 01:53:35,073 - data.market_data - INFO - Successfully downloaded XLF data: 1516 rows
+2025-03-19 01:53:35,205 - data.market_data - INFO - Successfully downloaded XLK data: 1516 rows
+2025-03-19 01:53:35,357 - data.market_data - INFO - Successfully downloaded XLV data: 1516 rows
+2025-03-19 01:53:35,484 - data.market_data - INFO - Successfully downloaded XLI data: 1516 rows
+2025-03-19 01:53:35,637 - data.market_data - INFO - Successfully downloaded XLP data: 1516 rows
+2025-03-19 01:53:35,750 - data.market_data - INFO - Successfully downloaded XLY data: 1516 rows
+2025-03-19 01:53:35,927 - data.market_data - INFO - Successfully downloaded XLE data: 1516 rows
+2025-03-19 01:53:36,055 - data.market_data - INFO - Successfully downloaded XLU data: 1516 rows
+2025-03-19 01:53:36,056 - data.market_data - INFO - Successfully fetched data for 8/8 tickers
+2025-03-19 01:53:36,056 - data.market_data - INFO - Date range: 2019-03-08 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 01:53:36,056 - data.market_data - INFO - Data shape: (1516, 8)
+2025-03-19 01:53:36,057 - strategy.regime_switching - INFO - Successfully fetched data for 8/8 tickers
+2025-03-19 01:53:36,057 - strategy.regime_switching - INFO - Date range: 2020-03-20 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 01:53:36,057 - strategy.regime_switching - INFO - Data shape: (1255, 8)
+2025-03-19 01:53:36,057 - strategy.regime_switching - INFO - Fetching macroeconomic data...
+2025-03-19 01:53:36,057 - strategy.regime_switching - INFO - Fetching macroeconomic data from 2019-03-08 to 2025-03-19
+2025-03-19 01:53:36,155 - data.market_data - INFO - Successfully downloaded ^VIX data: 1516 rows
+2025-03-19 01:53:36,246 - data.market_data - INFO - Successfully downloaded ^TNX data: 1516 rows
+2025-03-19 01:53:36,441 - data.market_data - INFO - Successfully downloaded SPY data: 1516 rows
+2025-03-19 01:53:36,657 - data.market_data - INFO - Successfully downloaded TLT data: 1516 rows
+2025-03-19 01:53:36,761 - data.market_data - INFO - Successfully downloaded DX-Y.NYB data: 1517 rows
+2025-03-19 01:53:36,762 - data.market_data - INFO - Successfully fetched data for 5/5 tickers
+2025-03-19 01:53:36,762 - data.market_data - INFO - Date range: 2019-03-08 00:00:00 to 2025-03-18 00:00:00
+2025-03-19 01:53:36,762 - data.market_data - INFO - Data shape: (1516, 5)
+2025-03-19 01:53:36,764 - strategy.regime_switching - INFO - Successfully fetched and processed macro data with shape (1255, 9)
+2025-03-19 01:53:36,764 - strategy.regime_switching - INFO - Finding cointegrated pairs...
+2025-03-19 01:53:36,764 - pairs.cointegration - INFO - Testing 28 potential pairs for cointegration...
+2025-03-19 01:53:36,851 - pairs.cointegration - INFO - Found cointegrated pair: XLE-XLU with p-value 0.027836
+2025-03-19 01:53:36,851 - pairs.cointegration - INFO - Found 1 cointegrated pairs
+2025-03-19 01:53:36,852 - strategy.regime_switching - INFO - Found 1 cointegrated pairs.
+2025-03-19 01:53:36,852 - strategy.regime_switching - INFO - Generating trading signals...
+2025-03-19 01:53:36,852 - strategy.regime_switching - INFO - Generating signals for 1 pairs
+2025-03-19 01:53:36,950 - strategy.regime_switching - INFO - Calculated hedge ratios for ('XLE', 'XLU'): mean=1.0622, std=0.3554
+2025-03-19 01:53:36,950 - strategy.regime_switching - INFO - Calculated spread using dynamic hedge ratios
+2025-03-19 01:53:36,951 - regime.detector - INFO - Using features for regime detection: ['spread', 'VIX', 'SPY_Vol_20d', 'TNX_Change_20d', 'VIX_Vol_Gap']
+2025-03-19 01:53:37,342 - regime.detector - INFO - Regime statistics: {0: {'count': 644, 'proportion': 0.5389121338912134}, 1: {'count': 551, 'proportion': 0.4610878661087866}}
+2025-03-19 01:53:37,344 - signals.generator - INFO - Regime 0: mean=-0.0673, std=4.0617, n=644
+2025-03-19 01:53:37,345 - signals.generator - INFO - Regime 1: mean=-1.6447, std=6.4977, n=551
+2025-03-19 01:53:37,360 - signals.generator - INFO - Generated signals: {0: 1170, 1: 16, -1: 9}
+2025-03-19 01:53:37,360 - strategy.regime_switching - INFO - Backtesting strategy...
+2025-03-19 01:53:37,486 - execution.simulator - INFO - Backtest results for ('XLE', 'XLU'): Return=0.0483, Sharpe=0.6959, Drawdown=-0.0162, Trades=10
+2025-03-19 01:53:37,486 - strategy.regime_switching - INFO - Aggregate metrics: Return=0.0483, Annual=0.0100, Sharpe=0.6959, Drawdown=-0.0162
